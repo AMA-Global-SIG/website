@@ -1,0 +1,159 @@
+---
+layout: ~/layouts/MarkdownLayout.astro
+title: Conferences
+description: AMA Global Marketing SIG conferences - upcoming events, registration, and conference history.
+---
+
+import Features2 from '~/components/widgets/Features2.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Note from '~/components/widgets/Note.astro';
+
+# Conferences
+
+The **AMA Global Marketing SIG** hosts annual conferences in diverse international locations, bringing together scholars and practitioners from around the world to advance international marketing research and education.
+
+---
+
+## Next Conference
+
+<div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl my-8">
+  <p class="text-sm uppercase tracking-wide opacity-80 mb-2">Coming Up</p>
+  <h2 class="text-3xl font-bold mb-2">2026 AMA Global Marketing Conference</h2>
+  <p class="text-xl mb-2">May 27–29, 2026</p>
+  <p class="text-lg mb-4">Nice, France</p>
+  <p class="text-sm opacity-90 mb-6">Hosted by IAE Nice Graduate School of Management</p>
+  <div class="flex flex-wrap gap-3">
+    <a href="/conferences/nice-2026" class="bg-white text-blue-700 px-5 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">Conference Details</a>
+    <a href="/conferences/nice-2026#registration" class="bg-white/20 text-white px-5 py-2 rounded-lg font-semibold hover:bg-white/30 transition">Register</a>
+  </div>
+</div>
+
+<Note
+  title="Early Bird Deadline: March 1, 2026"
+  description="Register early for discounted rates. Join us on the French Riviera for cutting-edge research sessions, doctoral consortium, and cultural experiences."
+/>
+
+---
+
+## Upcoming Conferences
+
+<Features2
+  columns={2}
+  items={[
+    {
+      title: '2026 — Nice, France',
+      description: 'May 27–29, 2026\nIAE Nice Graduate School of Management\n\nRegistration now open!',
+      icon: 'tabler:building-castle',
+      callToAction: {
+        text: 'View Details',
+        href: '/conferences/nice-2026',
+      },
+    },
+    {
+      title: '2027 — Osaka, Japan',
+      description: 'Late May / Early June 2027\nRitsumeikan University\n\nFirst conference in Japan!',
+      icon: 'tabler:torii',
+      callToAction: {
+        text: 'View Details',
+        href: '/conferences/osaka-2027',
+      },
+    },
+  ]}
+/>
+
+---
+
+## Recent Conferences
+
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2025</p>
+    <p class="font-semibold">Sydney</p>
+    <p class="text-sm text-muted">Australia</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2024</p>
+    <p class="font-semibold">Verona</p>
+    <p class="text-sm text-muted">Italy</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2023</p>
+    <p class="font-semibold">Santiago</p>
+    <p class="text-sm text-muted">Chile</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2022</p>
+    <p class="font-semibold">Crete</p>
+    <p class="text-sm text-muted">Greece</p>
+  </div>
+</div>
+
+Our conferences have taken place across **five continents** in locations including Taormina, Buenos Aires, Santorini, Havana, and many more international destinations.
+
+<CallToAction
+  title="Explore Our Conference History"
+  subtitle="View the complete list of past conferences from 1994 to present"
+  actions={[
+    {
+      variant: 'primary',
+      text: 'View Full History',
+      href: '/conferences/history',
+      icon: 'tabler:history',
+    },
+  ]}
+/>
+
+---
+
+## For Presenters
+
+<div class="grid md:grid-cols-2 gap-6 my-6">
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg">
+    <h3 class="font-bold text-lg mb-2">Submission Guidelines</h3>
+    <p class="text-sm text-muted mb-4">Learn about paper formats, track options, and the review process for competitive and interactive sessions.</p>
+    <a href="/conferences/submission-guidelines" class="text-primary font-semibold hover:underline">View Submission Guidelines →</a>
+  </div>
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg">
+    <h3 class="font-bold text-lg mb-2">Presentation Guidelines</h3>
+    <p class="text-sm text-muted mb-4">Tips for delivering effective presentations and creating engaging posters at the conference.</p>
+    <a href="/conferences/presentation-guidelines" class="text-primary font-semibold hover:underline">View Presentation Guidelines →</a>
+  </div>
+</div>
+
+---
+
+## Doctoral Consortium
+
+Each conference includes a **Doctoral Consortium** the day before the main program, offering PhD students:
+
+- Research feedback from senior scholars
+- Career development guidance
+- Networking with peers worldwide
+- Travel stipends available
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Learn About the Doctoral Consortium',
+      href: '/contact',
+      icon: 'tabler:school',
+    },
+  ]}
+/>
+
+---
+
+## Questions?
+
+For conference inquiries, contact the program chairs or local organizers listed on each conference page.
+
+<CallToAction
+  actions={[
+    {
+      text: 'Contact Us',
+      href: '/contact',
+      icon: 'tabler:mail',
+    },
+  ]}
+/>

@@ -1,0 +1,197 @@
+---
+layout: ~/layouts/MarkdownLayout.astro
+title: "2026 Nice Conference"
+description: "2026 AMA Global Marketing Conference - Nice, France - May 27-29, 2026"
+---
+
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Note from '~/components/widgets/Note.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+# 2026 Nice Conference
+
+<div class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white p-8 rounded-xl my-8">
+  <h2 class="text-3xl font-bold mb-2">2026 AMA Global Marketing Conference</h2>
+  <p class="text-xl mb-2">May 27–29, 2026</p>
+  <p class="text-lg">Nice, France</p>
+  <p class="mt-4 text-sm bg-white/20 inline-block px-3 py-1 rounded">🇫🇷 French Riviera</p>
+</div>
+
+<Note
+  title="Registration Now Open"
+  description="Early bird deadline: March 1, 2026. Register now to secure discounted rates."
+/>
+
+---
+
+## Conference Overview
+
+Join us on the **French Riviera** for the 2026 AMA Global Marketing Conference! The conference will take place at **IAE Nice Graduate School of Management** from May 27–29, 2026.
+
+{/* TODO: Add more conference overview content */}
+
+<Stats
+  stats={[
+    { title: 'Conference Days', amount: '3' },
+    { title: 'Expected Attendees', amount: '200+' },
+    { title: 'Conference Tracks', amount: '18' },
+    { title: 'Location', amount: 'Nice' },
+  ]}
+/>
+
+---
+
+## Conference Venue
+
+<div class="bg-blue-50 dark:bg-slate-800 p-6 rounded-lg my-6">
+
+### IAE Nice Graduate School of Management
+
+**Nice, France**
+
+{/* TODO: Add venue details */}
+
+*Venue details and directions will be provided as they become available.*
+
+</div>
+
+---
+
+## About Nice
+
+Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect blend of Mediterranean charm, cultural richness, and academic excellence.
+
+<Features
+  title="Why Nice?"
+  columns={3}
+  items={[
+    {
+      title: 'Mediterranean Setting',
+      description: 'Beautiful coastal city on the French Riviera with stunning beaches and promenades',
+      icon: 'tabler:beach',
+    },
+    {
+      title: 'Cultural Heritage',
+      description: 'Rich history, world-class museums, and vibrant arts scene',
+      icon: 'tabler:palette',
+    },
+    {
+      title: 'Easy Access',
+      description: 'Nice Côte d\'Azur Airport with direct connections to major European and international cities',
+      icon: 'tabler:plane',
+    },
+  ]}
+/>
+
+---
+
+## Conference Highlights
+
+<Features2
+  columns={2}
+  items={[
+    {
+      title: 'Journal of International Marketing Special Issue',
+      description: 'Dedicated special session for JIM special issue. Authors of presented papers welcome to submit for possible publication.',
+      icon: 'tabler:book',
+    },
+    {
+      title: 'Doctoral Consortium',
+      description: 'May 26, 2026 — Unique opportunity for PhD students to receive feedback from leading scholars.',
+      icon: 'tabler:school',
+    },
+    {
+      title: 'Riviera Experience',
+      description: 'Experience the French Riviera\'s legendary cuisine, culture, and Mediterranean lifestyle.',
+      icon: 'tabler:sun',
+    },
+    {
+      title: 'Global Networking',
+      description: 'Connect with leading international marketing scholars and practitioners from around the world.',
+      icon: 'tabler:world',
+    },
+  ]}
+/>
+
+---
+
+## Program Chairs
+
+<div class="grid md:grid-cols-2 gap-6 my-6">
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg">
+    <p class="font-bold">Peter Magnusson</p>
+    <p class="text-sm text-muted">University of Texas Rio Grande Valley</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg">
+    <p class="font-bold">Goksel Yalcinkaya</p>
+    <p class="text-sm text-muted">University of New Hampshire</p>
+  </div>
+</div>
+
+---
+
+## Key Dates
+
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 p-6 rounded-xl my-6">
+
+| Milestone | Date |
+| :--- | :--- |
+| **Early Bird Registration Deadline** | March 1, 2026 |
+| **Doctoral Consortium** | May 26, 2026 |
+| **Conference Dates** | May 27–29, 2026 |
+
+{/* TODO: Add submission deadlines and other key dates */}
+
+</div>
+
+---
+
+## Registration {#registration}
+
+<div class="bg-green-50 dark:bg-green-900/20 border-l-4 border-green-500 p-5 rounded-r-lg my-6">
+
+**Registration is now open!**
+
+Early bird rates are available through **March 1, 2026**.
+
+{/* TODO: Add registration link and fee details */}
+
+</div>
+
+---
+
+## Accommodation
+
+<div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg my-6">
+
+{/* TODO: Add accommodation details and hotel blocks */}
+
+Accommodation information and hotel recommendations will be provided soon.
+
+</div>
+
+---
+
+## Contact
+
+For questions about the 2026 Nice Conference, please contact:
+
+{/* TODO: Add local organizer contacts */}
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Contact Us',
+      href: '/contact',
+      icon: 'tabler:mail',
+    },
+    {
+      text: 'View All Conferences',
+      href: '/conferences',
+      icon: 'tabler:calendar-event',
+    },
+  ]}
+/>

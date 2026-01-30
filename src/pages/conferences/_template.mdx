@@ -1,0 +1,482 @@
+---
+layout: ~/layouts/MarkdownLayout.astro
+title: "[YEAR] [CITY] Conference"
+description: "[YEAR] AMA Global Marketing Conference - [CITY], [COUNTRY]"
+# NOTE: This is a template file. To create a new conference page:
+# 1. Copy this file and rename (e.g., osaka-2027.mdx, nice-2026.mdx)
+# 2. Replace all [PLACEHOLDERS] with actual content
+# 3. Update the frontmatter title and description
+# 4. Remove sections that don't apply or add conference-specific content
+---
+
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Note from '~/components/widgets/Note.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+# [YEAR] [CITY] Conference
+
+<div class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white p-8 rounded-xl my-8">
+  <h2 class="text-3xl font-bold mb-2">[YEAR] AMA Global Marketing Conference</h2>
+  <p class="text-xl mb-2">[DATES]</p>
+  <p class="text-lg">[CITY], [COUNTRY]</p>
+</div>
+
+---
+
+## Conference Overview
+
+{/* Replace with conference-specific introduction */}
+
+We are delighted to announce that **[CITY], [COUNTRY]** will host the [YEAR] AMA Global Marketing SIG Conference. The conference will take place at **[VENUE NAME]** in [DATES].
+
+This event is expected to welcome approximately **[NUMBER] participants** from around the world, bringing together leading scholars, practitioners, and doctoral students to advance international marketing research and education.
+
+Join us for an exhilarating academic program, immersive cultural experiences, and stimulating conversations in [CITY DESCRIPTION]!
+
+<Stats
+  stats={[
+    { title: 'Expected Attendees', amount: '[NUMBER]' },
+    { title: 'Countries Represented', amount: '[NUMBER]+' },
+    { title: 'Conference Tracks', amount: '[NUMBER]' },
+    { title: 'Days of Programming', amount: '[NUMBER]' },
+  ]}
+/>
+
+---
+
+## Conference Venue
+
+<div class="bg-blue-50 dark:bg-slate-800 p-6 rounded-lg my-6">
+
+### [VENUE NAME]
+
+**[VENUE ADDRESS]**
+
+{/* Add venue description and facilities */}
+
+The conference will be held at [VENUE NAME]. The venue provides modern conference facilities designed to facilitate world-class academic gatherings.
+
+**Venue Details:**
+- [Facility description]
+- [Meeting room capabilities]
+- [On-campus amenities]
+- [Accessibility information]
+
+</div>
+
+---
+
+## About [CITY]
+
+{/* Add city description highlighting:
+    - Cultural significance
+    - Business/economic importance
+    - Culinary scene
+    - Transportation accessibility
+    - Nearby attractions */}
+
+[CITY DESCRIPTION - 2-3 paragraphs about the host city, its significance for international business/marketing, cultural attractions, and travel convenience]
+
+<Features
+  title="Why [CITY]?"
+  columns={3}
+  items={[
+    {
+      title: '[Highlight 1]',
+      description: '[Description of cultural/business significance]',
+      icon: 'tabler:building',
+    },
+    {
+      title: '[Highlight 2]',
+      description: '[Description of accessibility/location]',
+      icon: 'tabler:plane',
+    },
+    {
+      title: '[Highlight 3]',
+      description: '[Description of experiences/attractions]',
+      icon: 'tabler:map-pin',
+    },
+  ]}
+/>
+
+---
+
+## Conference Highlights
+
+<Features2
+  columns={2}
+  items={[
+    {
+      title: 'Journal of International Marketing Special Issue',
+      description: 'A dedicated special session for JIM special issue. Authors of presented papers are welcome to submit for possible publication.',
+      icon: 'tabler:book',
+    },
+    {
+      title: 'Doctoral Consortium',
+      description: 'Unique opportunity for PhD students to receive feedback from leading scholars and build professional networks.',
+      icon: 'tabler:school',
+    },
+    {
+      title: 'Cultural Experience',
+      description: 'Immerse yourself in local culture, cuisine, and traditions through conference activities and excursions.',
+      icon: 'tabler:compass',
+    },
+    {
+      title: 'Global Networking',
+      description: 'Connect with leading international marketing scholars, practitioners, and doctoral students from around the world.',
+      icon: 'tabler:world',
+    },
+  ]}
+/>
+
+### Journal of International Marketing (JIM) Special Issue
+
+<div class="bg-amber-50 dark:bg-slate-800 p-5 rounded-lg border-l-4 border-amber-500 my-6">
+
+**[SPECIAL ISSUE DETAILS TBD]**
+
+A dedicated special session for the *Journal of International Marketing* (JIM) special issue will take place during the conference. Authors of presented papers are welcome to submit their work for possible publication. The special issue theme and guest editors will be announced in advance.
+
+</div>
+
+### Doctoral Consortium
+
+The Doctoral Consortium provides a unique opportunity for PhD students focusing on international and cross-cultural marketing to fine-tune their research ideas and gain insights into building a successful academic career.
+
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+  <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+    <h4 class="font-bold mb-2">Mentorship</h4>
+    <p class="text-sm text-muted">Senior international marketing scholars provide guidance</p>
+  </div>
+  <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+    <h4 class="font-bold mb-2">Research Feedback</h4>
+    <p class="text-sm text-muted">Dissertation research and career development advice</p>
+  </div>
+  <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+    <h4 class="font-bold mb-2">Panel Discussions</h4>
+    <p class="text-sm text-muted">Research trends and publishing strategies</p>
+  </div>
+  <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+    <h4 class="font-bold mb-2">Peer Networking</h4>
+    <p class="text-sm text-muted">Connect with doctoral students worldwide</p>
+  </div>
+  <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+    <h4 class="font-bold mb-2">Career Workshops</h4>
+    <p class="text-sm text-muted">Professional development and job market preparation</p>
+  </div>
+  <div class="p-4 bg-blue-50 dark:bg-slate-800 rounded-lg">
+    <h4 class="font-bold mb-2">Editor Sessions</h4>
+    <p class="text-sm text-muted">Meet editors from top international marketing journals</p>
+  </div>
+</div>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Doctoral Consortium Details',
+      href: '/doctoral-consortium/[YEAR]',
+      icon: 'tabler:school',
+    },
+  ]}
+/>
+
+### Cultural Experience
+
+{/* Add conference-specific cultural activities */}
+
+Experience [REGION]'s rich cultural heritage through [CITY]'s [CULTURAL HIGHLIGHTS]. The conference will offer opportunities to explore:
+
+- [Cultural activity 1]
+- [Cultural activity 2]
+- [Cultural activity 3]
+- Optional excursions to [NEARBY DESTINATIONS]
+
+---
+
+## Conference Tracks
+
+All submissions will be categorized into thematic tracks. Each submission must be submitted to only one track.
+
+<div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg my-6">
+
+**Anticipated tracks include:**
+
+{/* Update track list for each conference */}
+
+1. Cross-cultural Consumer Behavior
+2. Export and Import Management
+3. Firm Internationalization, Market Entry, and Market Exit
+4. Global Brand Management
+5. Global Consumer Research
+6. Global Entrepreneurship
+7. Global Ethics, Sustainability, and Corporate Social Responsibility
+8. Global Innovation and New Product Development
+9. Global Marketing Communications
+10. Global Marketing Research, Big Data, and Analytics
+11. Global Marketing Strategy
+12. Global Relationship Marketing, Sales, and Channel Management
+13. Global Retailing, Services, and E-Commerce
+14. Global Supply Chain Research
+15. Global Luxury Marketing
+16. Global Marketing Education
+17. Marketing in Emerging Markets
+18. Special Session Proposals
+
+*Track chairs will be announced when the call for papers opens.*
+
+</div>
+
+---
+
+## Submission Guidelines
+
+<Note
+  title="Submission System"
+  description="Papers and extended abstracts will be submitted electronically using the EasyChair conference submission system. The submission system is expected to open in [TIMEFRAME]."
+/>
+
+### Types of Submissions
+
+<div class="grid md:grid-cols-3 gap-6 my-6">
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg border-t-4 border-blue-500">
+    <h4 class="font-bold mb-3">Competitive Sessions</h4>
+    <p class="text-sm mb-2"><strong>Full Papers:</strong> Max 40 double-spaced pages (all materials included)</p>
+    <p class="text-sm"><strong>Extended Abstracts:</strong> For advanced projects with good potential</p>
+  </div>
+  <div class="bg-green-50 dark:bg-slate-800 p-5 rounded-lg border-t-4 border-green-500">
+    <h4 class="font-bold mb-3">Interactive Sessions</h4>
+    <p class="text-sm">Work-in-progress for informal feedback. Poster-style or roundtable format. Max 10 double-spaced pages.</p>
+  </div>
+  <div class="bg-amber-50 dark:bg-slate-800 p-5 rounded-lg border-t-4 border-amber-500">
+    <h4 class="font-bold mb-3">Special Sessions</h4>
+    <p class="text-sm">Introduction framing theme + 3-4 extended abstracts (3-4 pages each) + participant list.</p>
+  </div>
+</div>
+
+### Submission Requirements
+
+- Each manuscript may only be submitted to **one track**
+- All submissions undergo **blind peer review**
+- Submissions evaluated on: relevance, contribution, rigor, methodology, innovativeness, and clarity
+
+<div class="bg-amber-50 dark:bg-amber-900/20 border-l-4 border-amber-500 p-4 rounded-r-lg my-6">
+
+**Note:** Submitting as a competitive paper does not guarantee placement in a competitive session. Best papers will be placed in competitive sessions; others may be placed in interactive sessions due to space considerations.
+
+</div>
+
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'View Full Submission Guidelines',
+      href: '/conferences/submission-guidelines',
+      icon: 'tabler:file-text',
+    },
+  ]}
+/>
+
+---
+
+## Registration
+
+<div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg my-6">
+
+**Registration information will be announced in [TIMEFRAME].**
+
+### Registration Categories (Anticipated)
+
+| Category | Description |
+| :--- | :--- |
+| Early Bird | Discounted rates for early registration |
+| Regular | Standard registration rate |
+| Late/On-site | Higher rate for late registrations |
+| Student | Discounted rate for students |
+| Accompanying Person | For non-presenting guests |
+
+### Registration Typically Includes
+
+- Access to all conference sessions
+- Conference materials
+- Coffee breaks and lunches
+- Welcome reception
+- Conference gala dinner
+
+</div>
+
+---
+
+## Key Dates
+
+<div class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-700 p-6 rounded-xl my-6">
+
+| Milestone | Date |
+| :--- | :--- |
+| **Call for Papers Opens** | [DATE] |
+| **Submission System Opens** | [DATE] |
+| **Submission Deadline** | [DATE] |
+| **Acceptance Notification** | [DATE] |
+| **Registration Opens** | [DATE] |
+| **Early Bird Deadline** | [DATE] |
+| **Doctoral Consortium Application Deadline** | [DATE] |
+| **Conference Dates** | [DATES] |
+
+*All dates tentative — please check back for updates*
+
+</div>
+
+---
+
+## Accommodation
+
+<div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg my-6">
+
+**Accommodation information will be provided as we get closer to conference dates.**
+
+We will arrange:
+- Hotel room blocks at special conference rates
+- Recommendations for hotels at various price points
+- Information about proximity to conference venue
+- Local transportation options
+
+Expected options include:
+- Hotels near [VENUE]
+- Hotels in central [CITY] with convenient access
+- Budget-friendly options for doctoral students
+
+</div>
+
+---
+
+## Practical Information
+
+### Travel & Visa
+
+<div class="grid md:grid-cols-2 gap-6 my-6">
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg">
+    <h4 class="font-bold mb-3">Entry Requirements</h4>
+    <ul class="text-sm space-y-2">
+      <li>• Visa requirements vary by nationality</li>
+      <li>• Allow 6-8 weeks for visa processing if required</li>
+      <li>• Conference organizers can provide visa support letters upon request</li>
+    </ul>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg">
+    <h4 class="font-bold mb-3">Getting to [CITY]</h4>
+    <ul class="text-sm space-y-2">
+      <li>• [AIRPORT CODE] - Main international gateway</li>
+      <li>• [Alternative airports/transport]</li>
+      <li>• [Train/ground transportation options]</li>
+    </ul>
+  </div>
+</div>
+
+### About [COUNTRY]
+
+<div class="grid md:grid-cols-3 gap-4 my-6">
+  <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg text-center">
+    <p class="font-bold">Currency</p>
+    <p class="text-sm text-muted">[CURRENCY]</p>
+  </div>
+  <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg text-center">
+    <p class="font-bold">Language</p>
+    <p class="text-sm text-muted">[LANGUAGE]</p>
+  </div>
+  <div class="p-4 bg-slate-100 dark:bg-slate-800 rounded-lg text-center">
+    <p class="font-bold">Climate</p>
+    <p class="text-sm text-muted">[WEATHER DESCRIPTION]</p>
+  </div>
+</div>
+
+---
+
+## Conference Chairs
+
+<div class="grid md:grid-cols-2 gap-6 my-6">
+  <div>
+    <h3 class="font-bold text-xl mb-4">Program Chairs</h3>
+    <div class="space-y-4">
+      <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+        <p class="font-bold">[Name TBD]</p>
+        <p class="text-sm text-muted">[Institution]</p>
+      </div>
+    </div>
+    <p class="text-sm text-muted mt-2">*Program chair appointments will be announced in [TIMEFRAME]*</p>
+  </div>
+  <div>
+    <h3 class="font-bold text-xl mb-4">Local Host Organizers</h3>
+    <div class="space-y-4">
+      <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+        <p class="font-bold">[Name]</p>
+        <p class="text-sm text-muted">[Title], [Institution]</p>
+        <p class="text-sm">[Email]</p>
+      </div>
+      <div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg">
+        <p class="font-bold">[Name]</p>
+        <p class="text-sm text-muted">[Title], [Institution]</p>
+        <p class="text-sm">[Email]</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+### Doctoral Consortium Chairs
+
+<div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg my-4">
+
+*Doctoral consortium chair appointments will be announced when the call for papers opens.*
+
+</div>
+
+---
+
+## Contact
+
+For questions about the conference, please contact:
+
+<div class="grid md:grid-cols-2 gap-6 my-6">
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg">
+    <h4 class="font-bold mb-2">Local Host Organizers</h4>
+    <p class="text-sm">[Name], [Institution]</p>
+    <p class="text-sm">[Email]</p>
+  </div>
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg">
+    <h4 class="font-bold mb-2">General Inquiries</h4>
+    <p class="text-sm">[Email TBD]</p>
+  </div>
+</div>
+
+---
+
+## Stay Informed
+
+<CallToAction
+  title="Get Conference Updates"
+  subtitle="Subscribe to receive announcements about call for papers, registration, accommodations, and more"
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Contact Us',
+      href: '/contact',
+      icon: 'tabler:mail',
+    },
+    {
+      text: 'View All Conferences',
+      href: '/conferences',
+      icon: 'tabler:calendar-event',
+    },
+  ]}
+/>
+
+---
+
+<div class="bg-slate-100 dark:bg-slate-800 p-4 rounded-lg text-sm text-center">
+
+**Last Updated:** [DATE]
+
+*This page contains preliminary information based on current planning. All details are subject to confirmation and may be updated as planning progresses. Please check back regularly for the most current information.*
+
+</div>
