@@ -1,167 +1,131 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getAsset } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
+      text: 'About',
       links: [
         {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
+          text: 'Mission & Objectives',
+          href: getPermalink('/mission'),
         },
         {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
+          text: 'History',
+          href: getPermalink('/history'),
         },
         {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
+          text: 'Leadership & Governance',
+          href: getPermalink('/leadership'),
         },
       ],
     },
     {
-      text: 'Pages',
+      text: 'Conferences',
       links: [
         {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
+          text: 'Nice 2026',
+          href: getPermalink('/conferences/nice-2026'),
         },
         {
-          text: 'Services',
-          href: getPermalink('/services'),
+          text: 'Osaka 2027',
+          href: getPermalink('/conferences/osaka-2027'),
         },
         {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
+          text: 'Conference History',
+          href: getPermalink('/conferences/history'),
         },
         {
-          text: 'About us',
-          href: getPermalink('/about'),
+          text: 'Submission Guidelines',
+          href: getPermalink('/conferences/submission-guidelines'),
         },
         {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
+          text: 'Presentation Guidelines',
+          href: getPermalink('/conferences/presentation-guidelines'),
         },
       ],
     },
     {
-      text: 'Landing',
+      text: 'Doctoral Consortia',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
+          text: 'Nice 2026',
+          href: getPermalink('/doctoral-consortium/nice-2026'),
         },
         {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
+          text: 'Osaka 2027',
+          href: getPermalink('/doctoral-consortium/osaka-2027'),
         },
         {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
+          text: 'Application Process',
+          href: getPermalink('/doctoral-consortium/application-process'),
         },
       ],
     },
     {
-      text: 'Blog',
+      text: 'Awards',
       links: [
         {
-          text: 'Blog List',
-          href: getBlogPermalink(),
+          text: 'Overview',
+          href: getPermalink('/awards'),
         },
         {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'SIG Awards',
+          href: getPermalink('/awards/sig-awards'),
         },
         {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
-        },
-        {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: 'JIM Awards',
+          href: getPermalink('/awards/jim-awards'),
         },
       ],
     },
     {
-      text: 'Widgets',
-      href: '#',
+      text: 'Contact',
+      href: getPermalink('/contact'),
     },
   ],
-  actions: [{ text: 'Download', href: 'https://github.com/arthelokyo/astrowind', target: '_blank' }],
+  actions: [
+    {
+      text: 'Nice 2026',
+      href: getPermalink('/conferences/nice-2026'),
+    },
+  ],
 };
 
 export const footerData = {
   links: [
     {
-      title: 'Product',
+      title: 'About',
       links: [
-        { text: 'Features', href: '#' },
-        { text: 'Security', href: '#' },
-        { text: 'Team', href: '#' },
-        { text: 'Enterprise', href: '#' },
-        { text: 'Customer stories', href: '#' },
-        { text: 'Pricing', href: '#' },
-        { text: 'Resources', href: '#' },
+        { text: 'Mission & Objectives', href: getPermalink('/mission') },
+        { text: 'History', href: getPermalink('/history') },
+        { text: 'Leadership & Governance', href: getPermalink('/leadership') },
       ],
     },
     {
-      title: 'Platform',
+      title: 'Conferences',
       links: [
-        { text: 'Developer API', href: '#' },
-        { text: 'Partners', href: '#' },
-        { text: 'Atom', href: '#' },
-        { text: 'Electron', href: '#' },
-        { text: 'AstroWind Desktop', href: '#' },
+        { text: 'Nice 2026', href: getPermalink('/conferences/nice-2026') },
+        { text: 'Osaka 2027', href: getPermalink('/conferences/osaka-2027') },
+        { text: 'Conference History', href: getPermalink('/conferences/history') },
+        { text: 'Submission Guidelines', href: getPermalink('/conferences/submission-guidelines') },
+        { text: 'Presentation Guidelines', href: getPermalink('/conferences/presentation-guidelines') },
       ],
     },
     {
-      title: 'Support',
+      title: 'Doctoral Consortia',
       links: [
-        { text: 'Docs', href: '#' },
-        { text: 'Community Forum', href: '#' },
-        { text: 'Professional Services', href: '#' },
-        { text: 'Skills', href: '#' },
-        { text: 'Status', href: '#' },
+        { text: 'Nice 2026', href: getPermalink('/doctoral-consortium/nice-2026') },
+        { text: 'Osaka 2027', href: getPermalink('/doctoral-consortium/osaka-2027') },
+        { text: 'Application Process', href: getPermalink('/doctoral-consortium/application-process') },
       ],
     },
     {
-      title: 'Company',
+      title: 'Awards & Contact',
       links: [
-        { text: 'About', href: '#' },
-        { text: 'Blog', href: '#' },
-        { text: 'Careers', href: '#' },
-        { text: 'Press', href: '#' },
-        { text: 'Inclusion', href: '#' },
-        { text: 'Social Impact', href: '#' },
-        { text: 'Shop', href: '#' },
+        { text: 'SIG Awards', href: getPermalink('/awards/sig-awards') },
+        { text: 'JIM Awards', href: getPermalink('/awards/jim-awards') },
+        { text: 'Contact Us', href: getPermalink('/contact') },
+        { text: 'Join AMA', href: 'https://www.ama.org', target: '_blank' },
       ],
     },
   ],
@@ -170,13 +134,10 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/arthelokyo/astrowind' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo"> Arthelokyo</a> · All rights reserved.
+    © ${new Date().getFullYear()} AMA Global Marketing SIG. All rights reserved.
   `,
 };
