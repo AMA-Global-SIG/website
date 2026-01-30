@@ -1,27 +1,36 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
-title: Conference History
-description: A history of AMA Global Marketing SIG conferences from 1994 to present, including upcoming events in Nice and Osaka.
+title: Conferences
+description: AMA Global Marketing SIG conferences - upcoming events, registration, and conference history.
 ---
 
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Content from '~/components/widgets/Content.astro';
+import Note from '~/components/widgets/Note.astro';
 
-# Conference History
+# Conferences
 
-The **AMA Global Marketing SIG** has hosted annual conferences in diverse international locations since its founding in 1994, bringing together scholars and practitioners from around the world to advance international marketing research and education.
+The **AMA Global Marketing SIG** hosts annual conferences in diverse international locations, bringing together scholars and practitioners from around the world to advance international marketing research and education.
 
-<Stats
-  stats={[
-    { title: 'Years of Conferences', amount: '30+' },
-    { title: 'Countries Hosted', amount: '15+' },
-    { title: 'Continents Visited', amount: '5' },
-    { title: 'Typical Attendance', amount: '200-300' },
-  ]}
+---
+
+## Next Conference
+
+<div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl my-8">
+  <p class="text-sm uppercase tracking-wide opacity-80 mb-2">Coming Up</p>
+  <h2 class="text-3xl font-bold mb-2">2026 AMA Global Marketing Conference</h2>
+  <p class="text-xl mb-2">May 27–29, 2026</p>
+  <p class="text-lg mb-4">Nice, France</p>
+  <p class="text-sm opacity-90 mb-6">Hosted by IAE Nice Graduate School of Management</p>
+  <div class="flex flex-wrap gap-3">
+    <a href="/conferences/nice-2026" class="bg-white text-blue-700 px-5 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">Conference Details</a>
+    <a href="/conferences/nice-2026#registration" class="bg-white/20 text-white px-5 py-2 rounded-lg font-semibold hover:bg-white/30 transition">Register</a>
+  </div>
+</div>
+
+<Note
+  title="Early Bird Deadline: March 1, 2026"
+  description="Register early for discounted rates. Join us on the French Riviera for cutting-edge research sessions, doctoral consortium, and cultural experiences."
 />
 
 ---
@@ -33,19 +42,19 @@ The **AMA Global Marketing SIG** has hosted annual conferences in diverse intern
   items={[
     {
       title: '2026 — Nice, France',
-      description: 'IAE Nice Graduate School of Management\nMay 27–29, 2026',
+      description: 'May 27–29, 2026\nIAE Nice Graduate School of Management\n\nRegistration now open!',
       icon: 'tabler:building-castle',
       callToAction: {
-        text: 'View Conference Details',
+        text: 'View Details',
         href: '/conferences/nice-2026',
       },
     },
     {
       title: '2027 — Osaka, Japan',
-      description: 'Ritsumeikan University\nLate May / Early June 2027',
+      description: 'Late May / Early June 2027\nRitsumeikan University\n\nFirst conference in Japan!',
       icon: 'tabler:torii',
       callToAction: {
-        text: 'View Conference Details',
+        text: 'View Details',
         href: '/conferences/osaka-2027',
       },
     },
@@ -54,113 +63,97 @@ The **AMA Global Marketing SIG** has hosted annual conferences in diverse intern
 
 ---
 
-## Past Conferences
+## Recent Conferences
 
-<Steps
-  title="Recent Conference History (2017–2025)"
-  items={[
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2025</p>
+    <p class="font-semibold">Sydney</p>
+    <p class="text-sm text-muted">Australia</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2024</p>
+    <p class="font-semibold">Verona</p>
+    <p class="text-sm text-muted">Italy</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2023</p>
+    <p class="font-semibold">Santiago</p>
+    <p class="text-sm text-muted">Chile</p>
+  </div>
+  <div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg text-center">
+    <p class="text-2xl font-bold text-primary">2022</p>
+    <p class="font-semibold">Crete</p>
+    <p class="text-sm text-muted">Greece</p>
+  </div>
+</div>
+
+Our conferences have taken place across **five continents** in locations including Taormina, Buenos Aires, Santorini, Havana, and many more international destinations.
+
+<CallToAction
+  title="Explore Our Conference History"
+  subtitle="View the complete list of past conferences from 1994 to present"
+  actions={[
     {
-      title: '2025 — Sydney, Australia',
-      description: 'Our first conference in Australia, bringing global marketing scholars to the Asia-Pacific region.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2024 — Verona, Italy',
-      description: 'Historic Italian setting for cutting-edge research presentations and networking.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2023 — Santiago, Chile',
-      description: 'Latin American hub for international marketing discourse.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2022 — Crete, Greece',
-      description: 'Mediterranean island venue for post-pandemic scholarly reconnection.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2021 — Taormina, Italy',
-      description: 'Sicilian gathering as in-person conferences resumed.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2020 — Cancelled',
-      description: 'Conference cancelled due to COVID-19 pandemic.',
-      icon: 'tabler:calendar-off',
-    },
-    {
-      title: '2019 — Buenos Aires, Argentina',
-      description: 'South American conference exploring emerging market dynamics.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2018 — Santorini, Greece',
-      description: 'Iconic Greek island setting for global marketing scholarship.',
-      icon: 'tabler:map-pin',
-    },
-    {
-      title: '2017 — Havana, Cuba',
-      description: 'Historic conference in Cuba examining unique market conditions.',
-      icon: 'tabler:map-pin',
+      variant: 'primary',
+      text: 'View Full History',
+      href: '/conferences/history',
+      icon: 'tabler:history',
     },
   ]}
 />
 
 ---
 
-## Historical Records (2011–2016)
+## For Presenters
 
-<div class="bg-amber-50 dark:bg-slate-800 border-l-4 border-amber-400 p-5 rounded-r-lg my-6">
-
-**Compilation in Progress**
-
-Conference records from 2011–2016 are currently being compiled. Locations and details will be added as historical documentation is completed.
-
-| Year | Location |
-| :--- | :--- |
-| 2016 | *Records being compiled* |
-| 2015 | *Records being compiled* |
-| 2014 | *Records being compiled* |
-| 2013 | *Records being compiled* |
-| 2012 | *Records being compiled* |
-| 2011 | *Records being compiled* |
-
+<div class="grid md:grid-cols-2 gap-6 my-6">
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg">
+    <h3 class="font-bold text-lg mb-2">Submission Guidelines</h3>
+    <p class="text-sm text-muted mb-4">Learn about paper formats, track options, and the review process for competitive and interactive sessions.</p>
+    <a href="/resources/submission-guidelines" class="text-primary font-semibold hover:underline">View Submission Guidelines →</a>
+  </div>
+  <div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg">
+    <h3 class="font-bold text-lg mb-2">Presentation Guidelines</h3>
+    <p class="text-sm text-muted mb-4">Tips for delivering effective presentations and creating engaging posters at the conference.</p>
+    <a href="/resources/presentation-guidelines" class="text-primary font-semibold hover:underline">View Presentation Guidelines →</a>
+  </div>
 </div>
 
 ---
 
-## 1994–2010 Conferences
+## Doctoral Consortium
 
-From 1994–2010, the SIG organized conferences and special sessions through partnerships with the **Academy of Marketing (UK)** and in conjunction with **AMA Educators' Conferences**. Conference locations during this period included venues in Europe, Latin America, and Asia.
+Each conference includes a **Doctoral Consortium** the day before the main program, offering PhD students:
 
-<div class="bg-blue-50 dark:bg-slate-800 p-5 rounded-lg my-6">
-
-**Founding Era Highlights**
-
-- Bi-annual joint conferences with Academy of Marketing (UK) established
-- Expansion to international venues outside the United States
-- Partnership model developed for conference organization
-- Complete records from this founding period are being compiled
-
-</div>
-
----
+- Research feedback from senior scholars
+- Career development guidance
+- Networking with peers worldwide
+- Travel stipends available
 
 <CallToAction
-  title="Learn More About Our History"
-  subtitle="Explore how the SIG grew from six founding members to a global community"
   actions={[
     {
       variant: 'primary',
-      text: 'View SIG History',
-      href: '/history',
-      icon: 'tabler:history',
+      text: 'Learn About the Doctoral Consortium',
+      href: '/contact',
+      icon: 'tabler:school',
     },
+  ]}
+/>
+
+---
+
+## Questions?
+
+For conference inquiries, contact the program chairs or local organizers listed on each conference page.
+
+<CallToAction
+  actions={[
     {
-      text: 'Nice 2026 Conference',
-      href: '/conferences/nice-2026',
-      icon: 'tabler:calendar-event',
+      text: 'Contact Us',
+      href: '/contact',
+      icon: 'tabler:mail',
     },
   ]}
 />
