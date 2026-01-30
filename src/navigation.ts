@@ -65,10 +65,6 @@ export const headerData = {
       text: 'Awards',
       links: [
         {
-          text: 'Overview',
-          href: getPermalink('/awards'),
-        },
-        {
           text: 'SIG Awards',
           href: getPermalink('/awards/sig-awards'),
         },
@@ -108,24 +104,20 @@ export const footerData = {
         { text: 'Osaka 2027', href: getPermalink('/conferences/osaka-2027') },
         { text: 'Conference History', href: getPermalink('/conferences/history') },
         { text: 'Submission Guidelines', href: getPermalink('/conferences/submission-guidelines') },
-        { text: 'Presentation Guidelines', href: getPermalink('/conferences/presentation-guidelines') },
       ],
     },
     {
-      title: 'Doctoral Consortia',
-      links: [
-        { text: 'Nice 2026', href: getPermalink('/doctoral-consortium/nice-2026') },
-        { text: 'Osaka 2027', href: getPermalink('/doctoral-consortium/osaka-2027') },
-        { text: 'Application Process', href: getPermalink('/doctoral-consortium/application-process') },
-      ],
-    },
-    {
-      title: 'Awards & Contact',
+      title: 'Awards',
       links: [
         { text: 'SIG Awards', href: getPermalink('/awards/sig-awards') },
         { text: 'JIM Awards', href: getPermalink('/awards/jim-awards') },
+      ],
+    },
+    {
+      title: 'Contact',
+      links: [
         { text: 'Contact Us', href: getPermalink('/contact') },
-        { text: 'Join AMA', href: 'https://www.ama.org', target: '_blank' },
+        { text: 'Join AMA', href: 'https://www.ama.org' },
       ],
     },
   ],
