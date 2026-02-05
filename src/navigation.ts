@@ -126,8 +126,8 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'lucide:brand-linkedin', href: '#' },
-    { ariaLabel: 'X', icon: 'lucide:brand-x', href: '#' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
+    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
   ],
   footNote: `
     © ${new Date().getFullYear()} AMA Global Marketing SIG. All rights reserved.
