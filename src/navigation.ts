@@ -17,6 +17,10 @@ export const headerData = {
           text: 'Leadership & Governance',
           href: getPermalink('/leadership'),
         },
+        {
+          text: 'Bylaws',
+          href: getPermalink('/bylaws'),
+        },
       ],
     },
     {
@@ -95,6 +99,7 @@ export const footerData = {
         { text: 'Mission & Objectives', href: getPermalink('/mission') },
         { text: 'History', href: getPermalink('/history') },
         { text: 'Leadership & Governance', href: getPermalink('/leadership') },
+        { text: 'Bylaws', href: getPermalink('/bylaws') },
       ],
     },
     {
