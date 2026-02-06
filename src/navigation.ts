@@ -81,8 +81,12 @@ export const headerData = {
           href: getPermalink('/awards/sig-awards'),
         },
         {
-          text: 'JIM Awards',
-          href: getPermalink('/awards/jim-awards'),
+          text: 'Hans B. Thorelli Award',
+          href: getPermalink('/awards/thorelli-award'),
+        },
+        {
+          text: 'S. Tamer Cavusgil Award',
+          href: getPermalink('/awards/cavusgil-award'),
         },
       ],
     },
@@ -125,7 +129,8 @@ export const footerData = {
       title: 'Awards',
       links: [
         { text: 'SIG Awards', href: getPermalink('/awards/sig-awards') },
-        { text: 'JIM Awards', href: getPermalink('/awards/jim-awards') },
+        { text: 'Hans B. Thorelli Award', href: getPermalink('/awards/thorelli-award') },
+        { text: 'S. Tamer Cavusgil Award', href: getPermalink('/awards/cavusgil-award') },
       ],
     },
     {
