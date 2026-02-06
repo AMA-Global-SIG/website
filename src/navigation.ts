@@ -14,20 +14,12 @@ export const headerData = {
           href: getPermalink('/board-of-directors'),
         },
         {
-          text: 'Past Chairs & Board Members',
-          href: getPermalink('/past-chairs'),
-        },
-        {
           text: 'History',
           href: getPermalink('/history'),
         },
         {
           text: 'Leadership & Governance',
           href: getPermalink('/leadership'),
-        },
-        {
-          text: 'Bylaws',
-          href: getPermalink('/bylaws'),
         },
       ],
     },
@@ -118,10 +110,8 @@ export const footerData = {
       links: [
         { text: 'Mission & Objectives', href: getPermalink('/mission') },
         { text: 'Board of Directors', href: getPermalink('/board-of-directors') },
-        { text: 'Past Chairs & Board Members', href: getPermalink('/past-chairs') },
         { text: 'History', href: getPermalink('/history') },
         { text: 'Leadership & Governance', href: getPermalink('/leadership') },
-        { text: 'Bylaws', href: getPermalink('/bylaws') },
       ],
     },
     {
