@@ -7,6 +7,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwind from '@astrojs/tailwind';
 import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
+import netlify from '@astrojs/netlify';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
 import type { AstroIntegration } from 'astro';
@@ -23,6 +24,7 @@ const whenExternalScripts = (items: (() => AstroIntegration) | (() => AstroInteg
 
 export default defineConfig({
   output: 'static',
+  adapter: netlify(),
 
   integrations: [
     tailwind({
@@ -33,6 +35,7 @@ export default defineConfig({
     icon({
       include: {
         tabler: ['*'],
+        lucide: ['*'],
         'flat-color-icons': [
           'template',
           'gallery',
