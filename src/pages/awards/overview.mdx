@@ -1,21 +1,23 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
-title: "AMA Global Marketing SIG Awards"
-description: "Awards presented by the AMA Global Marketing SIG recognizing excellence in global marketing scholarship and contributions to the field."
+title: "Awards Overview"
+description: "Overview of awards presented by the AMA Global Marketing SIG and the Journal of International Marketing recognizing excellence in global marketing scholarship."
 ---
 
 import Features from '~/components/widgets/Features.astro';
 import Note from '~/components/widgets/Note.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 
-The **AMA Global Marketing SIG** presents two annual awards at the AMA Summer Educators' Conference, recognizing outstanding contributions to the field of global marketing.
-
-<Note
-  title="Award Presentation"
-  description="Both SIG awards are presented annually at the AMA Summer Educators' Conference during the Global Marketing SIG business meeting."
-/>
+The global marketing community recognizes outstanding scholarship through two distinct sets of awards, each presented annually at the **AMA Summer Educators' Conference**.
 
 ---
+
+## AMA Global Marketing SIG Awards
+
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-slate-800 dark:to-slate-700 p-6 rounded-xl border-l-4 border-blue-500 my-6">
+
+The **AMA Global Marketing SIG** presents two awards honoring individual scholars and impactful research that have advanced the field of global marketing.
+
+</div>
 
 <Features
   columns={2}
@@ -41,10 +43,6 @@ The **AMA Global Marketing SIG** presents two annual awards at the AMA Summer Ed
   ]}
 />
 
----
-
-## Nomination Information
-
 <div class="grid md:grid-cols-3 gap-6 my-8">
   <div class="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-slate-800 dark:to-slate-700 p-5 rounded-xl text-center">
     <h4 class="font-bold mb-2">Timeline</h4>
@@ -65,24 +63,40 @@ The **AMA Global Marketing SIG** presents two annual awards at the AMA Summer Ed
 
 ---
 
-<CallToAction
-  title="Explore All Awards"
-  actions={[
+## Journal of International Marketing Awards
+
+<div class="bg-gradient-to-br from-amber-50 to-amber-100 dark:from-slate-800 dark:to-slate-700 p-6 rounded-xl border-l-4 border-amber-500 my-6">
+
+The **Journal of International Marketing Editorial Board** presents two awards recognizing published articles that have made transformative contributions to international marketing scholarship.
+
+</div>
+
+<Features
+  columns={2}
+  items={[
     {
-      variant: 'primary',
-      text: 'Significant Contributions Award',
-      href: '/awards/significant-contributions',
-      icon: 'lucide:trophy',
+      title: 'Hans B. Thorelli Award',
+      description: 'Recognizes an article that has made the most significant long-term contribution to international marketing theory or practice. Re-established as a "five-year-plus" award in 2005.',
+      icon: 'lucide:scroll-text',
+      callToAction: {
+        text: 'View Recipients',
+        href: '/awards/thorelli-award',
+      },
     },
     {
-      text: 'Excellence in Research Award',
-      href: '/awards/excellence-research',
-      icon: 'lucide:award',
-    },
-    {
-      text: 'JIM Awards',
-      href: '/awards/jim-awards',
-      icon: 'lucide:book-open',
+      title: 'S. Tamer Cavusgil Award',
+      description: 'Established in 1998, honors the article published each calendar year that has made the most significant contribution to advancing the practice of international marketing management.',
+      icon: 'lucide:file-badge',
+      callToAction: {
+        text: 'View Recipients',
+        href: '/awards/cavusgil-award',
+      },
     },
   ]}
 />
+
+<div class="bg-slate-100 dark:bg-slate-800 p-5 rounded-lg my-6 text-sm">
+
+**Selection Process:** JIM awards are determined through Editorial Board review of published JIM articles; authors do not submit nominations.
+
+</div>
