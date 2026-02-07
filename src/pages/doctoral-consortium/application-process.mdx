@@ -7,8 +7,38 @@ description: "How to apply for the AMA Global Marketing SIG Doctoral Consortium"
 import Features from '~/components/widgets/Features.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 
 The AMA Global Marketing SIG Doctoral Consortium provides a unique opportunity for PhD students with an interest in international and cross-cultural marketing to advance their research and careers.
+
+<Steps2
+  title="Application Process Overview"
+  subtitle="Follow these steps to apply for the Doctoral Consortium"
+  items={[
+    {
+      title: 'Prepare Your Materials',
+      description: 'Gather your cover letter, research abstract (max 5 pages), and CV (max 2 pages).',
+      icon: 'tabler:file-text',
+    },
+    {
+      title: 'Submit via EasyChair',
+      description: 'Combine all materials into a single PDF and submit through the conference system.',
+      icon: 'tabler:upload',
+    },
+    {
+      title: 'Await Selection',
+      description: 'Applications are reviewed holistically by the selection committee.',
+      icon: 'tabler:clock',
+    },
+    {
+      title: 'Attend the Consortium',
+      description: 'Join us for a full day of mentorship, feedback, and networking.',
+      icon: 'tabler:users',
+    },
+  ]}
+/>
 
 ---
 
@@ -171,6 +201,54 @@ The Consortium takes place on the **day preceding the main conference**. The pro
     <a href="mailto:katharina.zeugner@skema.edu" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">katharina.zeugner@skema.edu</a>
   </div>
 </div>
+
+---
+
+## What Past Participants Say
+
+<Testimonials
+  testimonials={[
+    {
+      testimonial: 'The Doctoral Consortium was a transformative experience. The feedback I received from senior scholars helped shape my dissertation in meaningful ways, and the connections I made have lasted throughout my career.',
+      name: 'Past Participant',
+      job: 'Consortium Alumni',
+    },
+    {
+      testimonial: 'Beyond the invaluable research feedback, the consortium provided a supportive community of peers facing similar challenges. The mentorship and networking opportunities were exceptional.',
+      name: 'Past Participant',
+      job: 'Consortium Alumni',
+    },
+  ]}
+/>
+
+---
+
+## Frequently Asked Questions
+
+<FAQs
+  items={[
+    {
+      title: 'When should I apply to the Doctoral Consortium?',
+      description: 'Students at any stage of their doctoral program are welcome, though those who have begun developing their dissertation research tend to benefit most. Ideally, you should have a well-defined research question and preliminary theoretical framework.',
+    },
+    {
+      title: 'Can I attend the main conference if I participate in the Consortium?',
+      description: 'Yes! Consortium participants are encouraged to also submit papers to the main conference and attend all conference sessions. The Consortium takes place the day before the main conference begins.',
+    },
+    {
+      title: 'How competitive is the selection process?',
+      description: 'We typically receive more applications than available spots. However, we strive to include a diverse cohort representing various research topics and backgrounds. A strong, well-articulated research proposal significantly improves your chances.',
+    },
+    {
+      title: 'What if I don\'t receive a travel stipend?',
+      description: 'Even without a stipend, the Consortium experience is highly valuable. Many participants seek funding from their home institutions. We encourage you to apply regardless of financial support availability.',
+    },
+    {
+      title: 'Do I need to have publications to apply?',
+      description: 'No, publications are not required. We evaluate applications holistically, focusing on your research potential, the quality of your proposal, and your fit with the Consortium\'s goals.',
+    },
+  ]}
+/>
 
 ---
 

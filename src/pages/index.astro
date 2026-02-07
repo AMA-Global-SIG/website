@@ -8,6 +8,8 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 const metadata = {
   title: 'AMA Global Marketing SIG — International Marketing Scholars & Practitioners',
@@ -218,6 +220,35 @@ const metadata = {
       { title: 'Continents', amount: '6' },
       { title: 'Annual Conferences', amount: '25+' },
       { title: 'Doctoral Alumni', amount: '500+' },
+    ]}
+  />
+
+  <!-- Chair's Message -->
+  <Testimonials
+    tagline="From Our Leadership"
+    title="Message from the Chair"
+    testimonials={[
+      {
+        testimonial: 'The AMA Global Marketing SIG has been at the forefront of advancing international marketing scholarship for over three decades. Our community of researchers, educators, and practitioners continues to shape the future of global marketing through rigorous research, meaningful collaboration, and mentorship of the next generation of scholars. I invite you to join us in this important work.',
+        name: 'Goksel Yalcinkaya',
+        job: 'Chair, AMA Global Marketing SIG | University of New Hampshire',
+      },
+    ]}
+    callToAction={{
+      text: 'Meet the Board',
+      href: '/board-of-directors',
+    }}
+  />
+
+  <!-- Partner Organizations -->
+  <Brands
+    title="Our Partners & Affiliations"
+    subtitle="Collaborating with leading organizations to advance global marketing scholarship"
+    icons={[
+      'tabler:building-community',
+      'tabler:book',
+      'tabler:school',
+      'tabler:world',
     ]}
   />
 

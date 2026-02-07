@@ -9,6 +9,11 @@ import Features2 from '~/components/widgets/Features2.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Content from '~/components/widgets/Content.astro';
+import Steps2 from '~/components/widgets/Steps2.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Brands from '~/components/widgets/Brands.astro';
 
 <div class="bg-gradient-to-r from-red-600 to-red-800 text-white p-8 rounded-xl my-8">
   <h2 class="text-3xl font-bold mb-2">2027 AMA Global Marketing Conference</h2>
@@ -35,6 +40,37 @@ Join us for an exhilarating academic program, immersive cultural experiences, an
     { title: 'Historic First', amount: 'Japan' },
   ]}
 />
+
+<Content
+  isReversed
+  items={[
+    {
+      title: 'World-Class Research',
+      description: 'Present your work alongside leading international marketing scholars.',
+    },
+    {
+      title: 'Doctoral Consortium',
+      description: 'Full-day program for PhD students with senior scholar mentorship.',
+    },
+    {
+      title: 'JIM Special Issue',
+      description: 'Opportunity for publication in the Journal of International Marketing.',
+    },
+    {
+      title: 'Japanese Experience',
+      description: 'Immerse yourself in Japan\'s unique blend of tradition and innovation.',
+    },
+  ]}
+  image={{
+    src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+    alt: 'Osaka, Japan',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Experience Japan</h3>
+    The conference combines rigorous academic programming with the rich culture and hospitality of the Kansai region.
+  </Fragment>
+</Content>
 
 ---
 
@@ -276,6 +312,33 @@ All submissions will be categorized into thematic tracks. Each submission must b
   ]}
 />
 
+<Steps2
+  title="Submission Process"
+  subtitle="How to submit your paper for the 2027 conference"
+  items={[
+    {
+      title: 'Prepare Your Paper',
+      description: 'Follow the submission guidelines for formatting and length requirements.',
+      icon: 'tabler:file-text',
+    },
+    {
+      title: 'Submit via EasyChair',
+      description: 'Upload your paper through the conference submission system (opens Fall 2026).',
+      icon: 'tabler:upload',
+    },
+    {
+      title: 'Peer Review',
+      description: 'Your submission will be reviewed by program committee members.',
+      icon: 'tabler:users',
+    },
+    {
+      title: 'Present in Osaka',
+      description: 'Accepted papers will be scheduled for presentation at the conference.',
+      icon: 'tabler:presentation',
+    },
+  ]}
+/>
+
 ---
 
 ## Registration
@@ -405,6 +468,20 @@ Expected options include:
 
 ---
 
+## Welcome from the Hosts
+
+<Testimonials
+  testimonials={[
+    {
+      testimonial: 'We are honored to host the first AMA Global Marketing Conference in Japan. Osaka and Ritsumeikan University offer an exceptional setting for scholarly exchange, blending Japan\'s rich traditions with modern innovation. We look forward to welcoming participants from around the world.',
+      name: 'Ryuta Ishii & Mai Kikumori',
+      job: 'Local Host Organizers, Ritsumeikan University',
+    },
+  ]}
+/>
+
+---
+
 ## Conference Chairs
 
 <div class="grid md:grid-cols-2 gap-6 my-6">
@@ -459,6 +536,49 @@ For questions about the conference, please contact:
     <p class="text-sm mt-2"><a href="https://www.amaglobalsig.org" class="text-primary hover:underline">www.amaglobalsig.org</a></p>
   </div>
 </div>
+
+---
+
+## Frequently Asked Questions
+
+<FAQs
+  items={[
+    {
+      title: 'Do I need a visa to attend the conference in Japan?',
+      description: 'Visa requirements depend on your nationality. Many countries have visa exemption agreements with Japan for short stays. Check with the Japanese embassy or consulate in your country. We can provide visa support letters upon request.',
+    },
+    {
+      title: 'What is included in the registration fee?',
+      description: 'Registration typically includes access to all conference sessions, conference materials, coffee breaks, lunches, welcome reception, and the conference gala dinner. Accommodation is not included.',
+    },
+    {
+      title: 'How do I get from Kansai Airport (KIX) to Osaka?',
+      description: 'Kansai International Airport is well connected to Osaka. The JR Haruka Express train reaches central Osaka in about 50-60 minutes. Limousine buses and taxis are also available. Detailed transportation information will be provided to registered attendees.',
+    },
+    {
+      title: 'Is English widely spoken in Japan?',
+      description: 'English signage is common at major transportation hubs, hotels, and tourist areas. Conference sessions will be conducted in English. Translation apps and pocket Wi-Fi can be helpful for everyday interactions.',
+    },
+    {
+      title: 'What is the weather like in Osaka in late May/early June?',
+      description: 'Late May to early June is generally warm and humid, with temperatures around 18-26°C (64-79°F). This period may see some rain (early rainy season). Light, breathable clothing and an umbrella are recommended.',
+    },
+  ]}
+/>
+
+---
+
+## Partners & Sponsors
+
+<Brands
+  title="Conference Partners"
+  subtitle="We thank our partners for supporting the 2027 conference"
+  icons={[
+    'tabler:school',
+    'tabler:building-community',
+    'tabler:book',
+  ]}
+/>
 
 ---
 
