@@ -2,12 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  h1, h2, h3, h4, h5, h6 {
-    color: var(--aw-color-text-heading);
-  }
-}
-
 @layer utilities {
   .bg-page {
     background-color: var(--aw-color-bg-page);
@@ -89,6 +83,11 @@
 
 [data-aw-toggle-menu].expanded g > path:last-child {
   @apply rotate-45 translate-y-[-8px] translate-x-[14px];
+}
+
+/* Heading color — placed outside @layer so it wins over Typography plugin */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--aw-color-text-heading);
 }
 
 /* To deprecated */
