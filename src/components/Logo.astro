@@ -1,9 +1,8 @@
 ---
-import { SITE } from 'astrowind:config';
+import { Image } from 'astro:assets';
+import logoLight from '~/assets/images/default_light.png';
+import logoDark from '~/assets/images/default_dark.png';
 ---
 
-<span
-  class="self-center ml-2 rtl:ml-0 rtl:mr-2 text-2xl md:text-xl font-bold text-gray-900 whitespace-nowrap dark:text-white"
->
-  🚀 {SITE?.name}
-</span>
+<Image src={logoLight} alt="AMA Global Marketing SIG" class="h-8 w-auto dark:hidden" loading="eager" />
+<Image src={logoDark} alt="AMA Global Marketing SIG" class="h-8 w-auto hidden dark:block" loading="eager" />
