@@ -133,6 +133,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--aw-color-text-heading);
 }
 
+/* Remove top margin from headings that open a box/card inside prose.
+   Typography adds margin-top to every h2/h3 via :where() (specificity 0,1,0).
+   :is() raises our specificity to 0,2,1 so this override wins. ------------- */
+.prose :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 0;
+}
+
 /* To deprecated */
 
 .dd *:first-child {
