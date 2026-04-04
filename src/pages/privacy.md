@@ -180,6 +180,4 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 
 ## Contact Us
 
-If you have any questions about this Privacy Policy, You can contact us:
-
-- By visiting our [Contact page](/contact)
+If you have any questions about this Privacy Policy, vou can contact us (see "Contact")
