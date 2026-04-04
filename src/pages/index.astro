@@ -31,6 +31,10 @@ const metadata = {
       { text: 'Nice 2026 Conference', href: '/conferences/nice-2026', icon: 'lucide:calendar' },
     ]}
   >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-white dark:from-brand-850 dark:via-brand-800 dark:to-brand-800"></div>
+      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 75% 20%, rgb(76 117 193 / 0.12) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgb(61 94 155 / 0.07) 0%, transparent 45%);"></div>
+    </Fragment>
     <Fragment slot="title">
       Welcome to the <span class="text-accent dark:text-white">AMA Global Marketing SIG</span>
     </Fragment>
@@ -163,6 +167,7 @@ const metadata = {
 
   <!-- Upcoming Events - Nice 2026 -->
   <CallToAction
+    isDark={true}
     id="nice-2026"
     title="2026 AMA Global Marketing Conference"
     subtitle="Nice, France | May 27-29, 2026"
@@ -214,6 +219,7 @@ const metadata = {
 
   <!-- Stats -->
   <Stats
+    isDark={true}
     title="Our Global Community"
     stats={[
       { title: 'Years Active', amount: '30+' },
@@ -291,6 +297,7 @@ const metadata = {
 
   <!-- Get Involved CTA -->
   <CallToAction
+    isDark={true}
     title="Get Involved"
     subtitle="Membership is open to all AMA members. International scholars may apply for affiliated membership."
     actions={[
