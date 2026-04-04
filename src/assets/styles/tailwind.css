@@ -116,6 +116,18 @@
 }
 /* -------------------------------------------------------------------------- */
 
+/* Button text must override Tailwind Typography prose-a link color ---------- */
+/* prose-a:text-* has specificity 0,1,0; two-class selector beats it at 0,2,0 */
+.btn.btn-primary,
+.btn.btn-secondary {
+  color: white;
+}
+.dark .btn.btn-primary,
+.dark .btn.btn-secondary {
+  color: rgb(24 37 61); /* brand-900 */
+}
+/* -------------------------------------------------------------------------- */
+
 /* Heading color — placed outside @layer so it wins over Typography plugin */
 h1, h2, h3, h4, h5, h6 {
   color: var(--aw-color-text-heading);
