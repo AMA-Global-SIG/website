@@ -117,13 +117,14 @@
 /* -------------------------------------------------------------------------- */
 
 /* Button text must override Tailwind Typography prose-a link color ---------- */
-/* prose-a:text-* has specificity 0,1,0; two-class selector beats it at 0,2,0 */
-.btn.btn-primary,
-.btn.btn-secondary {
+/* Unlayered rules beat @layer utilities regardless of specificity, so a      */
+/* single-class selector suffices (buttons only ever get btn-primary alone).  */
+.btn-primary,
+.btn-secondary {
   color: white;
 }
-.dark .btn.btn-primary,
-.dark .btn.btn-secondary {
+.dark .btn-primary,
+.dark .btn-secondary {
   color: rgb(24 37 61); /* brand-900 */
 }
 /* -------------------------------------------------------------------------- */
