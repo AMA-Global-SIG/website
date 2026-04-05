@@ -4,7 +4,6 @@ title: Contact Us
 description: Find the right contact for your inquiry - conferences, membership, doctoral consortium, awards, and more.
 ---
 
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -16,7 +15,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
   description="For urgent conference-related matters, please contact the SIG Chair directly: goksel.yalcinkaya@unh.edu"
 />
 
-<Features
+<Features2
   title="Quick Contacts"
   columns={3}
   items={[
@@ -171,24 +170,38 @@ For nominations and questions about the **Significant Contributions to Global Ma
 
 ## Join the SIG
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-lg font-semibold text-brand-800 dark:text-brand-100 mb-3">AMA Members</h3>
-    <p class="text-slate-600 dark:text-slate-300 mb-4">Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your desire to join when initiating or renewing your annual AMA membership.</p>
-    <a href="https://www.ama.org" target="_blank" class="btn btn-primary">Join or Renew at AMA.org</a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-lg font-semibold text-brand-800 dark:text-brand-100 mb-3">Non-AMA Members</h3>
-    <p class="text-slate-600 dark:text-slate-300 mb-4">International scholars may apply for <strong>affiliated (non-voting) membership</strong>, allowing participation in SIG activities while maintaining primary professional associations.</p>
-    <a href="#affiliated-membership-application" class="btn btn-secondary">Application Details</a>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: 'AMA Members',
+      description: 'Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your desire to join when initiating or renewing your annual AMA membership.',
+      icon: 'lucide:user-check',
+      callToAction: {
+        variant: 'primary',
+        text: 'Join or Renew at AMA.org',
+        href: 'https://www.ama.org',
+        target: '_blank',
+      },
+    },
+    {
+      title: 'Non-AMA Members',
+      description: 'International scholars may apply for <strong>affiliated (non-voting) membership</strong>, allowing participation in SIG activities while maintaining primary professional associations.',
+      icon: 'lucide:globe',
+      callToAction: {
+        variant: 'secondary',
+        text: 'Application Details',
+        href: '#affiliated-membership-application',
+      },
+    },
+  ]}
+/>
 
 ---
 
 ## Stay Connected
 
-<Features
+<Features2
   columns={3}
   items={[
     {
