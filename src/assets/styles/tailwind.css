@@ -167,10 +167,16 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Consistent table styling — unlayered so it overrides Tailwind Typography --- */
 .prose :where(table) {
-  display: block;
+  width: 100%;
+}
+/* Scroll container for wide tables on mobile — wraps thead/tbody so the
+   table itself stays display:table and width:100% works correctly */
+.prose :where(table > thead),
+.prose :where(table > tbody) {
+  display: table;
+  width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
 }
 .prose :where(thead tr) {
   @apply bg-brand-100 dark:bg-brand-700;
