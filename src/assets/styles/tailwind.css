@@ -141,6 +141,27 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
 }
 
+/* Consistent table styling — unlayered so it overrides Tailwind Typography --- */
+.prose :where(table) {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.prose :where(thead tr) {
+  @apply bg-brand-100 dark:bg-brand-700;
+}
+.prose :where(th) {
+  @apply text-brand-800 dark:text-brand-100 font-semibold py-2.5 px-4 border-b-2 border-brand-200 dark:border-brand-600;
+}
+.prose :where(td) {
+  @apply py-2.5 px-4 border-b border-brand-100 dark:border-brand-700;
+}
+.prose :where(tbody tr:hover) {
+  @apply bg-brand-50 dark:bg-brand-800;
+  transition: background-color 150ms;
+}
+/* --------------------------------------------------------------------------- */
+
 /* To deprecated */
 
 .dd *:first-child {
