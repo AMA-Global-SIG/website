@@ -1,7 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
@@ -10,6 +9,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import Button from '~/components/ui/Button.astro';
 
 const metadata = {
   title: 'AMA Global Marketing SIG — International Marketing Scholars & Practitioners',
@@ -18,32 +18,79 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Section -->
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Join the SIG',
-        href: 'https://www.ama.org',
-        target: '_blank',
-        icon: 'lucide:users',
-      },
-      { text: 'Nice 2026 Conference', href: '/conferences/nice-2026', icon: 'lucide:calendar' },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-gradient-to-br from-brand-50 via-white to-white dark:from-brand-850 dark:via-brand-800 dark:to-brand-800"></div>
-      <div class="absolute inset-0 pointer-events-none" style="background: radial-gradient(ellipse at 75% 20%, rgb(76 117 193 / 0.12) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgb(61 94 155 / 0.07) 0%, transparent 45%);"></div>
-    </Fragment>
-    <Fragment slot="title">
-      Welcome to the <span class="text-accent dark:text-white">AMA Global Marketing SIG</span>
-    </Fragment>
+  <!-- Typographic Hero — asymmetric, serif wordmark, no gradient template -->
+  <section class="relative md:-mt-[76px] not-prose overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+      <div class="absolute inset-0 bg-page"></div>
+      <div
+        class="absolute inset-0 opacity-60 dark:opacity-40"
+        style="background: radial-gradient(ellipse at 85% 15%, rgb(76 117 193 / 0.10) 0%, transparent 55%), radial-gradient(ellipse at 10% 90%, rgb(61 94 155 / 0.06) 0%, transparent 50%);"
+      >
+      </div>
+    </div>
 
-    <Fragment slot="subtitle">
-      The AMA Global Marketing Special Interest Group brings together <span class="font-semibold">international marketing scholars, practitioners, and doctoral students</span> through annual conferences, research awards, and collaborative programs.
-      <span class="block mt-2 text-sm">Founded in 1994 — Members spanning six continents</span>
-    </Fragment>
-  </Hero>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center py-16 md:py-24 lg:py-28">
+        <!-- Left: wordmark + subtitle + actions -->
+        <div class="lg:col-span-7 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <p class="font-sans text-xs md:text-sm font-semibold tracking-[0.22em] uppercase text-primary dark:text-brand-250 mb-6">
+            Est. 1994 · Six Continents · AMA
+          </p>
+          <h1 class="font-heading font-semibold text-heading leading-[0.95] tracking-tight text-[clamp(2.75rem,7vw,5.5rem)] mb-6">
+            Global<br />
+            <span class="italic font-normal text-accent dark:text-brand-250">Marketing</span><br />
+            SIG
+          </h1>
+          <p class="font-sans text-lg md:text-xl text-muted max-w-xl leading-relaxed mb-8">
+            A Special Interest Group of the American Marketing Association — bringing together
+            international marketing scholars, practitioners, and doctoral students through annual
+            conferences, research awards, and collaborative programs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button
+              variant="primary"
+              text="Join the SIG"
+              href="https://www.ama.org"
+              target="_blank"
+              class="sm:w-auto"
+            />
+            <Button variant="tertiary" text="Nice 2026 Conference →" href="/conferences/nice-2026" class="sm:w-auto" />
+          </div>
+        </div>
+
+        <!-- Right: placeholder for world map / photo (labeled) -->
+        <div class="lg:col-span-5 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <div
+            class="relative aspect-[4/5] w-full rounded-2xl border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 overflow-hidden"
+            role="img"
+            aria-label="Placeholder for world map of past conference cities"
+          >
+            <!-- Subtle stripe pattern so it reads as placeholder -->
+            <div
+              class="absolute inset-0 opacity-40"
+              style="background-image: repeating-linear-gradient(135deg, transparent 0, transparent 14px, rgb(61 94 155 / 0.08) 14px, rgb(61 94 155 / 0.08) 15px);"
+            >
+            </div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+              <span
+                class="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-muted mb-2"
+              >
+                Placeholder
+              </span>
+              <span class="font-heading text-lg md:text-xl text-heading max-w-[22ch] leading-snug">
+                World map of past conference cities
+              </span>
+              <span class="font-sans text-xs md:text-sm text-muted mt-3 max-w-[28ch] leading-snug">
+                Sydney · Verona · Santiago · Crete · Taormina · Buenos Aires · Santorini · Havana · Nice · Osaka
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Mission Note -->
   <Note
@@ -51,112 +98,71 @@ const metadata = {
     description="Fostering dialogue and expanding knowledge on global marketing issues among academics, business people, and government representatives."
   />
 
-  <!-- Core Objectives -->
+  <!-- What We Do — merged Objectives + Activities into one block -->
   <Features
-    id="objectives"
-    tagline="Mission & Objectives"
-    title="Our Four Core Objectives"
+    id="what-we-do"
+    tagline="What We Do"
+    title="Four Objectives, One Community"
+    subtitle="How the Global Marketing SIG advances international marketing scholarship and practice."
     items={[
       {
         title: 'Facilitate Interaction',
-        description: 'Among academics, business people, and government representatives interested in global marketing.',
-        icon: 'lucide:users',
+        description:
+          'Bringing academics, business people, and government representatives together through annual international conferences — including bi-annual partnerships with the Academy of Marketing, UK.',
       },
       {
         title: 'Promote Globalization',
-        description: 'Of marketing courses and curricula across institutions worldwide.',
-        icon: 'lucide:globe',
+        description:
+          'Championing the globalization of marketing courses and curricula through academic partnerships with leading organizations and the AMA Academic Council.',
       },
       {
         title: 'Foster Research',
-        description: 'On global marketing issues through conferences, publications, and collaborative projects.',
-        icon: 'lucide:microscope',
+        description:
+          'Supporting doctoral consortia with senior scholar mentorship, and collaborating on Journal of International Marketing special issues on cutting-edge topics.',
       },
       {
         title: 'Disseminate Findings',
-        description: 'Research results, theoretical contributions, and successful business practices among members.',
-        icon: 'lucide:megaphone',
+        description:
+          'Recognizing research excellence through the Hans B. Thorelli and S. Tamer Cavusgil Awards, and sharing results across our global membership.',
       },
     ]}
   />
 
-  <!-- How We Accomplish Our Mission -->
-  <Content
-    isReversed
-    tagline="Our Activities"
-    title="How We Accomplish These Objectives"
-    items={[
-      {
-        title: 'Annual International Conferences',
-        description: 'Including bi-annual partnerships with the Academy of Marketing, UK.',
-      },
-      {
-        title: 'Doctoral Consortia',
-        description: 'With senior scholar mentorship for emerging researchers.',
-      },
-      {
-        title: 'Awards Programs',
-        description: 'Recognizing research excellence and contributions to the field.',
-      },
-      {
-        title: 'Journal Collaboration',
-        description: 'Partnership with the Journal of International Marketing.',
-      },
-      {
-        title: 'Academic Partnerships',
-        description: 'Collaboration with leading organizations and the AMA Academic Council.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Conference networking',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building Global Connections</h3>
-      Advancing international marketing scholarship through collaboration and knowledge exchange.
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-brand-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Why Join Section -->
+  <!-- Why Join — kept, same structure (icons removed via Features2 rework) -->
   <Features2
     tagline="Membership Benefits"
     title="Why Join Our Community?"
-    subtitle="Connect with the global international marketing community and advance your research and career"
+    subtitle="Connect with the global international marketing community and advance your research and career."
     items={[
       {
         title: 'Network Globally',
-        description: 'Connect with international marketing scholars and practitioners from leading universities and organizations worldwide. Build relationships across continents.',
-        icon: 'lucide:network',
+        description:
+          'Connect with international marketing scholars and practitioners from leading universities and organizations worldwide. Build relationships across continents.',
       },
       {
         title: 'Present Your Research',
-        description: 'Share your work at annual conferences in exciting international locations—from Nice to Osaka, Sydney to Buenos Aires.',
-        icon: 'lucide:presentation',
+        description:
+          'Share your work at annual conferences in exciting international locations — from Nice to Osaka, Sydney to Buenos Aires.',
       },
       {
         title: 'Doctoral Development',
-        description: 'Participate in our consortium for research feedback, career guidance, and professional network development. Travel stipends available.',
-        icon: 'lucide:graduation-cap',
+        description:
+          'Participate in our consortium for research feedback, career guidance, and professional network development. Travel stipends available.',
       },
       {
         title: 'Research Recognition',
-        description: 'Compete for the Hans B. Thorelli Award and S. Tamer Cavusgil Award recognizing exceptional contributions to international marketing.',
-        icon: 'lucide:award',
+        description:
+          'Compete for the Hans B. Thorelli Award and S. Tamer Cavusgil Award recognizing exceptional contributions to international marketing.',
       },
       {
         title: 'Professional Development',
-        description: 'Engage through conferences, meet-the-editor sessions, panel discussions, and networking opportunities.',
-        icon: 'lucide:trending-up',
+        description:
+          'Engage through conferences, meet-the-editor sessions, panel discussions, and networking opportunities.',
       },
       {
         title: 'Journal Collaboration',
-        description: 'Collaborate on Journal of International Marketing special issues addressing cutting-edge topics.',
-        icon: 'lucide:book',
+        description:
+          'Collaborate on Journal of International Marketing special issues addressing cutting-edge topics.',
       },
     ]}
   >
@@ -170,24 +176,25 @@ const metadata = {
     isDark={true}
     id="nice-2026"
     title="2026 AMA Global Marketing Conference"
-    subtitle="Nice, France | May 27-29, 2026"
     actions={[
       {
         variant: 'primary',
         text: 'Register Now',
         href: '/conferences/nice-2026',
-        icon: 'lucide:ticket',
       },
       {
-        text: 'View All Conferences',
+        variant: 'tertiary',
+        text: 'View all conferences →',
         href: '/conferences',
       },
     ]}
   >
     <Fragment slot="subtitle">
-      <p class="text-lg">Join us on the <span class="font-semibold">French Riviera</span> for cutting-edge research sessions, doctoral consortium, and cultural experiences.</p>
-      <p class="mt-2">Hosted by IAE Nice Graduate School of Management</p>
-      <p class="mt-2 text-accent font-semibold">Early bird deadline: March 1, 2026</p>
+      <p class="text-lg leading-relaxed">
+        <span class="font-semibold">Nice, France</span> · May 27–29, 2026. Hosted by IAE Nice
+        Graduate School of Management, on the French Riviera.
+      </p>
+      <p class="mt-3 text-accent font-semibold text-base">Early bird deadline: March 1, 2026</p>
     </Fragment>
   </CallToAction>
 
@@ -199,21 +206,27 @@ const metadata = {
     items={[
       {
         title: 'Our First Conference in Japan',
-        description: 'Mark your calendars for late May/early June 2027.',
+        description: 'Mark your calendars for late May / early June 2027.',
       },
       {
         title: 'Details Coming Soon',
-        description: 'Venue, call for papers timeline, and registration information will be announced in 2026.',
+        description:
+          'Venue, call for papers timeline, and registration information will be announced in 2026.',
       },
     ]}
     image={{
       src: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Osaka Japan',
+      alt: 'Placeholder — Osaka conference photo',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Expanding Our Global Reach</h3>
-      Our conferences have taken place in Sydney, Verona, Santiago, Crete, Taormina, Buenos Aires, Santorini, Havana, and many other international locations.
+      <h3 class="font-heading text-2xl font-semibold tracking-tight dark:text-white sm:text-3xl mb-2">
+        Expanding Our Global Reach
+      </h3>
+      <p class="leading-relaxed">
+        Our conferences have taken place in Sydney, Verona, Santiago, Crete, Taormina, Buenos Aires,
+        Santorini, Havana, and many other international locations.
+      </p>
     </Fragment>
   </Content>
 
@@ -235,133 +248,53 @@ const metadata = {
     title="Message from the Chair"
     testimonials={[
       {
-        testimonial: 'The AMA Global Marketing SIG has been at the forefront of advancing international marketing scholarship for over three decades. Our community of researchers, educators, and practitioners continues to shape the future of global marketing through rigorous research, meaningful collaboration, and mentorship of the next generation of scholars. I invite you to join us in this important work.',
+        testimonial:
+          'The AMA Global Marketing SIG has been at the forefront of advancing international marketing scholarship for over three decades. Our community of researchers, educators, and practitioners continues to shape the future of global marketing through rigorous research, meaningful collaboration, and mentorship of the next generation of scholars. I invite you to join us in this important work.',
         name: 'Goksel Yalcinkaya',
-        job: 'Chair, AMA Global Marketing SIG | University of New Hampshire',
+        job: 'Chair, AMA Global Marketing SIG · University of New Hampshire',
       },
     ]}
     callToAction={{
-      text: 'Meet the Board',
+      text: 'Meet the Board →',
       href: '/board-of-directors',
+      variant: 'tertiary',
     }}
   />
 
   <!-- Partner Organizations -->
   <Brands
     title="Our Partners & Affiliations"
-    subtitle="Collaborating with leading organizations to advance global marketing scholarship"
-    icons={[
-      'tabler:building-community',
-      'tabler:book',
-      'tabler:school',
-      'tabler:world',
-    ]}
-  />
-
-  <!-- Recent News Section -->
-  <Features
-    id="news"
-    tagline="Latest Updates"
-    title="News & Announcements"
-    columns={3}
-    items={[
-      {
-        title: '2025 Award Winners Announced',
-        description: 'Congratulations to our 2025 award recipients! See the complete awards history.',
-        icon: 'lucide:trophy',
-        callToAction: {
-          text: 'View Awards',
-          href: '/awards',
-        },
-      },
-      {
-        title: 'Nice 2026 Registration Open',
-        description: 'Register now for the May 2026 conference. Early bird rates available through March 1, 2026.',
-        icon: 'lucide:calendar-check',
-        callToAction: {
-          text: 'Register',
-          href: '/conferences/nice-2026',
-        },
-      },
-      {
-        title: 'JIM Special Issue',
-        description: 'Journal of International Marketing announces new special issue opportunities.',
-        icon: 'lucide:newspaper',
-        callToAction: {
-          text: 'Learn More',
-          href: '/resources',
-        },
-      },
-    ]}
+    subtitle="Collaborating with leading organizations to advance global marketing scholarship."
+    icons={['tabler:building-community', 'tabler:book', 'tabler:school', 'tabler:world']}
   />
 
   <!-- Get Involved CTA -->
   <CallToAction
     isDark={true}
     title="Get Involved"
-    subtitle="Membership is open to all AMA members. International scholars may apply for affiliated membership."
     actions={[
       {
         variant: 'primary',
         text: 'Join AMA',
         href: 'https://www.ama.org',
         target: '_blank',
-        icon: 'lucide:arrow-up-right',
       },
       {
-        text: 'Contact Us',
+        variant: 'tertiary',
+        text: 'Contact us →',
         href: '/contact',
-        icon: 'lucide:mail',
       },
     ]}
   >
     <Fragment slot="subtitle">
-      <p class="mb-4">Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your desire to join when initiating or renewing your annual AMA membership.</p>
-      <p><span class="font-semibold">International Scholars:</span> Scholars who are not AMA members may apply for affiliated (non-voting) membership. Contact the Membership Coordinator for details.</p>
+      <p class="mb-4 leading-relaxed">
+        Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your
+        desire to join when initiating or renewing your annual AMA membership.
+      </p>
+      <p class="leading-relaxed">
+        <span class="font-semibold">International scholars</span> who are not AMA members may apply
+        for affiliated (non-voting) membership. Contact the Membership Coordinator for details.
+      </p>
     </Fragment>
   </CallToAction>
-
-  <!-- Quick Links -->
-  <Features2
-    tagline="Explore"
-    title="Quick Links"
-    items={[
-      {
-        title: 'About',
-        description: 'Learn about our history, mission, leadership, and governance structure.',
-        icon: 'lucide:info',
-        callToAction: {
-          text: 'Learn More',
-          href: '/about',
-        },
-      },
-      {
-        title: 'Conferences',
-        description: 'Current and past conferences, submission guidelines, and registration.',
-        icon: 'lucide:calendar',
-        callToAction: {
-          text: 'View Conferences',
-          href: '/conferences',
-        },
-      },
-      {
-        title: 'Awards',
-        description: 'Hans B. Thorelli Award, S. Tamer Cavusgil Award, and recognition programs.',
-        icon: 'lucide:award',
-        callToAction: {
-          text: 'See Awards',
-          href: '/awards',
-        },
-      },
-      {
-        title: 'Resources',
-        description: 'Research tools, teaching materials, and professional development resources.',
-        icon: 'lucide:library',
-        callToAction: {
-          text: 'Browse Resources',
-          href: '/resources',
-        },
-      },
-    ]}
-  />
 </Layout>
