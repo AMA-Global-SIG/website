@@ -5,7 +5,6 @@ description: Find the right contact for your inquiry - conferences, membership, 
 ---
 
 import Features2 from '~/components/widgets/Features2.astro';
-import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
@@ -140,22 +139,22 @@ _The SIG Chair serves as the primary point of contact for matters not covered by
 
 ### Key Board Contacts
 
-<ItemGrid2
+<Features2
   columns={3}
   items={[
     {
       title: 'Academic Programs & Membership',
-      description: 'Annie Peng Cui<br>West Virginia University<br><a href="mailto:annie.cui@mail.wvu.edu">annie.cui@mail.wvu.edu</a>',
+      description: 'Annie Peng Cui\nWest Virginia University\nannie.cui@mail.wvu.edu',
       icon: 'lucide:users',
     },
     {
       title: 'International Liaison',
-      description: 'Constantine S. Katsikeas<br>Leeds University Business School<br><a href="mailto:buscsk@leeds.ac.uk">buscsk@leeds.ac.uk</a>',
+      description: 'Constantine S. Katsikeas\nLeeds University Business School\nbuscsk@leeds.ac.uk',
       icon: 'lucide:globe',
     },
     {
       title: 'Webmaster & Social Media',
-      description: 'Timo Mandler<br>NEOMA Business School<br><a href="mailto:timo.mandler@neoma-bs.fr">timo.mandler@neoma-bs.fr</a>',
+      description: 'Timo Mandler\nNEOMA Business School\ntimo.mandler@neoma-bs.fr',
       icon: 'lucide:laptop',
     },
   ]}
@@ -174,7 +173,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
 
 ## Join the SIG
 
-<ItemGrid2
+<Features2
   columns={2}
   items={[
     {
@@ -207,7 +206,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
 
 ## Stay Connected
 
-<ItemGrid2
+<Features2
   columns={3}
   items={[
     {
