@@ -1,33 +1,23 @@
 ---
 import '@fontsource-variable/inter';
 
-// 'DM Sans'
-// Nunito
-// Dosis
-// Outfit
-// Roboto
-// Literata
-// 'IBM Plex Sans'
-// Karla
-// Poppins
-// 'Fira Sans'
-// 'Libre Franklin'
-// Inconsolata
-// Raleway
-// Oswald
-// 'Space Grotesk'
-// Urbanist
+// Typography: Fraunces (headings/serif) + Inter (body/sans).
+// To revert: change the Google Fonts <link> back to Outfit and restore
+// --aw-font-heading / --aw-font-serif to 'Outfit'.
 ---
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap"
+  rel="stylesheet"
+/>
 
 <style is:inline>
   :root {
     --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Outfit', ui-sans-serif, sans-serif;
-    --aw-font-heading: 'Outfit', ui-sans-serif, sans-serif;
+    --aw-font-serif: 'Fraunces', ui-serif, Georgia, serif;
+    --aw-font-heading: 'Fraunces', ui-serif, Georgia, serif;
 
     --aw-color-primary: rgb(61 94 155);
     --aw-color-secondary: rgb(31 48 79);
@@ -48,26 +38,32 @@ import '@fontsource-variable/inter';
     }
   }
 
+  /* Fraunces settles better with slightly tighter tracking at display sizes. */
+  .font-heading {
+    font-optical-sizing: auto;
+    letter-spacing: -0.015em;
+  }
+
   .dark {
     --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Outfit', ui-sans-serif, sans-serif;
-    --aw-font-heading: 'Outfit', ui-sans-serif, sans-serif;
+    --aw-font-serif: 'Fraunces', ui-serif, Georgia, serif;
+    --aw-font-heading: 'Fraunces', ui-serif, Georgia, serif;
 
     /* Dark mode: lighter tones for contrast on navy background */
     --aw-color-primary: rgb(118 147 191);   /* brand-300: buttons, CTAs */
     --aw-color-secondary: rgb(97 131 184);  /* brand-350: hover states */
     --aw-color-accent: rgb(138 163 204);    /* brand-250: links, highlights */
 
-    --aw-color-text-heading: rgb(241 244 249);  /* brand-50: high contrast headings */
-    --aw-color-text-default: rgb(224 231 242);  /* brand-100: body text */
+    --aw-color-text-heading: rgb(241 244 249);  /* brand-50 */
+    --aw-color-text-default: rgb(224 231 242);  /* brand-100 */
 
     --tw-prose-headings: rgb(241 244 249);
-    --aw-color-text-muted: rgb(198 212 233 / 80%);  /* brand-150 at 80% */
+    --aw-color-text-muted: rgb(198 212 233 / 80%);
     --aw-color-bg-page: rgb(31 48 79);  /* brand-800 */
 
     ::selection {
-      background-color: rgb(76 117 193);  /* brand-400 */
-      color: rgb(241 244 249);  /* brand-50 */
+      background-color: rgb(76 117 193);
+      color: rgb(241 244 249);
     }
   }
 </style>
