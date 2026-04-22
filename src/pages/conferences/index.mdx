@@ -7,6 +7,7 @@ description: AMA Global Marketing SIG conferences - upcoming events, registratio
 import Features2 from '~/components/widgets/Features2.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Note from '~/components/widgets/Note.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 The **AMA Global Marketing SIG** hosts annual conferences in diverse international locations, bringing together scholars and practitioners from around the world to advance international marketing research and education.
 
@@ -14,27 +15,18 @@ The **AMA Global Marketing SIG** hosts annual conferences in diverse internation
 
 ## Next Conference
 
-<div class="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-xl my-8">
-  <p class="text-sm uppercase tracking-wide opacity-80 mb-2">Coming Up</p>
-  <h2 class="text-3xl font-bold mb-2">2026 AMA Global Marketing Conference</h2>
-  <p class="text-xl mb-2">May 27–29, 2026</p>
-  <p class="text-lg mb-4">Nice, France</p>
-  <p class="text-sm opacity-90 mb-6">Hosted by IAE Nice Graduate School of Management</p>
-  <div class="flex flex-wrap gap-3">
-    <a
-      href="/conferences/nice-2026"
-      class="bg-white text-brand-600 px-5 py-2 rounded-lg font-semibold hover:bg-brand-50 transition"
-    >
-      Conference Details
-    </a>
-    <a
-      href="/conferences/nice-2026#registration"
-      class="bg-white/20 text-white px-5 py-2 rounded-lg font-semibold hover:bg-white/30 transition"
-    >
-      Register
-    </a>
-  </div>
+<Callout kicker="Coming Up" title="2026 AMA Global Marketing Conference">
+
+**May 27–29, 2026** · Nice, France
+
+Hosted by IAE Nice Graduate School of Management.
+
+<div class="flex flex-wrap gap-3 mt-4">
+  <a href="/conferences/nice-2026" class="inline-flex items-center bg-primary text-white px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">Conference Details</a>
+  <a href="/conferences/nice-2026#registration" class="inline-flex items-center border border-brand-200 dark:border-brand-500 text-brand-700 dark:text-brand-100 px-5 py-2 rounded-lg font-semibold hover:bg-brand-100 dark:hover:bg-brand-600 transition">Register</a>
 </div>
+
+</Callout>
 
 <Note
   title="Early Bird Deadline: March 1, 2026"
@@ -52,19 +44,13 @@ The **AMA Global Marketing SIG** hosts annual conferences in diverse internation
       title: '2026 — Nice, France',
       description: 'May 27–29, 2026\nIAE Nice Graduate School of Management\n\nRegistration now open!',
       icon: 'lucide:landmark',
-      callToAction: {
-        text: 'View Details',
-        href: '/conferences/nice-2026',
-      },
+      callToAction: { text: 'View Details', href: '/conferences/nice-2026' },
     },
     {
       title: '2027 — Osaka, Japan',
       description: 'Late May / Early June 2027\nRitsumeikan University\n\nFirst conference in Japan!',
       icon: 'lucide:castle',
-      callToAction: {
-        text: 'View Details',
-        href: '/conferences/osaka-2027',
-      },
+      callToAction: { text: 'View Details', href: '/conferences/osaka-2027' },
     },
   ]}
 />
@@ -73,28 +59,15 @@ The **AMA Global Marketing SIG** hosts annual conferences in diverse internation
 
 ## Recent Conferences
 
-<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700 text-center">
-    <p class="text-2xl font-bold text-brand-500 dark:text-brand-300">2025</p>
-    <p class="font-semibold text-brand-800 dark:text-brand-100">Sydney</p>
-    <p class="text-sm text-slate-500 dark:text-slate-400">Australia</p>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700 text-center">
-    <p class="text-2xl font-bold text-brand-500 dark:text-brand-300">2024</p>
-    <p class="font-semibold text-brand-800 dark:text-brand-100">Verona</p>
-    <p class="text-sm text-slate-500 dark:text-slate-400">Italy</p>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700 text-center">
-    <p class="text-2xl font-bold text-brand-500 dark:text-brand-300">2023</p>
-    <p class="font-semibold text-brand-800 dark:text-brand-100">Santiago</p>
-    <p class="text-sm text-slate-500 dark:text-slate-400">Chile</p>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700 text-center">
-    <p class="text-2xl font-bold text-brand-500 dark:text-brand-300">2022</p>
-    <p class="font-semibold text-brand-800 dark:text-brand-100">Crete</p>
-    <p class="text-sm text-slate-500 dark:text-slate-400">Greece</p>
-  </div>
-</div>
+<Features2
+  columns={4}
+  items={[
+    { title: '2025 — Sydney', description: 'Australia', icon: 'lucide:map-pin' },
+    { title: '2024 — Verona', description: 'Italy', icon: 'lucide:map-pin' },
+    { title: '2023 — Santiago', description: 'Chile', icon: 'lucide:map-pin' },
+    { title: '2022 — Crete', description: 'Greece', icon: 'lucide:map-pin' },
+  ]}
+/>
 
 Our conferences have taken place across **five continents** in locations including Taormina, Buenos Aires, Santorini, Havana, and many more international destinations.
 
@@ -102,12 +75,7 @@ Our conferences have taken place across **five continents** in locations includi
   title="Explore Our Conference History"
   subtitle="View the complete list of past conferences from 1994 to present"
   actions={[
-    {
-      variant: 'primary',
-      text: 'View Full History',
-      href: '/conferences/history',
-      icon: 'lucide:history',
-    },
+    { variant: 'primary', text: 'View Full History', href: '/conferences/history', icon: 'lucide:history' },
   ]}
 />
 
@@ -115,32 +83,23 @@ Our conferences have taken place across **five continents** in locations includi
 
 ## For Presenters
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-base font-semibold text-brand-800 dark:text-brand-100 mb-2">Submission Guidelines</h3>
-    <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
-      Learn about paper formats, track options, and the review process for competitive and interactive sessions.
-    </p>
-    <a
-      href="/conferences/submission-guidelines"
-      class="text-brand-500 dark:text-brand-300 font-semibold hover:underline"
-    >
-      View Submission Guidelines →
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-base font-semibold text-brand-800 dark:text-brand-100 mb-2">Presentation Guidelines</h3>
-    <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
-      Tips for delivering effective presentations and creating engaging posters at the conference.
-    </p>
-    <a
-      href="/conferences/presentation-guidelines"
-      class="text-brand-500 dark:text-brand-300 font-semibold hover:underline"
-    >
-      View Presentation Guidelines →
-    </a>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: 'Submission Guidelines',
+      description: 'Learn about paper formats, track options, and the review process for competitive and interactive sessions.',
+      icon: 'lucide:file-text',
+      callToAction: { text: 'View Submission Guidelines', href: '/conferences/submission-guidelines' },
+    },
+    {
+      title: 'Presentation Guidelines',
+      description: 'Tips for delivering effective presentations and creating engaging posters at the conference.',
+      icon: 'lucide:presentation',
+      callToAction: { text: 'View Presentation Guidelines', href: '/conferences/presentation-guidelines' },
+    },
+  ]}
+/>
 
 ---
 
@@ -155,12 +114,7 @@ Each conference includes a **Doctoral Consortium** the day before the main progr
 
 <CallToAction
   actions={[
-    {
-      variant: 'primary',
-      text: 'Learn About the Doctoral Consortium',
-      href: '/doctoral-consortium/application-process',
-      icon: 'lucide:graduation-cap',
-    },
+    { variant: 'primary', text: 'Learn About the Doctoral Consortium', href: '/doctoral-consortium/application-process', icon: 'lucide:graduation-cap' },
   ]}
 />
 
@@ -172,10 +126,6 @@ For conference inquiries, contact the program chairs or local organizers listed 
 
 <CallToAction
   actions={[
-    {
-      text: 'Contact Us',
-      href: '/contact',
-      icon: 'lucide:mail',
-    },
+    { text: 'Contact Us', href: '/contact', icon: 'lucide:mail' },
   ]}
 />

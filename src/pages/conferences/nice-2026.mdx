@@ -1,10 +1,9 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
-title: '2026 Nice Conference'
-description: '2026 AMA Global Marketing Conference - Nice, France - May 27-29, 2026'
+title: "2026 Nice Conference"
+description: "2026 AMA Global Marketing Conference - Nice, France - May 27-29, 2026"
 ---
 
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Note from '~/components/widgets/Note.astro';
@@ -14,13 +13,13 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Brands from '~/components/widgets/Brands.astro';
+import Callout from '~/components/ui/Callout.astro';
 
-<div class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white p-8 rounded-xl my-8">
-  <h2 class="text-3xl font-bold mb-2">2026 AMA Global Marketing Conference</h2>
-  <p class="text-xl mb-2">May 27–29, 2026</p>
-  <p class="text-lg">Nice, France</p>
-  <p class="mt-4 text-sm bg-white/20 inline-block px-3 py-1 rounded">🇫🇷 French Riviera</p>
-</div>
+<Callout kicker="May 27–29, 2026 · Nice, France" title="2026 AMA Global Marketing Conference">
+
+Hosted on the French Riviera at **IAE Nice Graduate School of Management**.
+
+</Callout>
 
 <Note
   title="Registration Now Open"
@@ -36,22 +35,10 @@ Join us on the **French Riviera** for the 2026 AMA Global Marketing Conference! 
 <ContentWidget
   isReversed
   items={[
-    {
-      title: 'World-Class Research',
-      description: 'Present your work alongside leading international marketing scholars.',
-    },
-    {
-      title: 'Doctoral Consortium',
-      description: 'Full-day program for PhD students on May 26, 2026.',
-    },
-    {
-      title: 'JIM Special Issue',
-      description: 'Opportunity for publication in the Journal of International Marketing.',
-    },
-    {
-      title: 'Mediterranean Experience',
-      description: 'Enjoy the legendary French Riviera hospitality and culture.',
-    },
+    { title: 'World-Class Research', description: 'Present your work alongside leading international marketing scholars.' },
+    { title: 'Doctoral Consortium', description: 'Full-day program for PhD students on May 26, 2026.' },
+    { title: 'JIM Special Issue', description: 'Opportunity for publication in the Journal of International Marketing.' },
+    { title: 'Mediterranean Experience', description: 'Enjoy the legendary French Riviera hospitality and culture.' },
   ]}
   image={{
     src: 'https://images.unsplash.com/photo-1491166617655-0723a0999cfc?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
@@ -77,17 +64,13 @@ Join us on the **French Riviera** for the 2026 AMA Global Marketing Conference! 
 
 ## Conference Venue
 
-<div class="bg-brand-50 dark:bg-brand-850 p-6 rounded-lg my-6">
-
-### IAE Nice Graduate School of Management
+<Callout title="IAE Nice Graduate School of Management" kicker="Venue">
 
 **Nice, France**
 
-{/* TODO: Add venue details */}
+*Venue details and directions will be provided as they become available.*
 
-_Venue details and directions will be provided as they become available._
-
-</div>
+</Callout>
 
 ---
 
@@ -99,21 +82,9 @@ Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect 
   title="Why Nice?"
   columns={3}
   items={[
-    {
-      title: 'Mediterranean Setting',
-      description: 'Beautiful coastal city on the French Riviera with stunning beaches and promenades',
-      icon: 'lucide:sun',
-    },
-    {
-      title: 'Cultural Heritage',
-      description: 'Rich history, world-class museums, and vibrant arts scene',
-      icon: 'lucide:palette',
-    },
-    {
-      title: 'Easy Access',
-      description: "Nice Côte d'Azur Airport with direct connections to major European and international cities",
-      icon: 'lucide:plane',
-    },
+    { title: 'Mediterranean Setting', description: 'Beautiful coastal city on the French Riviera with stunning beaches and promenades', icon: 'lucide:sun' },
+    { title: 'Cultural Heritage', description: 'Rich history, world-class museums, and vibrant arts scene', icon: 'lucide:palette' },
+    { title: 'Easy Access', description: 'Nice Côte d\'Azur Airport with direct connections to major European and international cities', icon: 'lucide:plane' },
   ]}
 />
 
@@ -124,27 +95,10 @@ Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect 
 <Features2
   columns={2}
   items={[
-    {
-      title: 'Journal of International Marketing Special Issue',
-      description:
-        'Dedicated special session for JIM special issue. Authors of presented papers welcome to submit for possible publication.',
-      icon: 'lucide:book',
-    },
-    {
-      title: 'Doctoral Consortium',
-      description: 'May 26, 2026 — Unique opportunity for PhD students to receive feedback from leading scholars.',
-      icon: 'lucide:graduation-cap',
-    },
-    {
-      title: 'Riviera Experience',
-      description: "Experience the French Riviera's legendary cuisine, culture, and Mediterranean lifestyle.",
-      icon: 'lucide:sun',
-    },
-    {
-      title: 'Global Networking',
-      description: 'Connect with leading international marketing scholars and practitioners from around the world.',
-      icon: 'lucide:globe',
-    },
+    { title: 'Journal of International Marketing Special Issue', description: 'Dedicated special session for JIM special issue. Authors of presented papers welcome to submit for possible publication.', icon: 'lucide:book' },
+    { title: 'Doctoral Consortium', description: 'May 26, 2026 — Unique opportunity for PhD students to receive feedback from leading scholars.', icon: 'lucide:graduation-cap' },
+    { title: 'Riviera Experience', description: 'Experience the French Riviera\'s legendary cuisine, culture, and Mediterranean lifestyle.', icon: 'lucide:sun' },
+    { title: 'Global Networking', description: 'Connect with leading international marketing scholars and practitioners from around the world.', icon: 'lucide:globe' },
   ]}
 />
 
@@ -152,16 +106,13 @@ Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect 
 
 ## Program Chairs
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg">
-    <p class="font-bold">Peter Magnusson</p>
-    <p class="text-sm text-muted">University of Texas Rio Grande Valley</p>
-  </div>
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg">
-    <p class="font-bold">Goksel Yalcinkaya</p>
-    <p class="text-sm text-muted">University of New Hampshire</p>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    { title: 'Peter Magnusson', description: 'University of Texas Rio Grande Valley', icon: 'lucide:user' },
+    { title: 'Goksel Yalcinkaya', description: 'University of New Hampshire', icon: 'lucide:user' },
+  ]}
+/>
 
 ---
 
@@ -170,8 +121,7 @@ Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect 
 <Testimonials
   testimonials={[
     {
-      testimonial:
-        'We are delighted to welcome the AMA Global Marketing SIG to Nice for the 2026 conference. The French Riviera offers an inspiring setting for scholarly exchange, and we look forward to hosting participants from around the world at IAE Nice and SKEMA Business School.',
+      testimonial: 'We are delighted to welcome the AMA Global Marketing SIG to Nice for the 2026 conference. The French Riviera offers an inspiring setting for scholarly exchange, and we look forward to hosting participants from around the world at IAE Nice and SKEMA Business School.',
       name: 'Local Organizing Committee',
       job: 'IAE Nice & SKEMA Business School',
     },
@@ -182,92 +132,35 @@ Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect 
 
 ## Local Organizing Committee
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-4 rounded-lg border border-brand-100 dark:border-brand-700">
-    <p class="font-bold">Catherine Aussilhou</p>
-    <p class="text-sm text-muted mb-1">IAE Nice</p>
-    <a
-      href="mailto:Catherine.AUSSILHOU@univ-cotedazur.fr"
-      class="text-xs text-brand-500 dark:text-brand-300 hover:underline break-all"
-    >
-      Catherine.AUSSILHOU@univ-cotedazur.fr
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-4 rounded-lg border border-brand-100 dark:border-brand-700">
-    <p class="font-bold">Mantiaba Coulibaly</p>
-    <p class="text-sm text-muted mb-1">IAE Nice</p>
-    <a
-      href="mailto:Mantiaba.COULIBALY@univ-cotedazur.fr"
-      class="text-xs text-brand-500 dark:text-brand-300 hover:underline break-all"
-    >
-      Mantiaba.COULIBALY@univ-cotedazur.fr
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-4 rounded-lg border border-brand-100 dark:border-brand-700">
-    <p class="font-bold">Mohamed Didi-Alaoui</p>
-    <p class="text-sm text-muted mb-1">IAE Nice</p>
-    <a
-      href="mailto:Mohamed.DIDI-ALAOUI@univ-cotedazur.fr"
-      class="text-xs text-brand-500 dark:text-brand-300 hover:underline break-all"
-    >
-      Mohamed.DIDI-ALAOUI@univ-cotedazur.fr
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-4 rounded-lg border border-brand-100 dark:border-brand-700">
-    <p class="font-bold">Anastasia Stathopoulou</p>
-    <p class="text-sm text-muted mb-1">SKEMA Business School</p>
-    <a
-      href="mailto:anastasia.stathopoulou@skema.edu"
-      class="text-xs text-brand-500 dark:text-brand-300 hover:underline"
-    >
-      anastasia.stathopoulou@skema.edu
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-4 rounded-lg border border-brand-100 dark:border-brand-700">
-    <p class="font-bold">Katharina Zeugner-Roth</p>
-    <p class="text-sm text-muted mb-1">SKEMA Business School</p>
-    <a href="mailto:katharina.zeugner@skema.edu" class="text-xs text-brand-500 dark:text-brand-300 hover:underline">
-      katharina.zeugner@skema.edu
-    </a>
-  </div>
-</div>
+<Features2
+  columns={3}
+  items={[
+    { title: 'Catherine Aussilhou', description: 'IAE Nice\nCatherine.AUSSILHOU@univ-cotedazur.fr', icon: 'lucide:user' },
+    { title: 'Mantiaba Coulibaly', description: 'IAE Nice\nMantiaba.COULIBALY@univ-cotedazur.fr', icon: 'lucide:user' },
+    { title: 'Mohamed Didi-Alaoui', description: 'IAE Nice\nMohamed.DIDI-ALAOUI@univ-cotedazur.fr', icon: 'lucide:user' },
+    { title: 'Anastasia Stathopoulou', description: 'SKEMA Business School\nanastasia.stathopoulou@skema.edu', icon: 'lucide:user' },
+    { title: 'Katharina Zeugner-Roth', description: 'SKEMA Business School\nkatharina.zeugner@skema.edu', icon: 'lucide:user' },
+  ]}
+/>
 
 ---
 
 ## Key Dates
 
-| Milestone                            | Date            |
-| :----------------------------------- | :-------------- |
-| **Early Bird Registration Deadline** | March 1, 2026   |
-| **Doctoral Consortium**              | May 26, 2026    |
-| **Conference Dates**                 | May 27–29, 2026 |
-
-{/* TODO: Add submission deadlines and other key dates */}
+| Milestone | Date |
+| :--- | :--- |
+| **Early Bird Registration Deadline** | March 1, 2026 |
+| **Doctoral Consortium** | May 26, 2026 |
+| **Conference Dates** | May 27–29, 2026 |
 
 <Steps2
   title="Submission Process"
   subtitle="How to submit your paper for the 2026 conference"
   items={[
-    {
-      title: 'Prepare Your Paper',
-      description: 'Follow the submission guidelines for formatting and length requirements.',
-      icon: 'tabler:file-text',
-    },
-    {
-      title: 'Submit via EasyChair',
-      description: 'Upload your paper through the conference submission system.',
-      icon: 'tabler:upload',
-    },
-    {
-      title: 'Peer Review',
-      description: 'Your submission will be reviewed by program committee members.',
-      icon: 'tabler:users',
-    },
-    {
-      title: 'Present at Conference',
-      description: 'Accepted papers will be scheduled for presentation in Nice.',
-      icon: 'tabler:presentation',
-    },
+    { title: 'Prepare Your Paper', description: 'Follow the submission guidelines for formatting and length requirements.', icon: 'tabler:file-text' },
+    { title: 'Submit via EasyChair', description: 'Upload your paper through the conference submission system.', icon: 'tabler:upload' },
+    { title: 'Peer Review', description: 'Your submission will be reviewed by program committee members.', icon: 'tabler:users' },
+    { title: 'Present at Conference', description: 'Accepted papers will be scheduled for presentation in Nice.', icon: 'tabler:presentation' },
   ]}
 />
 
@@ -275,27 +168,21 @@ Nice, located on the stunning French Riviera (Côte d'Azur), offers the perfect 
 
 ## Registration
 
-<div class="bg-brand-50 dark:bg-brand-850 border-l-4 border-brand-400 p-5 rounded-r-lg my-6">
-
-**Registration is now open!**
+<Callout kicker="Registration" title="Registration is now open">
 
 Early bird rates are available through **March 1, 2026**.
 
-{/* TODO: Add registration link and fee details */}
-
-</div>
+</Callout>
 
 ---
 
 ## Accommodation
 
-<div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg my-6">
-
-{/* TODO: Add accommodation details and hotel blocks */}
+<Callout tone="muted">
 
 Accommodation information and hotel recommendations will be provided soon.
 
-</div>
+</Callout>
 
 ---
 
@@ -303,31 +190,11 @@ Accommodation information and hotel recommendations will be provided soon.
 
 <FAQs
   items={[
-    {
-      title: 'Do I need a visa to attend the conference in France?',
-      description:
-        'Visa requirements depend on your nationality. EU/EEA citizens do not need a visa. Citizens of many countries (US, Canada, Australia, etc.) can enter France visa-free for up to 90 days. Check with the French consulate in your country for specific requirements.',
-    },
-    {
-      title: 'What is included in the registration fee?',
-      description:
-        'Registration includes access to all conference sessions, conference materials, coffee breaks, lunches during the conference, and the conference dinner. Accommodation is not included.',
-    },
-    {
-      title: 'Can I attend the Doctoral Consortium if I am presenting a paper?',
-      description:
-        'Yes! PhD students are encouraged to both participate in the Doctoral Consortium (May 26) and present their research at the main conference (May 27-29). Separate applications are required.',
-    },
-    {
-      title: 'How do I get from Nice Airport to the conference venue?',
-      description:
-        "Nice Côte d'Azur Airport is well connected to the city center. Trams, buses, and taxis are readily available. Detailed transportation information will be provided to registered attendees.",
-    },
-    {
-      title: 'What is the weather like in Nice in late May?',
-      description:
-        'Late May is a beautiful time to visit Nice. Expect warm, sunny weather with temperatures around 20-25°C (68-77°F). Light layers and comfortable walking shoes are recommended.',
-    },
+    { title: 'Do I need a visa to attend the conference in France?', description: 'Visa requirements depend on your nationality. EU/EEA citizens do not need a visa. Citizens of many countries (US, Canada, Australia, etc.) can enter France visa-free for up to 90 days. Check with the French consulate in your country for specific requirements.' },
+    { title: 'What is included in the registration fee?', description: 'Registration includes access to all conference sessions, conference materials, coffee breaks, lunches during the conference, and the conference dinner. Accommodation is not included.' },
+    { title: 'Can I attend the Doctoral Consortium if I am presenting a paper?', description: 'Yes! PhD students are encouraged to both participate in the Doctoral Consortium (May 26) and present their research at the main conference (May 27-29). Separate applications are required.' },
+    { title: 'How do I get from Nice Airport to the conference venue?', description: 'Nice Côte d\'Azur Airport is well connected to the city center. Trams, buses, and taxis are readily available. Detailed transportation information will be provided to registered attendees.' },
+    { title: 'What is the weather like in Nice in late May?', description: 'Late May is a beautiful time to visit Nice. Expect warm, sunny weather with temperatures around 20-25°C (68-77°F). Light layers and comfortable walking shoes are recommended.' },
   ]}
 />
 

@@ -7,6 +7,7 @@ description: Guidelines for submitting papers to the AMA Global Marketing SIG An
 import Features2 from '~/components/widgets/Features.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 These guidelines apply to all paper submissions to the AMA Global Marketing SIG Annual Conference. Please read carefully before submitting your work through the **EasyChair** conference management system.
 
@@ -17,22 +18,9 @@ These guidelines apply to all paper submissions to the AMA Global Marketing SIG 
 <Features2
   columns={3}
   items={[
-    {
-      title: 'Competitive Sessions',
-      description:
-        'Full papers (max 40 pages) or extended abstracts (max 10 pages) for formal presentation and discussion.',
-      icon: 'lucide:trophy',
-    },
-    {
-      title: 'Interactive Sessions',
-      description: 'Work-in-progress (max 10 pages) for poster-style or roundtable feedback from peers.',
-      icon: 'lucide:message-circle',
-    },
-    {
-      title: 'Special Sessions',
-      description: 'Thematic proposals with 3-4 abstracts, framing introduction, and participant list.',
-      icon: 'lucide:users',
-    },
+    { title: 'Competitive Sessions', description: 'Full papers (max 40 pages) or extended abstracts (max 10 pages) for formal presentation and discussion.', icon: 'lucide:trophy' },
+    { title: 'Interactive Sessions', description: 'Work-in-progress (max 10 pages) for poster-style or roundtable feedback from peers.', icon: 'lucide:message-circle' },
+    { title: 'Special Sessions', description: 'Thematic proposals with 3-4 abstracts, framing introduction, and participant list.', icon: 'lucide:users' },
   ]}
 />
 
@@ -40,29 +28,19 @@ These guidelines apply to all paper submissions to the AMA Global Marketing SIG 
 
 Two types of submissions are accepted for competitive sessions:
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold mb-2">Full Paper Submissions</h4>
-    <p class="text-sm">
-      Complete manuscripts of no more than <strong>40 double-spaced pages</strong>, inclusive of all materials
-      (abstract, text, footnotes, references, tables, figures, and appendices).
-    </p>
-  </div>
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold mb-2">Extended Abstracts</h4>
-    <p class="text-sm">
-      Shorter submissions (<strong>maximum 10 double-spaced pages</strong>) focusing on projects that are sufficiently
-      advanced. Should clearly articulate research question, theoretical contribution, methodology, and expected
-      findings.
-    </p>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    { title: 'Full Paper Submissions', description: 'Complete manuscripts of no more than **40 double-spaced pages**, inclusive of all materials (abstract, text, footnotes, references, tables, figures, and appendices).', icon: 'lucide:file-text' },
+    { title: 'Extended Abstracts', description: 'Shorter submissions (**maximum 10 double-spaced pages**) focusing on projects that are sufficiently advanced. Should clearly articulate research question, theoretical contribution, methodology, and expected findings.', icon: 'lucide:file-minus' },
+  ]}
+/>
 
-<div class="bg-brand-50 dark:bg-brand-850 border-l-4 border-brand-400 p-4 rounded-r-lg my-6">
+<Callout tone="muted">
 
 **Note:** Submitting a manuscript as a competitive paper does not guarantee placement in a competitive session. The best papers in each track will be placed in competitive sessions, while other accepted papers may be placed in interactive sessions due to space considerations.
 
-</div>
+</Callout>
 
 ### Interactive Sessions
 
@@ -85,17 +63,17 @@ Special session proposals should include:
 
 ## Formatting Requirements
 
-| Element                      | Requirement                                                |
-| :--------------------------- | :--------------------------------------------------------- |
-| **Language**                 | English                                                    |
-| **File Format**              | Microsoft Word (.doc, .docx) or PDF                        |
-| **Font**                     | 12-point Times New Roman                                   |
-| **Spacing**                  | Double-spaced (tables and references may be single-spaced) |
-| **Margins**                  | 1 inch (2.54 cm) on all sides                              |
-| **Page Layout**              | No page numbers, line numbers, or headers/footers          |
-| **Citation Style**           | APA style (or consistent with AMA journal conventions)     |
-| **Full Paper Length**        | Maximum 40 pages (all materials included)                  |
-| **Extended Abstract Length** | Maximum 10 pages (all materials included)                  |
+| Element | Requirement |
+| :--- | :--- |
+| **Language** | English |
+| **File Format** | Microsoft Word (.doc, .docx) or PDF |
+| **Font** | 12-point Times New Roman |
+| **Spacing** | Double-spaced (tables and references may be single-spaced) |
+| **Margins** | 1 inch (2.54 cm) on all sides |
+| **Page Layout** | No page numbers, line numbers, or headers/footers |
+| **Citation Style** | APA style (or consistent with AMA journal conventions) |
+| **Full Paper Length** | Maximum 40 pages (all materials included) |
+| **Extended Abstract Length** | Maximum 10 pages (all materials included) |
 
 ---
 
@@ -103,72 +81,30 @@ Special session proposals should include:
 
 All submissions undergo **blind review**. To ensure anonymity:
 
-<div class="bg-brand-50 dark:bg-brand-850 border-l-4 border-brand-400 p-5 rounded-r-lg my-6">
-
-**Anonymization Checklist:**
+<Callout kicker="Anonymization Checklist">
 
 - Remove all author names, affiliations, and contact information from the manuscript
-- Anonymize self-citations (e.g., replace _"As we showed in Author (2023)..."_ with _"As shown in [Author] (2023)..."_)
+- Anonymize self-citations (e.g., replace *"As we showed in Author (2023)..."* with *"As shown in [Author] (2023)..."*)
 - Remove or anonymize acknowledgments, funding sources, and institutional references
 - Remove author-identifying metadata from file properties
   - In Word: `File > Info > Check for Issues > Inspect Document`
 
-</div>
+</Callout>
 
 ---
 
 ## Submission Rules
 
-<div class="space-y-4 my-6">
-  <div class="flex gap-3 p-4 bg-brand-50 dark:bg-brand-850 rounded-lg border border-brand-100 dark:border-brand-700">
-    <span class="text-xl">📝</span>
-    <div>
-      <strong>Single Track Submission</strong>
-      <p class="text-sm text-muted">
-        Each paper may only be submitted to one track. Select the track that best fits your research topic.
-      </p>
-    </div>
-  </div>
-  <div class="flex gap-3 p-4 bg-brand-50 dark:bg-brand-850 rounded-lg border border-brand-100 dark:border-brand-700">
-    <span class="text-xl">✨</span>
-    <div>
-      <strong>Original Work</strong>
-      <p class="text-sm text-muted">
-        Submitted papers must not have been published or accepted for publication elsewhere.
-      </p>
-    </div>
-  </div>
-  <div class="flex gap-3 p-4 bg-brand-50 dark:bg-brand-850 rounded-lg border border-brand-100 dark:border-brand-700">
-    <span class="text-xl">📰</span>
-    <div>
-      <strong>Concurrent Submissions</strong>
-      <p class="text-sm text-muted">
-        Papers under review at journals may be submitted, provided they do not appear in print or online before the
-        conference.
-      </p>
-    </div>
-  </div>
-  <div class="flex gap-3 p-4 bg-brand-50 dark:bg-brand-850 rounded-lg border border-brand-100 dark:border-brand-700">
-    <span class="text-xl">🔒</span>
-    <div>
-      <strong>Post-Submission Changes</strong>
-      <p class="text-sm text-muted">
-        Substantive changes to title, abstract, authorship, or content are not permitted after deadline. Minor
-        corrections allowed during camera-ready phase.
-      </p>
-    </div>
-  </div>
-  <div class="flex gap-3 p-4 bg-brand-50 dark:bg-brand-850 rounded-lg border border-brand-100 dark:border-brand-700">
-    <span class="text-xl">🎤</span>
-    <div>
-      <strong>Presentation Requirement</strong>
-      <p class="text-sm text-muted">
-        At least one author of each accepted paper must register and attend to present. Papers without a registered
-        presenting author may be withdrawn.
-      </p>
-    </div>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    { title: 'Single Track Submission', description: 'Each paper may only be submitted to one track. Select the track that best fits your research topic.', icon: 'lucide:file-text' },
+    { title: 'Original Work', description: 'Submitted papers must not have been published or accepted for publication elsewhere.', icon: 'lucide:sparkles' },
+    { title: 'Concurrent Submissions', description: 'Papers under review at journals may be submitted, provided they do not appear in print or online before the conference.', icon: 'lucide:newspaper' },
+    { title: 'Post-Submission Changes', description: 'Substantive changes to title, abstract, authorship, or content are not permitted after deadline. Minor corrections allowed during camera-ready phase.', icon: 'lucide:lock' },
+    { title: 'Presentation Requirement', description: 'At least one author of each accepted paper must register and attend to present. Papers without a registered presenting author may be withdrawn.', icon: 'lucide:mic' },
+  ]}
+/>
 
 ---
 
@@ -179,36 +115,12 @@ All competitive manuscript submissions undergo blind review. Submissions are eva
 <Features2
   columns={3}
   items={[
-    {
-      title: 'Relevance',
-      description: 'Relevance to the international marketing community',
-      icon: 'lucide:target',
-    },
-    {
-      title: 'Contribution',
-      description: 'Contribution to research, teaching, and/or practice',
-      icon: 'lucide:lightbulb',
-    },
-    {
-      title: 'Rigor',
-      description: 'Conceptual and analytical rigor',
-      icon: 'lucide:shield-check',
-    },
-    {
-      title: 'Methodology',
-      description: 'Appropriateness of methodology',
-      icon: 'lucide:list-check',
-    },
-    {
-      title: 'Innovation',
-      description: 'Innovativeness of approach or findings',
-      icon: 'lucide:sparkles',
-    },
-    {
-      title: 'Clarity',
-      description: 'Significance and clarity of conclusions',
-      icon: 'lucide:pen-line',
-    },
+    { title: 'Relevance', description: 'Relevance to the international marketing community', icon: 'lucide:target' },
+    { title: 'Contribution', description: 'Contribution to research, teaching, and/or practice', icon: 'lucide:lightbulb' },
+    { title: 'Rigor', description: 'Conceptual and analytical rigor', icon: 'lucide:shield-check' },
+    { title: 'Methodology', description: 'Appropriateness of methodology', icon: 'lucide:list-check' },
+    { title: 'Innovation', description: 'Innovativeness of approach or findings', icon: 'lucide:sparkles' },
+    { title: 'Clarity', description: 'Significance and clarity of conclusions', icon: 'lucide:pen-line' },
   ]}
 />
 
@@ -218,14 +130,14 @@ All competitive manuscript submissions undergo blind review. Submissions are eva
 
 Authors of accepted papers will receive:
 
-<div class="bg-brand-50 dark:bg-brand-850 border-l-4 border-brand-400 p-5 rounded-r-lg my-6">
+<Callout kicker="What happens next">
 
 1. **Session Assignment** — Notification of competitive or interactive placement
 2. **Camera-Ready Instructions** — Guidelines for preparing the final version
 3. **Registration Deadline** — Conference logistics and registration information
 4. **Presentation Details** — Guidelines and schedule (closer to conference date)
 
-</div>
+</Callout>
 
 ---
 

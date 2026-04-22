@@ -1,0 +1,74 @@
+---
+/**
+ * Callout — harmonized inline content box.
+ *
+ * Replaces the ad-hoc `<div class="bg-gradient-to-r from-brand-50 ...">` blocks
+ * scattered through MDX pages. Visual DNA matches the landing-page Features2 card
+ * so interior pages feel like the same product as the home page.
+ *
+ * Usage (MDX):
+ *
+ *   <Callout kicker="How We Do This">
+ *   - Bullet one
+ *   - Bullet two
+ *   </Callout>
+ *
+ *   <Callout title="Primary Leadership Role" icon="lucide:crown">
+ *   Body content, markdown-formatted.
+ *   </Callout>
+ *
+ *   <Callout tone="muted">
+ *   Quieter, flatter variant for dense pages.
+ *   </Callout>
+ */
+
+import { Icon } from 'astro-icon/components';
+
+export interface Props {
+  /** Small uppercase eyebrow label above the title (optional). */
+  kicker?: string;
+  /** Bold heading inside the callout (optional). */
+  title?: string;
+  /** Optional Iconify icon name (e.g. "lucide:crown"). Renders next to the title. */
+  icon?: string;
+  /** Visual tone. `soft` = landing-page card look (default). `muted` = quieter, for dense pages. */
+  tone?: 'soft' | 'muted';
+  /** Extra classes, merged onto the outer card. */
+  class?: string;
+}
+
+const { kicker, title, icon, tone = 'soft', class: className = '' } = Astro.props;
+
+const base =
+  'rounded-xl border p-5 md:p-6 my-6 shadow-sm transition-shadow duration-200 hover:shadow-md';
+
+const toneClasses = {
+  soft:
+    'bg-brand-50 border-brand-200 dark:bg-brand-650 dark:border-brand-500',
+  muted:
+    'bg-white border-brand-100 dark:bg-brand-700 dark:border-brand-600',
+}[tone];
+---
+
+<div class:list={[base, toneClasses, className]}>
+  {kicker && (
+    <div class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-brand-250 mb-3">
+      {kicker}
+    </div>
+  )}
+  {(title || icon) && (
+    <div class="flex items-center gap-3 mb-2">
+      {icon && (
+        <Icon name={icon} class="w-6 h-6 text-primary dark:text-brand-250 shrink-0" />
+      )}
+      {title && (
+        <h4 class="text-lg md:text-xl font-bold font-heading text-heading dark:text-slate-100 m-0">
+          {title}
+        </h4>
+      )}
+    </div>
+  )}
+  <div class="prose-sm md:prose-base max-w-none text-default">
+    <slot />
+  </div>
+</div>

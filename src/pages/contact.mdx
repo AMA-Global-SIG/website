@@ -5,9 +5,16 @@ description: Find the right contact for your inquiry - conferences, membership, 
 ---
 
 import Features2 from '~/components/widgets/Features2.astro';
+import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 **Find the right contact for your inquiry below, organized by topic and role.**
+
+<Note
+  title="Urgent Conference Matters?"
+  description="For urgent conference-related matters, please contact the SIG Chair directly: goksel.yalcinkaya@unh.edu"
+/>
 
 <Features2
   title="Quick Contacts"
@@ -49,63 +56,59 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 ### 2026 Nice Conference (May 27–29, 2026)
 
-<div class="bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700 my-6">
-<h4 class="text-sm font-semibold uppercase tracking-wider text-brand-500 dark:text-brand-300 mb-4">Program Chairs</h4>
+<Callout kicker="Program Chairs">
 
 - **Peter Magnusson**, University of Texas Rio Grande Valley
 - **Goksel Yalcinkaya**, University of New Hampshire
 
-<h4 class="text-sm font-semibold uppercase tracking-wider text-brand-500 dark:text-brand-300 mt-5 mb-3">
-  Local Chairs
-</h4>
+<div class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-brand-250 mt-5 mb-3">Local Chairs</div>
 
-- _IAE Nice contacts — to be confirmed_
+- *IAE Nice contacts — to be confirmed*
 
-<h4 class="text-sm font-semibold uppercase tracking-wider text-brand-500 dark:text-brand-300 mt-5 mb-3">
-  Registration, Venue & Logistics
-</h4>
+<div class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-brand-250 mt-5 mb-3">Registration, Venue & Logistics</div>
 
-- Contact: _2026 Nice Conference Coordinator — to be announced_
+- Contact: *2026 Nice Conference Coordinator — to be announced*
 
-</div>
+</Callout>
 
 > **Submission & Review Questions:** Please contact the appropriate **Track Chair** for your specific research area. Track chairs are listed on the current conference page and are appointed annually for each conference cycle.
 
-
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'View Nice 2026 Conference Details',
+      href: '/conferences/nice-2026',
+      icon: 'lucide:calendar',
+    },
+  ]}
+/>
 
 ---
 
 ## Doctoral Consortium
 
 <div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h4 class="text-base font-semibold text-brand-800 dark:text-brand-100 mb-1">Fabian Bartsch</h4>
-    <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">MBS School of Business</p>
-    <a href="mailto:f.bartsch@mbs-education.com" class="text-brand-500 dark:text-brand-300 hover:underline text-sm">
-      f.bartsch@mbs-education.com
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h4 class="text-base font-semibold text-brand-800 dark:text-brand-100 mb-1">Annie Peng Cui</h4>
-    <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">West Virginia University</p>
-    <a href="mailto:annie.cui@mail.wvu.edu" class="text-brand-500 dark:text-brand-300 hover:underline text-sm">
-      annie.cui@mail.wvu.edu
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h4 class="text-base font-semibold text-brand-800 dark:text-brand-100 mb-1">Timo Mandler</h4>
-    <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">NEOMA Business School</p>
-    <a href="mailto:timo.mandler@neoma-bs.fr" class="text-brand-500 dark:text-brand-300 hover:underline text-sm">
-      timo.mandler@neoma-bs.fr
-    </a>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h4 class="text-base font-semibold text-brand-800 dark:text-brand-100 mb-1">Katharina Zeugner-Roth</h4>
-    <p class="text-sm text-slate-500 dark:text-slate-400 mb-2">SKEMA Business School</p>
-    <a href="mailto:katharina.zeugner@skema.edu" class="text-brand-500 dark:text-brand-300 hover:underline text-sm">
-      katharina.zeugner@skema.edu
-    </a>
-  </div>
+  <Callout class="my-0">
+    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Fabian Bartsch</h4>
+    <p class="text-sm text-muted mb-2">MBS School of Business</p>
+    <a href="mailto:f.bartsch@mbs-education.com" class="text-primary dark:text-brand-250 hover:underline text-sm">f.bartsch@mbs-education.com</a>
+  </Callout>
+  <Callout class="my-0">
+    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Annie Peng Cui</h4>
+    <p class="text-sm text-muted mb-2">West Virginia University</p>
+    <a href="mailto:annie.cui@mail.wvu.edu" class="text-primary dark:text-brand-250 hover:underline text-sm">annie.cui@mail.wvu.edu</a>
+  </Callout>
+  <Callout class="my-0">
+    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Timo Mandler</h4>
+    <p class="text-sm text-muted mb-2">NEOMA Business School</p>
+    <a href="mailto:timo.mandler@neoma-bs.fr" class="text-primary dark:text-brand-250 hover:underline text-sm">timo.mandler@neoma-bs.fr</a>
+  </Callout>
+  <Callout class="my-0">
+    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Katharina Zeugner-Roth</h4>
+    <p class="text-sm text-muted mb-2">SKEMA Business School</p>
+    <a href="mailto:katharina.zeugner@skema.edu" class="text-primary dark:text-brand-250 hover:underline text-sm">katharina.zeugner@skema.edu</a>
+  </Callout>
 </div>
 
 **Application Process:** Submit applications through the conference submission system. The doctoral consortium takes place the day before the main conference begins.
@@ -116,20 +119,20 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 ## Leadership Contacts
 
-_For complete board member biographies and service records, visit our [Leadership & Governance](/leadership) page._
+*For complete board member biographies and service records, visit our [Leadership & Governance](/leadership) page.*
 
 ### SIG Chair
 
-<div class="bg-gradient-to-r from-brand-100 to-brand-50 dark:from-brand-850 dark:to-brand-900 border-l-4 border-primary p-5 rounded-r-xl my-6">
+<Callout>
 
 **Goksel Yalcinkaya**
-_Professor of Marketing, University of New Hampshire_
+*Professor of Marketing, University of New Hampshire*
 
 **Email:** [goksel.yalcinkaya@unh.edu](mailto:goksel.yalcinkaya@unh.edu)
 
-_The SIG Chair serves as the primary point of contact for matters not covered by specialized board roles._
+*The SIG Chair serves as the primary point of contact for matters not covered by specialized board roles.*
 
-</div>
+</Callout>
 
 ### Key Board Contacts
 
@@ -172,8 +175,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
   items={[
     {
       title: 'AMA Members',
-      description:
-        'Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your desire to join when initiating or renewing your annual AMA membership.',
+      description: 'Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your desire to join when initiating or renewing your annual AMA membership.',
       icon: 'lucide:user-check',
       callToAction: {
         variant: 'primary',
@@ -184,8 +186,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
     },
     {
       title: 'Non-AMA Members',
-      description:
-        'International scholars may apply for <strong>affiliated (non-voting) membership</strong>, allowing participation in SIG activities while maintaining primary professional associations.',
+      description: 'International scholars may apply for <strong>affiliated (non-voting) membership</strong>, allowing participation in SIG activities while maintaining primary professional associations.',
       icon: 'lucide:globe',
       callToAction: {
         variant: 'secondary',
@@ -205,8 +206,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
   items={[
     {
       title: 'Conference Announcements',
-      description:
-        'Upcoming dates, calls for papers, submission deadlines, registration info, and doctoral consortium applications.',
+      description: 'Upcoming dates, calls for papers, submission deadlines, registration info, and doctoral consortium applications.',
       icon: 'lucide:calendar',
       callToAction: {
         text: 'View Conferences',
@@ -215,8 +215,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
     },
     {
       title: 'Research & Resources',
-      description:
-        'Research tools, databases, teaching materials, syllabi, case studies, and professional development.',
+      description: 'Research tools, databases, teaching materials, syllabi, case studies, and professional development.',
       icon: 'lucide:book-open',
       callToAction: {
         text: 'Browse Resources',
@@ -225,8 +224,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
     },
     {
       title: 'Social Media',
-      description:
-        'The SIG is developing its social media presence. Contact the Webmaster to join our announcement list.',
+      description: 'The SIG is developing its social media presence. Contact the Webmaster to join our announcement list.',
       icon: 'lucide:share-2',
       callToAction: {
         text: 'Email Webmaster',
@@ -238,12 +236,31 @@ For nominations and questions about the **Significant Contributions to Global Ma
 
 ---
 
+## Feedback & Suggestions
+
+**Your Voice Matters** — We continuously work to improve the SIG's services and resources.
+
+| Topic | Contact |
+| :--- | :--- |
+| General feedback | SIG Chair or any board member |
+| Website feedback | Webmaster |
+| Conference suggestions | Conference coordinators |
+
+**Board Meeting Schedule:** The Board of Directors meets twice annually at the AMA Summer and Winter Educators' Conferences. Member input is welcome and can be shared with any board member for consideration.
+
+---
+
 ## Mailing Address
 
-The AMA Global Marketing SIG operates through the <strong>American Marketing Association</strong>.
+The AMA Global Marketing SIG operates through the American Marketing Association.
 
-<div class="bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-5 rounded-xl border border-brand-100 dark:border-brand-700 my-6">
-**Address:** 130 E. Randolph St., 22nd Floor, Chicago, IL 60601, USA
+<Callout>
+
+**American Marketing Association**
+130 E. Randolph St., 22nd Floor
+Chicago, IL 60601
+
 **Phone:** 1-800-AMA-1150 or (312) 542-9000
 **Website:** [www.ama.org](https://www.ama.org)
-</div>
+
+</Callout>

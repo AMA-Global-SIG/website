@@ -7,6 +7,7 @@ description: Guidelines for delivering effective competitive paper presentations
 import Features2 from '~/components/widgets/Features.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 <Note
   title="Congratulations on having your work accepted!"
@@ -15,38 +16,21 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 ## Quick Reference
 
-<div class="grid md:grid-cols-2 gap-6 my-8">
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border-l-4 border-brand-400">
-    <h3 class="font-bold text-lg mb-3">Before the Conference</h3>
-    <ul class="space-y-2 text-sm">
-      <li>
-        Prepare a <strong>15-minute presentation</strong> (competitive) or <strong>5-minute overview</strong> (poster)
-      </li>
-      <li>
-        Load presentation on USB drive (<strong>PowerPoint or PDF only</strong>)
-      </li>
-      <li>
-        Use <strong>Arial or Times New Roman</strong> fonts, minimum <strong>24pt size</strong>
-      </li>
-      <li>
-        Practice with timer—plan for <strong>13 minutes</strong> to allow buffer
-      </li>
-    </ul>
-  </div>
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border-l-4 border-brand-400">
-    <h3 class="font-bold text-lg mb-3">Day of Your Session</h3>
-    <ul class="space-y-2 text-sm">
-      <li>
-        Arrive <strong>10 minutes early</strong> to meet chair and test equipment
-      </li>
-      <li>Stay within time limit—chairs will enforce this</li>
-      <li>
-        Focus on your <strong>contribution</strong>, not comprehensive coverage
-      </li>
-      <li>Engage with Q&A; acknowledge good questions even if challenging</li>
-    </ul>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: 'Before the Conference',
+      description: 'Prepare a 15-minute presentation (competitive) or 5-minute overview (poster). Load presentation on USB drive (PowerPoint or PDF only). Use Arial or Times New Roman, minimum 24pt. Practice with timer—plan for 13 minutes to allow buffer.',
+      icon: 'lucide:clipboard-list',
+    },
+    {
+      title: 'Day of Your Session',
+      description: 'Arrive 10 minutes early to meet chair and test equipment. Stay within time limit—chairs will enforce this. Focus on your contribution, not comprehensive coverage. Engage with Q&A; acknowledge good questions even if challenging.',
+      icon: 'lucide:calendar-check',
+    },
+  ]}
+/>
 
 ---
 
@@ -54,19 +38,19 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 ### Session Format
 
-<div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg my-6">
+<Callout kicker="75-minute session">
 
 **Competitive sessions are 75 minutes** with typically 4 papers:
 
-| Time   | Activity                                  |
-| :----- | :---------------------------------------- |
-| 2 min  | Session chair introduces theme and papers |
-| 60 min | Four 15-minute presentations              |
-| 13 min | Audience Q&A                              |
+| Time | Activity |
+| :--- | :--- |
+| 2 min | Session chair introduces theme and papers |
+| 60 min | Four 15-minute presentations |
+| 13 min | Audience Q&A |
 
 **Your presentation time is 15 minutes.** Session chairs will enforce time limits to ensure fair treatment of all presenters and adequate discussion time.
 
-</div>
+</Callout>
 
 ### Before Your Session
 
@@ -77,22 +61,22 @@ Arrive 10 minutes early to:
 - Confirm presentation order
 - Distribute any handouts
 
-> _If you cannot attend, notify your session chair immediately._
+> *If you cannot attend, notify your session chair immediately.*
 
 ### Technical Requirements
 
-| Category        | Requirement                                                             |
-| :-------------- | :---------------------------------------------------------------------- |
+| Category | Requirement |
+| :--- | :--- |
 | **File Format** | PowerPoint (.pptx) or PDF. Bring on USB drive. Email yourself a backup. |
-| **Fonts**       | Arial or Times New Roman only. Minimum 24-point size.                   |
-| **Colors**      | High contrast for readability. Avoid red-green combinations.            |
-| **Equipment**   | Projector and computer provided. Confirm special needs in advance.      |
+| **Fonts** | Arial or Times New Roman only. Minimum 24-point size. |
+| **Colors** | High contrast for readability. Avoid red-green combinations. |
+| **Equipment** | Projector and computer provided. Confirm special needs in advance. |
 
 ### Presentation Best Practices
 
 #### Structure Your Talk
 
-<div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg my-6">
+<Callout kicker="Structure">
 
 **Start strong:**
 
@@ -107,77 +91,43 @@ Arrive 10 minutes early to:
 - **Results:** Report direction of effects and what the data tell you—not statistical tests
 - **Conclusion:** What have we learned? What should be done next?
 
-</div>
+</Callout>
 
 #### Effective Delivery
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold text-green-700 dark:text-green-400 mb-3">✓ DO</h4>
-    <ul class="space-y-2 text-sm">
-      <li>
-        ✅ <strong>Talk to the audience</strong>, not at them—make eye contact
-      </li>
-      <li>
-        ✅ <strong>Describe your contribution</strong>; urge them to read the paper for details
-      </li>
-      <li>
-        ✅ <strong>Pause after key points</strong> to let ideas land
-      </li>
-      <li>
-        ✅ <strong>Acknowledge limitations</strong> candidly
-      </li>
-      <li>
-        ✅ <strong>Plan for 13 minutes</strong> of content—easier to elaborate than cut
-      </li>
-      <li>
-        ✅ <strong>Identify where you want feedback</strong> and ask for it
-      </li>
-    </ul>
-  </div>
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold text-red-700 dark:text-red-400 mb-3">✗ DON'T</h4>
-    <ul class="space-y-2 text-sm">
-      <li>
-        ❌ <strong>Read from slides</strong> or provide comprehensive literature review
-      </li>
-      <li>
-        ❌ <strong>Explain every detail</strong> of your methodology
-      </li>
-      <li>
-        ❌ <strong>Describe instrument validation</strong> or sample characteristics
-      </li>
-      <li>
-        ❌ <strong>Save your conclusion</strong> as a surprise ending
-      </li>
-      <li>
-        ❌ <strong>Ignore time warnings</strong> from the chair
-      </li>
-    </ul>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: '✓ DO',
+      description: '**Talk to the audience**, not at them—make eye contact. **Describe your contribution**; urge them to read the paper for details. **Pause after key points** to let ideas land. **Acknowledge limitations** candidly. **Plan for 13 minutes** of content—easier to elaborate than cut. **Identify where you want feedback** and ask for it.',
+      icon: 'lucide:check-circle',
+    },
+    {
+      title: '✗ DON\'T',
+      description: '**Read from slides** or provide comprehensive literature review. **Explain every detail** of your methodology. **Describe instrument validation** or sample characteristics. **Save your conclusion** as a surprise ending. **Ignore time warnings** from the chair.',
+      icon: 'lucide:x-circle',
+    },
+  ]}
+/>
 
 #### Slide Design
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold text-green-700 dark:text-green-400 mb-3">✓ DO</h4>
-    <ul class="space-y-2 text-sm">
-      <li>✅ One key idea per slide</li>
-      <li>✅ Minimal text—slides support your talk, they do not replace it</li>
-      <li>✅ Simple, clear figures and tables</li>
-      <li>✅ Large fonts (28+ point for body text)</li>
-    </ul>
-  </div>
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold text-red-700 dark:text-red-400 mb-3">✗ DON'T</h4>
-    <ul class="space-y-2 text-sm">
-      <li>❌ Cram multiple messages onto one slide</li>
-      <li>❌ Use slides with tiny fonts or dense tables</li>
-      <li>❌ Include every detail from your paper</li>
-    </ul>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: '✓ DO',
+      description: 'One key idea per slide. Minimal text—slides support your talk, they do not replace it. Simple, clear figures and tables. Large fonts (28+ point for body text).',
+      icon: 'lucide:check-circle',
+    },
+    {
+      title: '✗ DON\'T',
+      description: 'Cram multiple messages onto one slide. Use slides with tiny fonts or dense tables. Include every detail from your paper.',
+      icon: 'lucide:x-circle',
+    },
+  ]}
+/>
 
 #### Handling Q&A
 
@@ -195,64 +145,37 @@ Interactive sessions provide in-depth, informal feedback on work-in-progress thr
 
 ### Poster Specifications
 
-| Specification         | Requirement                                                 |
-| :-------------------- | :---------------------------------------------------------- |
-| **Maximum size**      | A0 (841×1189 mm / 33×47 inches)                             |
-| **Orientation**       | Portrait (not landscape)                                    |
-| **Font size**         | Readable from 1+ meters (body 24+ pt, headings 36+ pt)      |
-| **Language**          | English only                                                |
+| Specification | Requirement |
+| :--- | :--- |
+| **Maximum size** | A0 (841×1189 mm / 33×47 inches) |
+| **Orientation** | Portrait (not landscape) |
+| **Font size** | Readable from 1+ meters (body 24+ pt, headings 36+ pt) |
+| **Language** | English only |
 | **Required elements** | Title, authors, affiliations, contact email for lead author |
 
 ### Effective Poster Design
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold text-green-700 dark:text-green-400 mb-3">✓ DO</h4>
-    <ul class="space-y-2 text-sm">
-      <li>
-        ✅ <strong>Structure clearly:</strong> Problem → Method → Key Finding → Implication
-      </li>
-      <li>
-        ✅ <strong>Lead with visuals:</strong> Use figures, charts, and diagrams
-      </li>
-      <li>
-        ✅ <strong>Limit text:</strong> Use bullet points; avoid dense paragraphs
-      </li>
-      <li>
-        ✅ <strong>Create visual hierarchy:</strong> Most important elements immediately visible
-      </li>
-      <li>
-        ✅ <strong>Include a "takeaway box":</strong> 2-3 sentences summarizing contribution
-      </li>
-      <li>
-        ✅ <strong>Prepare a 5-minute overview:</strong> Most visitors want a brief guided tour
-      </li>
-    </ul>
-  </div>
-  <div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg border border-brand-100 dark:border-brand-700">
-    <h4 class="font-bold text-red-700 dark:text-red-400 mb-3">✗ DON'T</h4>
-    <ul class="space-y-2 text-sm">
-      <li>
-        ❌ <strong>Reproduce your paper on a poster</strong>—posters are visual summaries
-      </li>
-      <li>
-        ❌ <strong>Use tiny fonts</strong> or dense text blocks
-      </li>
-      <li>
-        ❌ <strong>Show every analysis</strong>—focus on core findings
-      </li>
-      <li>
-        ❌ <strong>Forget contact information</strong>—visitors should be able to follow up
-      </li>
-    </ul>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    {
+      title: '✓ DO',
+      description: '**Structure clearly:** Problem → Method → Key Finding → Implication. **Lead with visuals:** Use figures, charts, diagrams. **Limit text:** Use bullet points; avoid dense paragraphs. **Create visual hierarchy:** Most important elements immediately visible. **Include a takeaway box:** 2-3 sentences summarizing contribution. **Prepare a 5-minute overview:** Most visitors want a brief guided tour.',
+      icon: 'lucide:check-circle',
+    },
+    {
+      title: '✗ DON\'T',
+      description: '**Reproduce your paper on a poster**—posters are visual summaries. **Use tiny fonts** or dense text blocks. **Show every analysis**—focus on core findings. **Forget contact information**—visitors should be able to follow up.',
+      icon: 'lucide:x-circle',
+    },
+  ]}
+/>
 
 ### During Your Poster Session
 
 - **Prepare to facilitate discussion:** Bring business cards, paper, sticky notes, and markers
 - **Stay at your poster** for the entire session
-- **Engage visitors proactively:** _"Would you like me to walk you through it?"_
+- **Engage visitors proactively:** *"Would you like me to walk you through it?"*
 - **Be ready to discuss** limitations, alternative approaches, and next steps
 - **If few people visit:** Use the time to visit other posters, build connections, and observe effective designs
 
@@ -263,23 +186,9 @@ Interactive sessions provide in-depth, informal feedback on work-in-progress thr
 <Features2
   columns={3}
   items={[
-    {
-      title: 'Before Your Presentation',
-      description:
-        'Arrive early to chat with attendees. Gauge familiarity with your topic. Identify potential discussants.',
-      icon: 'lucide:clock',
-    },
-    {
-      title: 'During Your Presentation',
-      description: 'Watch for reactions; adjust pacing. Connect to other session papers. Use inclusive language.',
-      icon: 'lucide:presentation',
-    },
-    {
-      title: 'After Your Presentation',
-      description:
-        'Stay available after session. Exchange contact info. Follow up within a week. Consider feedback for revision.',
-      icon: 'lucide:mail',
-    },
+    { title: 'Before Your Presentation', description: 'Arrive early to chat with attendees. Gauge familiarity with your topic. Identify potential discussants.', icon: 'lucide:clock' },
+    { title: 'During Your Presentation', description: 'Watch for reactions; adjust pacing. Connect to other session papers. Use inclusive language.', icon: 'lucide:presentation' },
+    { title: 'After Your Presentation', description: 'Stay available after session. Exchange contact info. Follow up within a week. Consider feedback for revision.', icon: 'lucide:mail' },
   ]}
 />
 
@@ -289,7 +198,7 @@ Interactive sessions provide in-depth, informal feedback on work-in-progress thr
 
 Create presentations that work for all attendees:
 
-<div class="bg-brand-50 dark:bg-brand-850 p-5 rounded-lg my-6">
+<Callout tone="muted">
 
 - Use **high-contrast color schemes** (avoid light text on light backgrounds)
 - **Describe all visual elements** verbally (charts, graphs, images)
@@ -297,61 +206,44 @@ Create presentations that work for all attendees:
 - Avoid discipline-specific jargon when possible; define necessary terms
 - Provide **handouts** for those who want to follow along
 
-</div>
+</Callout>
 
 ---
 
 ## Troubleshooting
 
-<div class="space-y-4 my-6">
-  <details class="bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <summary class="p-4 cursor-pointer font-semibold">"My presentation won't load"</summary>
-    <div class="p-4 pt-0 text-sm">
-      <ul class="space-y-2">
-        <li>• This is why you emailed yourself a backup—download from email</li>
-        <li>• PDF format is more reliable than PowerPoint if compatibility issues arise</li>
-        <li>• Have your 1-page handout ready; you can present from that if necessary</li>
-      </ul>
-    </div>
-  </details>
-  <details class="bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <summary class="p-4 cursor-pointer font-semibold">"I'm running out of time"</summary>
-    <div class="p-4 pt-0 text-sm">
-      <ul class="space-y-2">
-        <li>• Skip to your conclusion; summarize findings briefly</li>
-        <li>• Offer to discuss details during Q&A or afterward</li>
-        <li>
-          • <strong>Never speak faster</strong>—it reduces comprehension
-        </li>
-      </ul>
-    </div>
-  </details>
-  <details class="bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <summary class="p-4 cursor-pointer font-semibold">"Someone is challenging my work aggressively"</summary>
-    <div class="p-4 pt-0 text-sm">
-      <ul class="space-y-2">
-        <li>• Listen fully, then acknowledge the valid elements of their critique</li>
-        <li>• You do not need to defend every choice in real-time</li>
-        <li>
-          • <em>"That is an excellent point I will consider as I revise"</em> is always appropriate
-        </li>
-        <li>• Session chairs should redirect hostile questions; make eye contact if you need support</li>
-      </ul>
-    </div>
-  </details>
-  <details class="bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <summary class="p-4 cursor-pointer font-semibold">"No one is asking questions"</summary>
-    <div class="p-4 pt-0 text-sm">
-      <ul class="space-y-2">
-        <li>• Session chairs typically have prepared questions</li>
-        <li>
-          • You can prompt: <em>"One question I have gotten before is..."</em>
-        </li>
-        <li>• Silence does not mean your work is not interesting—audiences may be processing</li>
-      </ul>
-    </div>
-  </details>
-</div>
+<Callout title='"My presentation won\'t load"' tone="muted">
+
+- This is why you emailed yourself a backup—download from email
+- PDF format is more reliable than PowerPoint if compatibility issues arise
+- Have your 1-page handout ready; you can present from that if necessary
+
+</Callout>
+
+<Callout title='"I\'m running out of time"' tone="muted">
+
+- Skip to your conclusion; summarize findings briefly
+- Offer to discuss details during Q&A or afterward
+- **Never speak faster**—it reduces comprehension
+
+</Callout>
+
+<Callout title='"Someone is challenging my work aggressively"' tone="muted">
+
+- Listen fully, then acknowledge the valid elements of their critique
+- You do not need to defend every choice in real-time
+- *"That is an excellent point I will consider as I revise"* is always appropriate
+- Session chairs should redirect hostile questions; make eye contact if you need support
+
+</Callout>
+
+<Callout title='"No one is asking questions"' tone="muted">
+
+- Session chairs typically have prepared questions
+- You can prompt: *"One question I have gotten before is..."*
+- Silence does not mean your work is not interesting—audiences may be processing
+
+</Callout>
 
 ---
 

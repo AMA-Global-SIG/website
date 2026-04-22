@@ -1,7 +1,7 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
-title: 'Doctoral Consortium Application Process'
-description: 'How to apply for the AMA Global Marketing SIG Doctoral Consortium'
+title: "Doctoral Consortium Application Process"
+description: "How to apply for the AMA Global Marketing SIG Doctoral Consortium"
 ---
 
 import Features2 from '~/components/widgets/Features.astro';
@@ -10,6 +10,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 The AMA Global Marketing SIG Doctoral Consortium provides a unique opportunity for PhD students with an interest in international and cross-cultural marketing to advance their research and careers.
 
@@ -17,26 +18,10 @@ The AMA Global Marketing SIG Doctoral Consortium provides a unique opportunity f
   title="Application Process Overview"
   subtitle="Follow these steps to apply for the Doctoral Consortium"
   items={[
-    {
-      title: 'Prepare Your Materials',
-      description: 'Gather your cover letter, research abstract (max 5 pages), and CV (max 2 pages).',
-      icon: 'tabler:file-text',
-    },
-    {
-      title: 'Submit via EasyChair',
-      description: 'Combine all materials into a single PDF and submit through the conference system.',
-      icon: 'tabler:upload',
-    },
-    {
-      title: 'Await Selection',
-      description: 'Applications are reviewed holistically by the selection committee.',
-      icon: 'tabler:clock',
-    },
-    {
-      title: 'Attend the Consortium',
-      description: 'Join us for a full day of mentorship, feedback, and networking.',
-      icon: 'tabler:users',
-    },
+    { title: 'Prepare Your Materials', description: 'Gather your cover letter, research abstract (max 5 pages), and CV (max 2 pages).', icon: 'tabler:file-text' },
+    { title: 'Submit via EasyChair', description: 'Combine all materials into a single PDF and submit through the conference system.', icon: 'tabler:upload' },
+    { title: 'Await Selection', description: 'Applications are reviewed holistically by the selection committee.', icon: 'tabler:clock' },
+    { title: 'Attend the Consortium', description: 'Join us for a full day of mentorship, feedback, and networking.', icon: 'tabler:users' },
   ]}
 />
 
@@ -44,7 +29,7 @@ The AMA Global Marketing SIG Doctoral Consortium provides a unique opportunity f
 
 ## Who Should Apply
 
-<div class="bg-brand-50 dark:bg-brand-850 p-6 rounded-lg border-l-4 border-brand-400 my-6">
+<Callout kicker="Eligibility">
 
 The Consortium welcomes **doctoral students in marketing or international business** who:
 
@@ -52,7 +37,7 @@ The Consortium welcomes **doctoral students in marketing or international busine
 - Have begun developing their dissertation research (students at any stage with well-defined research ideas are welcome)
 - Seek to build connections within the international marketing academic community
 
-</div>
+</Callout>
 
 ---
 
@@ -60,50 +45,29 @@ The Consortium welcomes **doctoral students in marketing or international busine
 
 Applications should be submitted through the **EasyChair** conference system and must include:
 
-<div class="space-y-4 my-6">
-  <div class="flex gap-4 p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <span class="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold">
-      1
-    </span>
-    <div>
-      <h4 class="font-bold">Cover Letter</h4>
-      <p class="text-sm text-muted">
-        Describing your stage in the doctoral program, research interests, what you hope to gain from participating, and
-        whether you wish to be considered for a travel stipend.
-      </p>
-    </div>
-  </div>
-  <div class="flex gap-4 p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <span class="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold">
-      2
-    </span>
-    <div>
-      <h4 class="font-bold">Research Abstract</h4>
-      <p class="text-sm text-muted mb-2">
-        A current research project focused on international marketing (maximum 5 pages, single-spaced). Include:
-      </p>
-      <ul class="text-sm text-muted list-disc list-inside space-y-1">
-        <li>Title and keywords</li>
-        <li>Research question and motivation</li>
-        <li>Theoretical background and intended contribution</li>
-        <li>Proposed methodology or research design</li>
-        <li>Expected findings or preliminary results (if available)</li>
-      </ul>
-    </div>
-  </div>
-  <div class="flex gap-4 p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <span class="flex-shrink-0 w-8 h-8 bg-brand-500 text-white rounded-full flex items-center justify-center font-bold">
-      3
-    </span>
-    <div>
-      <h4 class="font-bold">Curriculum Vitae</h4>
-      <p class="text-sm text-muted">
-        Maximum 2 pages including education, research experience, publications or working papers, and conference
-        presentations.
-      </p>
-    </div>
-  </div>
-</div>
+<Callout title="1. Cover Letter">
+
+Describing your stage in the doctoral program, research interests, what you hope to gain from participating, and whether you wish to be considered for a travel stipend.
+
+</Callout>
+
+<Callout title="2. Research Abstract">
+
+A current research project focused on international marketing (**maximum 5 pages, single-spaced**). Include:
+
+- Title and keywords
+- Research question and motivation
+- Theoretical background and intended contribution
+- Proposed methodology or research design
+- Expected findings or preliminary results (if available)
+
+</Callout>
+
+<Callout title="3. Curriculum Vitae">
+
+Maximum 2 pages including education, research experience, publications or working papers, and conference presentations.
+
+</Callout>
 
 <Note
   title="Submission Format"
@@ -119,41 +83,29 @@ Applications are evaluated holistically, with particular attention to:
 <Features2
   columns={3}
   items={[
-    {
-      title: 'Topic Fit',
-      description: 'Research should relate to global marketing, international marketing, or cross-cultural marketing.',
-      icon: 'lucide:target',
-    },
-    {
-      title: 'Contribution Potential',
-      description: 'Strength and clarity of the intended theoretical and/or practical contribution.',
-      icon: 'lucide:lightbulb',
-    },
-    {
-      title: 'Overall Quality',
-      description: 'Coherence, clarity, and overall impression of the submitted abstract.',
-      icon: 'lucide:star',
-    },
+    { title: 'Topic Fit', description: 'Research should relate to global marketing, international marketing, or cross-cultural marketing.', icon: 'lucide:target' },
+    { title: 'Contribution Potential', description: 'Strength and clarity of the intended theoretical and/or practical contribution.', icon: 'lucide:lightbulb' },
+    { title: 'Overall Quality', description: 'Coherence, clarity, and overall impression of the submitted abstract.', icon: 'lucide:star' },
   ]}
 />
 
-<div class="bg-brand-50 dark:bg-brand-850 p-4 rounded-lg my-6 text-sm">
+<Callout tone="muted">
 
 The selection committee strives to assemble a **diverse cohort** representing a range of research topics, methodological approaches, and institutional backgrounds.
 
-</div>
+</Callout>
 
 ---
 
 ## Travel Stipends
 
-<div class="bg-brand-50 dark:bg-brand-850 border-l-4 border-brand-400 p-5 rounded-r-lg my-6">
+<Callout kicker="Financial Support">
 
 A limited number of **travel stipends** are available to help offset participation costs. Stipend amounts and availability vary by year.
 
 **To be considered:** Indicate your interest and briefly describe your need for financial support in your cover letter.
 
-</div>
+</Callout>
 
 ---
 
@@ -161,63 +113,37 @@ A limited number of **travel stipends** are available to help offset participati
 
 The Consortium takes place on the **day preceding the main conference**. The program typically includes:
 
-<div class="grid md:grid-cols-2 gap-4 my-6">
-  <div class="p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold mb-2">Panel Discussions</h4>
-    <p class="text-sm text-muted">
-      Senior faculty share insights on research trends, publishing strategies, and career development.
-    </p>
-  </div>
-  <div class="p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold mb-2">Small Group Sessions</h4>
-    <p class="text-sm text-muted">Present your research and receive detailed feedback from faculty mentors.</p>
-  </div>
-  <div class="p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold mb-2">Meet-the-Editors Sessions</h4>
-    <p class="text-sm text-muted">Connect with representatives from leading international marketing journals.</p>
-  </div>
-  <div class="p-5 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold mb-2">Networking Reception</h4>
-    <p class="text-sm text-muted">Build relationships with faculty and fellow doctoral students.</p>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    { title: 'Panel Discussions', description: 'Senior faculty share insights on research trends, publishing strategies, and career development.', icon: 'lucide:message-square' },
+    { title: 'Small Group Sessions', description: 'Present your research and receive detailed feedback from faculty mentors.', icon: 'lucide:users' },
+    { title: 'Meet-the-Editors Sessions', description: 'Connect with representatives from leading international marketing journals.', icon: 'lucide:book-open' },
+    { title: 'Networking Reception', description: 'Build relationships with faculty and fellow doctoral students.', icon: 'lucide:wine' },
+  ]}
+/>
 
 ---
 
 ## Upcoming Consortia
 
-| Year     | Location     | Date                     | Application Deadline |
-| :------- | :----------- | :----------------------- | :------------------- |
-| **2026** | Nice, France | May 26, 2026             | TBD                  |
-| **2027** | Osaka, Japan | Late May/Early June 2027 | TBD                  |
+| Year | Location | Date | Application Deadline |
+| :--- | :--- | :--- | :--- |
+| **2026** | Nice, France | May 26, 2026 | TBD |
+| **2027** | Osaka, Japan | Late May/Early June 2027 | TBD |
 
 ---
 
 ## Consortium Co-Organizers
 
-<div class="grid md:grid-cols-2 gap-4 my-6">
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Fabian Bartsch</h4>
-    <p class="text-sm text-muted">MBS School of Business</p>
-    <a href="mailto:f.bartsch@mbs-education.com" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      f.bartsch@mbs-education.com
-    </a>
-  </div>
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Annie Peng Cui</h4>
-    <p class="text-sm text-muted">West Virginia University</p>
-    <a href="mailto:annie.cui@mail.wvu.edu" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      annie.cui@mail.wvu.edu
-    </a>
-  </div>
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Katharina Zeugner-Roth</h4>
-    <p class="text-sm text-muted">SKEMA Business School</p>
-    <a href="mailto:katharina.zeugner@skema.edu" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      katharina.zeugner@skema.edu
-    </a>
-  </div>
-</div>
+<Features2
+  columns={3}
+  items={[
+    { title: 'Fabian Bartsch', description: 'MBS School of Business\nf.bartsch@mbs-education.com', icon: 'lucide:user' },
+    { title: 'Annie Peng Cui', description: 'West Virginia University\nannie.cui@mail.wvu.edu', icon: 'lucide:user' },
+    { title: 'Katharina Zeugner-Roth', description: 'SKEMA Business School\nkatharina.zeugner@skema.edu', icon: 'lucide:user' },
+  ]}
+/>
 
 ---
 
@@ -225,24 +151,8 @@ The Consortium takes place on the **day preceding the main conference**. The pro
 
 <Testimonials
   testimonials={[
-    {
-      testimonial:
-        'The Doctoral Consortium was a transformative experience. The feedback I received from senior scholars helped shape my dissertation in meaningful ways, and the connections I made have lasted throughout my career.',
-      name: 'Past Participant',
-      job: 'Consortium Alumni',
-    },
-    {
-      testimonial:
-        'Beyond the invaluable research feedback, the consortium provided a supportive community of peers facing similar challenges. The mentorship and networking opportunities were exceptional.',
-      name: 'Past Participant',
-      job: 'Consortium Alumni',
-    },
-    {
-      testimonial:
-        'Beyond the invaluable research feedback, the consortium provided a supportive community of peers facing similar challenges. The mentorship and networking opportunities were exceptional.',
-      name: 'Past Participant',
-      job: 'Consortium Alumni',
-    },
+    { testimonial: 'The Doctoral Consortium was a transformative experience. The feedback I received from senior scholars helped shape my dissertation in meaningful ways, and the connections I made have lasted throughout my career.', name: 'Past Participant', job: 'Consortium Alumni' },
+    { testimonial: 'Beyond the invaluable research feedback, the consortium provided a supportive community of peers facing similar challenges. The mentorship and networking opportunities were exceptional.', name: 'Past Participant', job: 'Consortium Alumni' },
   ]}
 />
 
@@ -252,31 +162,11 @@ The Consortium takes place on the **day preceding the main conference**. The pro
 
 <FAQs
   items={[
-    {
-      title: 'When should I apply to the Doctoral Consortium?',
-      description:
-        'Students at any stage of their doctoral program are welcome, though those who have begun developing their dissertation research tend to benefit most. Ideally, you should have a well-defined research question and preliminary theoretical framework.',
-    },
-    {
-      title: 'Can I attend the main conference if I participate in the Consortium?',
-      description:
-        'Yes! Consortium participants are encouraged to also submit papers to the main conference and attend all conference sessions. The Consortium takes place the day before the main conference begins.',
-    },
-    {
-      title: 'How competitive is the selection process?',
-      description:
-        'We typically receive more applications than available spots. However, we strive to include a diverse cohort representing various research topics and backgrounds. A strong, well-articulated research proposal significantly improves your chances.',
-    },
-    {
-      title: "What if I don't receive a travel stipend?",
-      description:
-        'Even without a stipend, the Consortium experience is highly valuable. Many participants seek funding from their home institutions. We encourage you to apply regardless of financial support availability.',
-    },
-    {
-      title: 'Do I need to have publications to apply?',
-      description:
-        "No, publications are not required. We evaluate applications holistically, focusing on your research potential, the quality of your proposal, and your fit with the Consortium's goals.",
-    },
+    { title: 'When should I apply to the Doctoral Consortium?', description: 'Students at any stage of their doctoral program are welcome, though those who have begun developing their dissertation research tend to benefit most. Ideally, you should have a well-defined research question and preliminary theoretical framework.' },
+    { title: 'Can I attend the main conference if I participate in the Consortium?', description: 'Yes! Consortium participants are encouraged to also submit papers to the main conference and attend all conference sessions. The Consortium takes place the day before the main conference begins.' },
+    { title: 'How competitive is the selection process?', description: 'We typically receive more applications than available spots. However, we strive to include a diverse cohort representing various research topics and backgrounds. A strong, well-articulated research proposal significantly improves your chances.' },
+    { title: 'What if I don\'t receive a travel stipend?', description: 'Even without a stipend, the Consortium experience is highly valuable. Many participants seek funding from their home institutions. We encourage you to apply regardless of financial support availability.' },
+    { title: 'Do I need to have publications to apply?', description: 'No, publications are not required. We evaluate applications holistically, focusing on your research potential, the quality of your proposal, and your fit with the Consortium\'s goals.' },
   ]}
 />
 

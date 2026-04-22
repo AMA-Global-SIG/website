@@ -8,6 +8,7 @@ import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Callout from '~/components/ui/Callout.astro';
 
 The **AMA Global Marketing SIG** and the **Journal of International Marketing** recognize excellence in international marketing scholarship through four prestigious awards celebrating both sustained career contributions and groundbreaking research.
 
@@ -45,23 +46,14 @@ The **AMA Global Marketing SIG** and the **Journal of International Marketing** 
 The SIG presents two awards annually at the **AMA Global Marketing Conference**, honoring scholars whose work has shaped global marketing theory and practice.
 
 <div class="grid md:grid-cols-2 gap-6 my-8">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-lg font-semibold text-brand-800 dark:text-brand-100 mb-3">
-      Significant Contributions to Global Marketing Award
-    </h3>
-    <p class="text-slate-600 dark:text-slate-300">
-      Recognizes scholars whose <strong>career-spanning research</strong> has fundamentally advanced international
-      marketing as a discipline.
-    </p>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-lg font-semibold text-brand-800 dark:text-brand-100 mb-3">
-      Excellence in Global Marketing Research Award
-    </h3>
-    <p class="text-slate-600 dark:text-slate-300">
-      Honors <strong>impactful research contributions</strong> that push the boundaries of global marketing knowledge.
-    </p>
-  </div>
+  <Callout class="my-0">
+    <h3 class="text-lg font-semibold text-heading dark:text-slate-100 mb-3 mt-0">Significant Contributions to Global Marketing Award</h3>
+    <p class="text-default">Recognizes scholars whose <strong>career-spanning research</strong> has fundamentally advanced international marketing as a discipline.</p>
+  </Callout>
+  <Callout class="my-0">
+    <h3 class="text-lg font-semibold text-heading dark:text-slate-100 mb-3 mt-0">Excellence in Global Marketing Research Award</h3>
+    <p class="text-default">Honors <strong>impactful research contributions</strong> that push the boundaries of global marketing knowledge.</p>
+  </Callout>
 </div>
 
 <Note
@@ -84,30 +76,25 @@ The SIG presents two awards annually at the **AMA Global Marketing Conference**,
 
 ## Journal of International Marketing Awards
 
-The _Journal of International Marketing_ Editorial Board presents two awards at the **AMA Summer Educators' Conference**, celebrating published articles that have transformed international marketing scholarship.
+The *Journal of International Marketing* Editorial Board presents two awards at the **AMA Summer Educators' Conference**, celebrating published articles that have transformed international marketing scholarship.
 
 <div class="grid md:grid-cols-2 gap-6 my-8">
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-lg font-semibold text-brand-800 dark:text-brand-100 mb-3">Hans B. Thorelli Award</h3>
-    <p class="text-slate-600 dark:text-slate-300">
-      Honors articles with <strong>sustained, long-term impact</strong> on international marketing theory or practice.
-    </p>
-    <p class="text-sm text-slate-500 dark:text-slate-400 mt-3 italic">Awarded for articles published 5+ years prior</p>
-  </div>
-  <div class="bg-gradient-to-br from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-6 rounded-xl border border-brand-100 dark:border-brand-700">
-    <h3 class="text-lg font-semibold text-brand-800 dark:text-brand-100 mb-3">S. Tamer Cavusgil Award</h3>
-    <p class="text-slate-600 dark:text-slate-300">
-      Celebrates the article published each calendar year that most effectively{' '}
-      <strong>advances international marketing management practice</strong>.
-    </p>
-  </div>
+  <Callout class="my-0">
+    <h3 class="text-lg font-semibold text-heading dark:text-slate-100 mb-3 mt-0">Hans B. Thorelli Award</h3>
+    <p class="text-default">Honors articles with <strong>sustained, long-term impact</strong> on international marketing theory or practice.</p>
+    <p class="text-sm text-muted mt-3 italic">Awarded for articles published 5+ years prior</p>
+  </Callout>
+  <Callout class="my-0">
+    <h3 class="text-lg font-semibold text-heading dark:text-slate-100 mb-3 mt-0">S. Tamer Cavusgil Award</h3>
+    <p class="text-default">Celebrates the article published each calendar year that most effectively <strong>advances international marketing management practice</strong>.</p>
+  </Callout>
 </div>
 
-<div class="bg-gradient-to-r from-brand-50 to-brand-100 dark:from-brand-850 dark:to-brand-900 p-4 rounded-xl border border-brand-100 dark:border-brand-700 my-6">
+<Callout>
 
-**Selection Process:** JIM awards are selected by the _Journal of International Marketing_ Editorial Board. No external nominations are required.
+**Selection Process:** JIM awards are selected by the *Journal of International Marketing* Editorial Board. No external nominations are required.
 
-</div>
+</Callout>
 
 <CallToAction
   actions={[

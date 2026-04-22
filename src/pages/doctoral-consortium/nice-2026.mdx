@@ -1,18 +1,19 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
-title: '2026 Nice Doctoral Consortium'
-description: 'AMA Global Marketing SIG Doctoral Consortium - Nice, France - May 26, 2026'
+title: "2026 Nice Doctoral Consortium"
+description: "AMA Global Marketing SIG Doctoral Consortium - Nice, France - May 26, 2026"
 ---
 
+import Features2 from '~/components/widgets/Features.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Callout from '~/components/ui/Callout.astro';
 
-<div class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white p-8 rounded-xl my-8">
-  <h2 class="text-3xl font-bold mb-2">2026 Doctoral Consortium</h2>
-  <p class="text-xl mb-2">May 26, 2026</p>
-  <p class="text-lg">Nice, France</p>
-  <p class="mt-2 text-sm opacity-80">Held the day before the AMA Global Marketing Conference</p>
-</div>
+<Callout kicker="May 26, 2026 · Nice, France" title="2026 Doctoral Consortium">
+
+Held the day before the AMA Global Marketing Conference.
+
+</Callout>
 
 <Note
   title="Details Coming Soon"
@@ -29,44 +30,23 @@ The Doctoral Consortium provides a unique opportunity for PhD students with an i
 
 ## Key Information
 
-| Item                     | Details                                   |
-| :----------------------- | :---------------------------------------- |
-| **Date**                 | May 26, 2026 (day before main conference) |
-| **Location**             | Nice, France                              |
-| **Application Deadline** | TBD                                       |
-| **Notification**         | TBD                                       |
+| Item | Details |
+| :--- | :--- |
+| **Date** | May 26, 2026 (day before main conference) |
+| **Location** | Nice, France |
+| **Application Deadline** | TBD |
+| **Notification** | TBD |
 
 ---
 
 ## Consortium Co-Organizers
 
-<div class="grid md:grid-cols-2 gap-4 my-6">
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Fabian Bartsch</h4>
-    <p class="text-sm text-muted">MBS School of Business</p>
-    <a href="mailto:f.bartsch@mbs-education.com" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      f.bartsch@mbs-education.com
-    </a>
-  </div>
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Annie Peng Cui</h4>
-    <p class="text-sm text-muted">West Virginia University</p>
-    <a href="mailto:annie.cui@mail.wvu.edu" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      annie.cui@mail.wvu.edu
-    </a>
-  </div>
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Timo Mandler</h4>
-    <p class="text-sm text-muted">NEOMA Business School</p>
-    <a href="mailto:timo.mandler@neoma-bs.fr" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      timo.mandler@neoma-bs.fr
-    </a>
-  </div>
-  <div class="p-4 bg-brand-50 dark:bg-brand-850 rounded-lg">
-    <h4 class="font-bold">Katharina Zeugner-Roth</h4>
-    <p class="text-sm text-muted">SKEMA Business School</p>
-    <a href="mailto:katharina.zeugner@skema.edu" class="text-sm text-brand-500 dark:text-brand-300 hover:underline">
-      katharina.zeugner@skema.edu
-    </a>
-  </div>
-</div>
+<Features2
+  columns={2}
+  items={[
+    { title: 'Fabian Bartsch', description: 'MBS School of Business\nf.bartsch@mbs-education.com', icon: 'lucide:user' },
+    { title: 'Annie Peng Cui', description: 'West Virginia University\nannie.cui@mail.wvu.edu', icon: 'lucide:user' },
+    { title: 'Timo Mandler', description: 'NEOMA Business School\ntimo.mandler@neoma-bs.fr', icon: 'lucide:user' },
+    { title: 'Katharina Zeugner-Roth', description: 'SKEMA Business School\nkatharina.zeugner@skema.edu', icon: 'lucide:user' },
+  ]}
+/>
