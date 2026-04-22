@@ -5,6 +5,7 @@ description: Find the right contact for your inquiry - conferences, membership, 
 ---
 
 import Features2 from '~/components/widgets/Features2.astro';
+import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
 import Note from '~/components/widgets/Note.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
@@ -137,24 +138,24 @@ _The SIG Chair serves as the primary point of contact for matters not covered by
 
 </div>
 
-<Features2
-  title="Key Board Contacts"
+### Key Board Contacts
+
+<ItemGrid2
   columns={3}
-  classes={{ container: 'pt-4 md:pt-6 lg:pt-8' }}
   items={[
     {
       title: 'Academic Programs & Membership',
-      description: 'Annie Peng Cui\nWest Virginia University\nannie.cui@mail.wvu.edu',
+      description: 'Annie Peng Cui<br>West Virginia University<br><a href="mailto:annie.cui@mail.wvu.edu">annie.cui@mail.wvu.edu</a>',
       icon: 'lucide:users',
     },
     {
       title: 'International Liaison',
-      description: 'Constantine S. Katsikeas\nLeeds University Business School\nbuscsk@leeds.ac.uk',
+      description: 'Constantine S. Katsikeas<br>Leeds University Business School<br><a href="mailto:buscsk@leeds.ac.uk">buscsk@leeds.ac.uk</a>',
       icon: 'lucide:globe',
     },
     {
       title: 'Webmaster & Social Media',
-      description: 'Timo Mandler\nNEOMA Business School\ntimo.mandler@neoma-bs.fr',
+      description: 'Timo Mandler<br>NEOMA Business School<br><a href="mailto:timo.mandler@neoma-bs.fr">timo.mandler@neoma-bs.fr</a>',
       icon: 'lucide:laptop',
     },
   ]}
@@ -173,7 +174,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
 
 ## Join the SIG
 
-<Features2
+<ItemGrid2
   columns={2}
   items={[
     {
@@ -206,7 +207,7 @@ For nominations and questions about the **Significant Contributions to Global Ma
 
 ## Stay Connected
 
-<Features2
+<ItemGrid2
   columns={3}
   items={[
     {
