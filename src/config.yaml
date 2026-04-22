@@ -11,7 +11,7 @@ metadata:
   title:
     default: AMA Global Marketing SIG
     template: '%s — AMA Global Marketing SIG'
-  description: "The AMA Global Marketing Special Interest Group fosters dialogue and expands knowledge on global marketing issues among academics, business people, and government representatives."
+  description: 'The AMA Global Marketing Special Interest Group fosters dialogue and expands knowledge on global marketing issues among academics, business people, and government representatives.'
   robots:
     index: true
     follow: true
