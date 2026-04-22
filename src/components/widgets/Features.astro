@@ -1,7 +1,8 @@
 ---
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
-import ItemGrid2 from '~/components/ui/ItemGrid2.astro';
 import Headline from '~/components/ui/Headline.astro';
+import Button from '~/components/ui/Button.astro';
+import { twMerge } from 'tailwind-merge';
 import type { Features as Props } from '~/types';
 
 const {
@@ -11,27 +12,43 @@ const {
   items = [],
   columns = 2,
 
-  defaultIcon,
-
   id,
   isDark = false,
   classes = {},
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
+
+const gridCols =
+  columns === 4
+    ? 'lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2'
+    : columns === 3
+      ? 'lg:grid-cols-3 sm:grid-cols-2'
+      : columns === 2
+        ? 'sm:grid-cols-2'
+        : '';
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
-  <ItemGrid2
-    items={items}
-    columns={columns}
-    defaultIcon={defaultIcon}
-    classes={{
-      container: 'gap-6',
-      panel: 'bg-white dark:bg-brand-650 rounded-xl border border-brand-200 dark:border-brand-500 p-5 shadow-sm hover:shadow-md transition-shadow duration-200',
-      title: 'md:text-[1.3rem]',
-      icon: 'text-white bg-primary rounded-full w-10 h-10 p-2 md:w-12 md:h-12 md:p-3 mb-3',
-      ...((classes?.items as Record<string, never>) ?? {}),
-    }}
-  />
+  <div class={twMerge(`grid gap-6 gap-x-10 sm:gap-y-8 ${gridCols}`)}>
+    {
+      items.map(({ title: itemTitle, description, callToAction }, i) => (
+        <div class="relative flex flex-col bg-white dark:bg-brand-650 rounded-xl border border-brand-200 dark:border-brand-500 p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow duration-200 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <span
+            class="font-heading text-sm font-semibold tracking-[0.18em] text-primary dark:text-brand-250 mb-2"
+            aria-hidden="true"
+          >
+            {String(i + 1).padStart(2, '0')}
+          </span>
+          <div class="font-heading text-xl md:text-[1.3rem] font-semibold text-heading leading-snug">{itemTitle}</div>
+          {description && <p class="text-muted mt-2" set:html={description} />}
+          {callToAction && (
+            <div class="mt-auto pt-4">
+              <Button {...callToAction} />
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
 </WidgetWrapper>
