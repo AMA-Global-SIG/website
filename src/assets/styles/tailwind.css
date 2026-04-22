@@ -102,6 +102,23 @@
   --aw-color-primary:      rgb(61 94 155);     /* brand-500 */
   --aw-color-accent:       rgb(76 117 193);    /* brand-400 */
 }
+/* CTA cards sit on their own surface inside an accent section — reset the   */
+/* inherited accent text vars so they follow the page theme, not the section. */
+.section-accent .cta-card {
+  --aw-color-text-heading: rgb(31 48 79);      /* brand-800 */
+  --aw-color-text-default: rgb(31 48 79);
+  --aw-color-text-muted:   rgb(31 48 79 / 72%);
+  --aw-color-primary:      rgb(61 94 155);     /* brand-500 */
+  --aw-color-accent:       rgb(76 117 193);    /* brand-400 */
+}
+
+.dark .section-accent .cta-card {
+  --aw-color-text-heading: rgb(241 244 249);   /* brand-50  */
+  --aw-color-text-default: rgb(224 231 242);   /* brand-100 */
+  --aw-color-text-muted:   rgb(198 212 233 / 80%); /* brand-150 */
+  --aw-color-primary:      rgb(118 147 191);   /* brand-300 */
+  --aw-color-accent:       rgb(138 163 204);   /* brand-250 */
+}
 /* Buttons inside accent sections should follow the section's context         */
 .dark .section-accent .btn {
   background-color: rgb(61 94 155);
