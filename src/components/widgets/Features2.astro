@@ -32,14 +32,22 @@ const gridCols =
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
   <div class={twMerge(`grid gap-4 md:gap-6 ${gridCols}`)}>
     {
-      items.map(({ title: itemTitle, description, callToAction }, i) => (
+      items.map(({ title: itemTitle, description, image, callToAction }, i) => (
         <div class="relative flex flex-col rounded-xl shadow-sm border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 p-6 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-400 transition-all duration-200 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-          <span
-            class="font-heading text-sm font-semibold tracking-[0.18em] text-primary dark:text-brand-250 mb-3"
-            aria-hidden="true"
-          >
-            {String(i + 1).padStart(2, '0')}
-          </span>
+          {image ? (
+            <img
+              src={image.src}
+              alt={image.alt ?? itemTitle ?? ''}
+              class="w-20 h-20 rounded-full object-cover mb-4 shadow-sm ring-2 ring-brand-200 dark:ring-brand-500"
+            />
+          ) : (
+            <span
+              class="font-heading text-sm font-semibold tracking-[0.18em] text-primary dark:text-brand-250 mb-3"
+              aria-hidden="true"
+            >
+              {String(i + 1).padStart(2, '0')}
+            </span>
+          )}
           <div class="font-heading text-xl font-semibold text-heading leading-snug">{itemTitle}</div>
           {description && <p class="text-muted mt-2" set:html={description} />}
           {callToAction && (
