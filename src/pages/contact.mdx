@@ -56,20 +56,20 @@ import Callout from '~/components/ui/Callout.astro';
 
 ### 2026 Nice Conference (May 27–29, 2026)
 
-<Callout kicker="Program Chairs">
+**Program Chairs**
 
-- **Peter Magnusson**, University of Texas Rio Grande Valley
-- **Goksel Yalcinkaya**, University of New Hampshire
+<Features2
+  columns={2}
+  items={[
+    { title: 'Peter Magnusson', description: 'University of Texas Rio Grande Valley', image: { src: '/people/pmagnusson_215x215.jpg', alt: 'Peter Magnusson' } },
+    { title: 'Goksel Yalcinkaya', description: 'University of New Hampshire', image: { src: '/people/gyalcinkaya_215x215.jpg', alt: 'Goksel Yalcinkaya' } },
+  ]}
+/>
 
-<div class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-brand-250 mt-5 mb-3">Local Chairs</div>
-
-- *IAE Nice contacts — to be confirmed*
-
-<div class="text-xs font-semibold uppercase tracking-wider text-primary dark:text-brand-250 mt-5 mb-3">Registration, Venue & Logistics</div>
-
-- Contact: *2026 Nice Conference Coordinator — to be announced*
-
-</Callout>
+<Note
+  title="Local Chairs & Registration"
+  description="IAE Nice local committee contacts and the registration coordinator will be announced shortly."
+/>
 
 > **Submission & Review Questions:** Please contact the appropriate **Track Chair** for your specific research area. Track chairs are listed on the current conference page and are appointed annually for each conference cycle.
 
@@ -88,28 +88,15 @@ import Callout from '~/components/ui/Callout.astro';
 
 ## Doctoral Consortium
 
-<div class="grid md:grid-cols-2 gap-6 my-6">
-  <Callout class="my-0">
-    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Fabian Bartsch</h4>
-    <p class="text-sm text-muted mb-2">MBS School of Business</p>
-    <a href="mailto:f.bartsch@mbs-education.com" class="text-primary dark:text-brand-250 hover:underline text-sm">f.bartsch@mbs-education.com</a>
-  </Callout>
-  <Callout class="my-0">
-    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Annie Peng Cui</h4>
-    <p class="text-sm text-muted mb-2">West Virginia University</p>
-    <a href="mailto:annie.cui@mail.wvu.edu" class="text-primary dark:text-brand-250 hover:underline text-sm">annie.cui@mail.wvu.edu</a>
-  </Callout>
-  <Callout class="my-0">
-    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Timo Mandler</h4>
-    <p class="text-sm text-muted mb-2">NEOMA Business School</p>
-    <a href="mailto:timo.mandler@neoma-bs.fr" class="text-primary dark:text-brand-250 hover:underline text-sm">timo.mandler@neoma-bs.fr</a>
-  </Callout>
-  <Callout class="my-0">
-    <h4 class="text-base font-semibold text-heading dark:text-slate-100 mb-1 mt-0">Katharina Zeugner-Roth</h4>
-    <p class="text-sm text-muted mb-2">SKEMA Business School</p>
-    <a href="mailto:katharina.zeugner@skema.edu" class="text-primary dark:text-brand-250 hover:underline text-sm">katharina.zeugner@skema.edu</a>
-  </Callout>
-</div>
+<Features2
+  columns={2}
+  items={[
+    { title: 'Fabian Bartsch', description: 'MBS School of Business<br><a href="mailto:f.bartsch@mbs-education.com">f.bartsch@mbs-education.com</a>', image: { src: '/people/fbartsch_215x215.jpg', alt: 'Fabian Bartsch' } },
+    { title: 'Annie Peng Cui', description: 'West Virginia University<br><a href="mailto:annie.cui@mail.wvu.edu">annie.cui@mail.wvu.edu</a>', image: { src: '/people/acui_215x215.jpg', alt: 'Annie Peng Cui' } },
+    { title: 'Timo Mandler', description: 'NEOMA Business School<br><a href="mailto:timo.mandler@neoma-bs.fr">timo.mandler@neoma-bs.fr</a>', image: { src: '/people/tmandler_215x215.jpg', alt: 'Timo Mandler' } },
+    { title: 'Katharina Zeugner-Roth', description: 'SKEMA Business School<br><a href="mailto:katharina.zeugner@skema.edu">katharina.zeugner@skema.edu</a>', image: { src: '/people/kzeugnerroth_215x215.jpg', alt: 'Katharina Zeugner-Roth' } },
+  ]}
+/>
 
 **Application Process:** Submit applications through the conference submission system. The doctoral consortium takes place the day before the main conference begins.
 
@@ -123,7 +110,7 @@ import Callout from '~/components/ui/Callout.astro';
 
 ### SIG Chair
 
-<Callout>
+<Callout image="/people/gyalcinkaya_215x215.jpg" imageAlt="Goksel Yalcinkaya">
 
 **Goksel Yalcinkaya**
 *Professor of Marketing, University of New Hampshire*
@@ -140,19 +127,19 @@ import Callout from '~/components/ui/Callout.astro';
   columns={3}
   items={[
     {
-      title: 'Academic Programs & Membership',
-      description: 'Annie Peng Cui\nWest Virginia University\nannie.cui@mail.wvu.edu',
-      icon: 'lucide:users',
+      title: 'Annie Peng Cui',
+      description: 'Academic Programs & Membership<br>West Virginia University<br><a href="mailto:annie.cui@mail.wvu.edu">annie.cui@mail.wvu.edu</a>',
+      image: { src: '/people/acui_215x215.jpg', alt: 'Annie Peng Cui' },
     },
     {
-      title: 'International Liaison',
-      description: 'Constantine S. Katsikeas\nLeeds University Business School\nbuscsk@leeds.ac.uk',
-      icon: 'lucide:globe',
+      title: 'Constantine S. Katsikeas',
+      description: 'International Liaison<br>Leeds University Business School<br><a href="mailto:buscsk@leeds.ac.uk">buscsk@leeds.ac.uk</a>',
+      image: { src: '/people/ckatsikeas_215x215.jpg', alt: 'Constantine S. Katsikeas' },
     },
     {
-      title: 'Webmaster & Social Media',
-      description: 'Timo Mandler\nNEOMA Business School\ntimo.mandler@neoma-bs.fr',
-      icon: 'lucide:laptop',
+      title: 'Timo Mandler',
+      description: 'Webmaster & Social Media<br>NEOMA Business School<br><a href="mailto:timo.mandler@neoma-bs.fr">timo.mandler@neoma-bs.fr</a>',
+      image: { src: '/people/tmandler_215x215.jpg', alt: 'Timo Mandler' },
     },
   ]}
 />
