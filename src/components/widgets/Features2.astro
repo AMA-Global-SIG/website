@@ -48,8 +48,8 @@ const gridCols =
               {String(i + 1).padStart(2, '0')}
             </span>
           )}
-          <div class="font-heading text-xl font-semibold text-heading leading-snug">{itemTitle}</div>
-          {description && <p class="text-muted mt-2" set:html={description} />}
+          <div class="font-heading text-xl font-semibold text-heading leading-snug break-words">{itemTitle}</div>
+          {description && <p class="text-muted mt-2 break-words" set:html={description} />}
           {callToAction && (
             <div class="mt-auto pt-4">
               <Button {...callToAction} />
