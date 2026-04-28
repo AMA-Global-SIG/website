@@ -28,7 +28,7 @@ const gridCols =
         : '';
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${!title && !subtitle && !tagline ? 'pt-4 md:pt-6' : ''} ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
   <div class={twMerge(`grid gap-6 gap-x-10 sm:gap-y-8 ${gridCols}`)}>
     {
