@@ -1,12 +1,12 @@
 ---
 layout: ~/layouts/MarkdownLayout.astro
 title: "2027 Osaka Doctoral Consortium"
-description: "AMA Global Marketing SIG Doctoral Consortium - Osaka, Japan - 2027"
+description: "AMA Global Marketing SIG Doctoral Consortium — May 2027 — Ritsumeikan University, Osaka, Japan"
 ---
 
 import Features2 from '~/components/widgets/Features.astro';
-import Note from '~/components/widgets/Note.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
 import Callout from '~/components/ui/Callout.astro';
 
 <Callout title="2027 Doctoral Consortium">
@@ -15,16 +15,21 @@ import Callout from '~/components/ui/Callout.astro';
 
 </Callout>
 
-<Note
-  title="Details Coming Soon"
-  description="Information about the 2027 Osaka Doctoral Consortium will be announced in 2026. Check back for application details, faculty mentors, and program schedule."
-/>
-
 ---
 
-## About the Doctoral Consortium
+## About the 2027 Osaka Consortium
 
-The Doctoral Consortium provides a unique opportunity for PhD students with an interest in international and cross-cultural marketing to advance their research and careers. Held annually in conjunction with the AMA Global Marketing Conference, the Consortium brings together 15-25 doctoral students from around the world with leading scholars in the field.
+The Doctoral Consortium provides a unique opportunity for PhD students with an interest in international and cross-cultural marketing to advance their research and careers. Held annually in conjunction with the AMA Global Marketing Conference, the Consortium brings together 15–25 doctoral students from around the world with leading scholars in the field. The program takes place on the day preceding the main conference and typically includes:
+
+<Features2
+  columns={2}
+  items={[
+    { title: 'Panel Discussions', description: 'Senior faculty share insights on research trends, publishing strategies, and career development.', icon: 'lucide:message-square' },
+    { title: 'Small Group Sessions', description: 'Present your research and receive detailed feedback from faculty mentors.', icon: 'lucide:users' },
+    { title: 'Meet-the-Editors Sessions', description: 'Connect with representatives from leading international marketing journals.', icon: 'lucide:book-open' },
+    { title: 'Networking Reception', description: 'Build relationships with faculty and fellow doctoral students.', icon: 'lucide:wine' },
+  ]}
+/>
 
 ---
 
@@ -35,11 +40,67 @@ The Doctoral Consortium provides a unique opportunity for PhD students with an i
 | **Date** | Day before main conference (Late May / Early June 2027) |
 | **Location** | Ritsumeikan University, Osaka, Japan |
 | **Application Deadline** | TBD (expected early 2027) |
-| **Notification** | TBD |
 
 ---
 
-## Consortium Co-Organizers
+## Eligibility & Application Requirements
+
+The Consortium welcomes doctoral students in marketing or international business who have a research focus on international marketing, cross-cultural marketing, or global business; who have begun developing their dissertation research; and who seek to build connections within the international marketing academic community. Students at any stage are welcome, provided they have a well-defined research idea.
+
+Applications are submitted through the **EasyChair** conference system as a single combined PDF and must include:
+
+- **Cover Letter:** Describe your stage in the doctoral program, your research interests, what you hope to gain from participating, and whether you wish to be considered for a travel stipend.
+- **Research Abstract** (max 5 pages, single-spaced): A current research project focused on international marketing, covering your research question and motivation, theoretical background and intended contribution, proposed methodology or research design, and expected findings or preliminary results (if available). Include a title and keywords.
+- **Curriculum Vitae** (max 2 pages): Include education, research experience, publications or working papers, and conference presentations.
+
+---
+
+## Selection & Travel Stipends
+
+Applications are evaluated holistically, with particular attention to topic fit (research relating to global, international, or cross-cultural marketing), the strength and clarity of the intended theoretical or practical contribution, and the overall coherence and quality of the submitted abstract. The selection committee strives to assemble a diverse cohort representing a range of research topics, methodological approaches, and institutional backgrounds.
+
+A limited number of **travel stipends** are available to help offset participation costs. Stipend amounts and availability vary by year. To be considered, indicate your interest and briefly describe your need for financial support in your cover letter.
+
+---
+
+## Past Consortia
+
+| Year | Location |
+| :--- | :--- |
+| **2026** | Nice, France |
+| **2025** | Sydney, Australia |
+| **2024** | Verona, Italy |
+
+For the full consortium history, see the [Past Consortia](/doctoral-consortium/past-consortia) page.
+
+---
+
+## What Past Participants Say
+
+<Testimonials
+  testimonials={[
+    { testimonial: 'The Doctoral Consortium was a transformative experience. The feedback I received from senior scholars helped shape my dissertation in meaningful ways, and the connections I made have lasted throughout my career.', name: 'Past Participant', job: 'Consortium Alumni' },
+    { testimonial: 'Beyond the invaluable research feedback, the consortium provided a supportive community of peers facing similar challenges. The mentorship and networking opportunities were exceptional.', name: 'Past Participant', job: 'Consortium Alumni' },
+  ]}
+/>
+
+---
+
+## Frequently Asked Questions
+
+<FAQs
+  items={[
+    { title: 'When should I apply to the Doctoral Consortium?', description: 'Students at any stage of their doctoral program are welcome, though those who have begun developing their dissertation research tend to benefit most. Ideally, you should have a well-defined research question and preliminary theoretical framework.' },
+    { title: 'Can I attend the main conference if I participate in the Consortium?', description: 'Yes! Consortium participants are encouraged to also submit papers to the main conference and attend all conference sessions. The Consortium takes place the day before the main conference begins.' },
+    { title: 'How competitive is the selection process?', description: 'We typically receive more applications than available spots. However, we strive to include a diverse cohort representing various research topics and backgrounds. A strong, well-articulated research proposal significantly improves your chances.' },
+    { title: 'What if I don\'t receive a travel stipend?', description: 'Even without a stipend, the Consortium experience is highly valuable. Many participants seek funding from their home institutions. We encourage you to apply regardless of financial support availability.' },
+    { title: 'Do I need to have publications to apply?', description: 'No, publications are not required. We evaluate applications holistically, focusing on your research potential, the quality of your proposal, and your fit with the Consortium\'s goals.' },
+  ]}
+/>
+
+---
+
+## Consortium Organizers
 
 <Features2
   columns={3}
@@ -49,3 +110,5 @@ The Doctoral Consortium provides a unique opportunity for PhD students with an i
     { title: 'Katharina Zeugner-Roth', description: 'SKEMA Business School\nkatharina.zeugner@skema.edu', image: { src: '/people/kzeugnerroth_215x215.jpg', alt: 'Katharina Zeugner-Roth' } },
   ]}
 />
+
+For questions about the Doctoral Consortium, please contact any of the Consortium Organizers listed above.

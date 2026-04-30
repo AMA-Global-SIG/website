@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git checkout *)"
+      "Bash(git checkout *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(grep -rn \"padStart\\\\|String\\(index\\\\|String\\(i\\)\\\\|0\\\\$\\\\|String.prototype.padStart\\\\|\\('0'\" \"C:/Users/Mandler/OneDrive/Dokumente/AMA Global Marketing SIG/GitHub/website/src/components/\")",
+      "Bash(npm run *)",
+      "Bash(git restore *)"
     ]
   }
 }
