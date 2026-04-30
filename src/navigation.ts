@@ -27,10 +27,6 @@ export const headerData = {
       text: 'Conferences',
       links: [
         {
-          text: 'Nice 2026',
-          href: getPermalink('/conferences/nice-2026'),
-        },
-        {
           text: 'Osaka 2027',
           href: getPermalink('/conferences/osaka-2027'),
         },
@@ -52,16 +48,12 @@ export const headerData = {
       text: 'Doctoral Consortia',
       links: [
         {
-          text: 'Nice 2026',
-          href: getPermalink('/doctoral-consortium/nice-2026'),
-        },
-        {
           text: 'Osaka 2027',
           href: getPermalink('/doctoral-consortium/osaka-2027'),
         },
         {
-          text: 'Application Process',
-          href: getPermalink('/doctoral-consortium/application-process'),
+          text: 'Consortia History',
+          href: getPermalink('/doctoral-consortium/consortia-history'),
         },
       ],
     },
@@ -97,8 +89,8 @@ export const headerData = {
   ],
   actions: [
     {
-      text: 'Nice 2026',
-      href: getPermalink('/conferences/nice-2026'),
+      text: 'Osaka 2027',
+      href: getPermalink('/conferences/osaka-2027'),
     },
   ],
 };
@@ -117,7 +109,6 @@ export const footerData = {
     {
       title: 'Conferences',
       links: [
-        { text: 'Nice 2026', href: getPermalink('/conferences/nice-2026') },
         { text: 'Osaka 2027', href: getPermalink('/conferences/osaka-2027') },
         { text: 'Conference History', href: getPermalink('/conferences/history') },
         { text: 'Submission Guidelines', href: getPermalink('/conferences/submission-guidelines') },
