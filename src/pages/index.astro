@@ -62,7 +62,7 @@ const metadata = {
               target="_blank"
               class="sm:w-auto"
             />
-            <Button variant="tertiary" text="Nice 2026 Conference →" href="/conferences/nice-2026" class="sm:w-auto" />
+            <Button variant="tertiary" text="Osaka 2027 Conference →" href="/conferences/osaka-2027" class="sm:w-auto" />
           </div>
         </div>
 
@@ -176,32 +176,6 @@ const metadata = {
     </Fragment>
   </Features2>
 
-  <!-- Upcoming Events - Nice 2026 -->
-  <CallToAction
-    id="nice-2026"
-    title="2026 AMA Global Marketing Conference"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Register Now',
-        href: '/conferences/nice-2026',
-      },
-      {
-        variant: 'tertiary',
-        text: 'View all conferences →',
-        href: '/conferences',
-      },
-    ]}
-  >
-    <Fragment slot="subtitle">
-      <p class="text-lg leading-relaxed">
-        <span class="font-semibold">Nice, France</span> · May 27–29, 2026. Hosted by IAE Nice Graduate School of Management,
-        on the French Riviera.
-      </p>
-      <p class="mt-3 text-accent font-semibold text-base">Early bird deadline: March 1, 2026</p>
-    </Fragment>
-  </CallToAction>
-
   <!-- Osaka 2027 Preview -->
   <Content
     isAfterContent
@@ -249,18 +223,20 @@ const metadata = {
   <Testimonials
     tagline="From Our Leadership"
     title="Message from the Chair"
+    columns={1}
     testimonials={[
       {
         testimonial:
           'The AMA Global Marketing SIG has been at the forefront of advancing international marketing scholarship for over three decades. Our community of researchers, educators, and practitioners continues to shape the future of global marketing through rigorous research, meaningful collaboration, and mentorship of the next generation of scholars. I invite you to join us in this important work.',
         name: 'Goksel Yalcinkaya',
         job: 'Chair, AMA Global Marketing SIG · University of New Hampshire',
+        image: { src: '/people/gyalcinkaya_215x215.jpg', alt: 'Goksel Yalcinkaya' },
       },
     ]}
     callToAction={{
-      text: 'Meet the Board →',
+      text: 'Meet the Board',
       href: '/board-of-directors',
-      variant: 'tertiary',
+      variant: 'primary',
     }}
   />
 
