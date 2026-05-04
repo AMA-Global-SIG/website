@@ -12,8 +12,8 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 <Stats
   stats={[
     { title: 'Founded', amount: '1994' },
-    { title: 'Years Active', amount: '30+' },
-    { title: 'Members Worldwide', amount: '500+' },
+    { title: 'Founding Members', amount: '6' },
+    { title: 'Members Today', amount: '500+' },
     { title: 'Countries Represented', amount: '50+' },
   ]}
 />
@@ -127,7 +127,7 @@ The SIG quickly became one of the most active special interest groups within the
 
 ## SIG Chairs
 
-The following scholars have led the SIG as Chair, typically serving two-year terms:
+The following scholars have led the SIG as Chair, typically serving two-year terms. Two leaders — founding member **Camille P. Schuster** and **Frank Franzak** — each served two non-consecutive terms, reflecting sustained commitment to the community.
 
 | Years            | Chair                | Institution                      |
 | :--------------- | :------------------- | :------------------------------- |
@@ -144,49 +144,37 @@ The following scholars have led the SIG as Chair, typically serving two-year ter
 | **2017–2021**    | Costas Katsikeas     | Leeds University Business School |
 | **2021–present** | Goksel Yalcinkaya    | University of New Hampshire      |
 
-> **Note:** Camille P. Schuster (founding member) and Frank Franzak each served two non-consecutive terms as Chair, demonstrating sustained commitment to SIG leadership.
+---
+
+## A Lasting Community
+
+From six founding members in 1994 to a global community of 500+ scholars across 50+ countries, the AMA Global Marketing SIG has become the premier forum for international marketing scholarship within the American Marketing Association. Annual conferences regularly draw 150–250 participants from 40+ nations and have been hosted across the United States, Europe, Latin America, and Asia.
+
+The doctoral consortium has supported successive generations of emerging scholars — many of whom now lead international marketing programs at research universities worldwide. Long-running partnerships with the Academy of Marketing (UK) and the _Journal of International Marketing_, together with the SIG's awards programs, continue to recognize and disseminate research that shapes the field.
 
 ---
 
-## Legacy & Impact
-
-From six founding members in 1994 to a global community of 500+ scholars across 50+ countries, the AMA Global Marketing SIG has become the premier forum for international marketing scholarship within the American Marketing Association.
-
-<Features2
-  title="Our Impact Across Multiple Dimensions"
-  columns={2}
-  items={[
+<CallToAction
+  title="The Story Continues"
+  actions={[
     {
-      title: 'Research Development',
-      description:
-        'Conferences have launched research collaborations spanning continents and disciplines. Work presented at SIG conferences has evolved into highly cited publications shaping how scholars understand cultural differences in consumer behavior, international market entry strategies, global brand management, and cross-border business relationships.',
-      icon: 'lucide:microscope',
+      variant: 'primary',
+      text: 'Mission & Objectives',
+      href: '/mission',
     },
     {
-      title: 'Doctoral Education',
-      description:
-        "The doctoral consortium has mentored generations of emerging scholars, many of whom now lead international marketing programs at research universities worldwide. This mentorship model—pairing students with senior scholars for intensive feedback—has become a valued feature of the SIG's annual conference.",
-      icon: 'lucide:graduation-cap',
-    },
-    {
-      title: 'Field Building',
-      description:
-        'The SIG helped establish international marketing as a distinct area of specialization. Early conferences provided forums where scholars could present international work that might not fit traditional domestic marketing tracks, creating space for methodological innovations in cross-cultural research.',
-      icon: 'lucide:building',
-    },
-    {
-      title: 'Bridging Research & Practice',
-      description:
-        'Through partnerships with the Journal of International Marketing and connections with multinational corporations, the SIG maintains the founding vision of connecting rigorous scholarship with managerial relevance. Awards programs recognize research that advances both theory and practice.',
-      icon: 'lucide:arrow-left-right',
-    },
-    {
-      title: 'Global Community',
-      description:
-        "The SIG's international membership and conference locations reflect the global nature of the field. Scholars from emerging markets, established economies, and transition economies collaborate on research addressing universal questions about marketing across borders while respecting local contexts.",
-      icon: 'lucide:globe',
+      variant: 'tertiary',
+      text: 'Board of Directors →',
+      href: '/board-of-directors',
     },
   ]}
-/>
-
-As international marketing continues evolving—shaped by digital transformation, sustainability imperatives, geopolitical shifts, and changing patterns of globalization—the SIG remains committed to its founding mission of advancing scholarship, education, and practice in this dynamic field.
+>
+  <Fragment slot="subtitle">
+    <p class="mb-4 leading-relaxed">
+      Three decades on, the SIG continues to advance international marketing scholarship under new leadership. Our <span class="font-semibold">mission and objectives</span> capture the principles that have guided the community since 1994.
+    </p>
+    <p class="leading-relaxed">
+      Meet the current <span class="font-semibold">board of directors</span> to see who is leading the SIG today.
+    </p>
+  </Fragment>
+</CallToAction>
