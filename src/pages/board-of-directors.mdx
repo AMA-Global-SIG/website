@@ -235,19 +235,22 @@ Email: [timo.mandler@neoma-bs.fr](mailto:timo.mandler@neoma-bs.fr)
   actions={[
     {
       variant: 'primary',
-      text: 'Our Mission',
-      href: '/mission',
-      icon: 'lucide:handshake',
-    },
-    {
-      text: 'Our Bylaws',
-      href: '/bylaws',
-      icon: 'lucide:briefcase',
-    },
-    {
       text: 'Past Chairs & Board Members',
       href: '/past-chairs',
-      icon: 'lucide:users',
+    },
+    {
+      variant: 'tertiary',
+      text: 'Our Mission →',
+      href: '/mission',
     },
   ]}
-/>
+>
+  <Fragment slot="subtitle">
+    <p class="mb-4 leading-relaxed">
+      The current board builds on a long tradition of leadership. Our <span class="font-semibold">past chairs and board members</span> page recognizes the scholars and practitioners who have shaped the SIG since its founding in 1994.
+    </p>
+    <p class="leading-relaxed">
+      To understand the values and goals that guide the board's work, visit our <span class="font-semibold">mission page</span>.
+    </p>
+  </Fragment>
+</CallToAction>
