@@ -4,52 +4,21 @@ title: Mission & Objectives
 description: The mission and four core objectives of the AMA Global Marketing Special Interest Group.
 ---
 
-import Note from '~/components/widgets/Note.astro';
-import Features2 from '~/components/widgets/Features.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Callout from '~/components/ui/Callout.astro';
 
 ## Our Mission
 
-<Note
-  title="Connecting the Global Marketing Community"
-  description="The AMA Global Marketing Special Interest Group connects academics, practitioners, and doctoral students who study international marketing, cross-cultural consumer behavior, and global business strategy. We advance the field through annual conferences, research collaboration, awards recognizing scholarly excellence, and support for emerging scholars."
-/>
+The AMA Global Marketing Special Interest Group connects academics, practitioners, and doctoral students who study international marketing, cross-cultural consumer behavior, and global business strategy.
+
+We advance the field through annual conferences, research collaboration, awards recognizing scholarly excellence, and support for emerging scholars.
 
 ---
 
 ## Our Objectives
 
-<Features2
-  title="Four Core Objectives"
-  subtitle="Guiding our activities since 1994"
-  columns={3}
-  items={[
-    {
-      title: 'Facilitate Interaction',
-      description: 'Connect academics, practitioners, and government representatives',
-      icon: 'lucide:users',
-    },
-    {
-      title: 'Promote Globalization',
-      description: 'Integrate international perspectives into marketing education',
-      icon: 'lucide:globe',
-    },
-    {
-      title: 'Foster Research',
-      description: 'Support scholarship on global marketing challenges',
-      icon: 'lucide:microscope',
-    },
-    {
-      title: 'Disseminate Knowledge',
-      description: 'Share findings with academic and practitioner audiences',
-      icon: 'lucide:megaphone',
-    },
-  ]}
-/>
-
----
+Four core objectives have guided the SIG's activities since 1994. Each shapes how we serve our members and the broader international marketing community.
 
 ### 1. Facilitate Interaction Across Stakeholder Groups
 
@@ -140,4 +109,13 @@ The SIG's members represent the breadth and depth of international marketing sch
       icon: 'lucide:file-text',
     },
   ]}
-/>
+>
+  <Fragment slot="subtitle">
+    <p class="mb-4 leading-relaxed">
+      Curious how the SIG came to be and how it operates? Our <span class="font-semibold">history</span> traces three decades of advancing international marketing scholarship — from the founding members who launched the group in 1994 to the global community it has become today.
+    </p>
+    <p class="leading-relaxed">
+      The <span class="font-semibold">bylaws</span> document the SIG's governance, officer roles, and operating procedures that guide our work as a community.
+    </p>
+  </Fragment>
+</CallToAction>
