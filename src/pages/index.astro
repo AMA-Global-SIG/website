@@ -1,8 +1,6 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
@@ -98,84 +96,6 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Mission Note -->
-  <Note
-    title="Our Mission:"
-    description="Fostering dialogue and expanding knowledge on global marketing issues among academics, business people, and government representatives."
-  />
-
-  <!-- What We Do — merged Objectives + Activities into one block -->
-  <Features
-    id="what-we-do"
-    tagline="What We Do"
-    title="Four Objectives, One Community"
-    subtitle="How the Global Marketing SIG advances international marketing scholarship and practice."
-    items={[
-      {
-        title: 'Facilitate Interaction',
-        description:
-          'Bringing academics, business people, and government representatives together through annual international conferences — including bi-annual partnerships with the Academy of Marketing, UK.',
-      },
-      {
-        title: 'Promote Globalization',
-        description:
-          'Championing the globalization of marketing courses and curricula through academic partnerships with leading organizations and the AMA Academic Council.',
-      },
-      {
-        title: 'Foster Research',
-        description:
-          'Supporting doctoral consortia with senior scholar mentorship, and collaborating on Journal of International Marketing special issues on cutting-edge topics.',
-      },
-      {
-        title: 'Disseminate Findings',
-        description:
-          'Recognizing research excellence through the Hans B. Thorelli and S. Tamer Cavusgil Awards, and sharing results across our global membership.',
-      },
-    ]}
-  />
-
-  <!-- Why Join — kept, same structure (icons removed via Features2 rework) -->
-  <Features2
-    tagline="Membership Benefits"
-    title="Why Join Our Community?"
-    subtitle="Connect with the global international marketing community and advance your research and career."
-    items={[
-      {
-        title: 'Network Globally',
-        description:
-          'Connect with international marketing scholars and practitioners from leading universities and organizations worldwide. Build relationships across continents.',
-      },
-      {
-        title: 'Present Your Research',
-        description:
-          'Share your work at annual conferences in exciting international locations — from Nice to Osaka, Sydney to Buenos Aires.',
-      },
-      {
-        title: 'Doctoral Development',
-        description:
-          'Participate in our consortium for research feedback, career guidance, and professional network development. Travel stipends available.',
-      },
-      {
-        title: 'Research Recognition',
-        description:
-          'Compete for the Hans B. Thorelli Award and S. Tamer Cavusgil Award recognizing exceptional contributions to international marketing.',
-      },
-      {
-        title: 'Professional Development',
-        description:
-          'Engage through conferences, meet-the-editor sessions, panel discussions, and networking opportunities.',
-      },
-      {
-        title: 'Journal Collaboration',
-        description: 'Collaborate on Journal of International Marketing special issues addressing cutting-edge topics.',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-brand-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
   <!-- Osaka 2027 Preview -->
   <Content
     tagline="Coming in 2027"
@@ -217,6 +137,48 @@ const metadata = {
       { title: 'Doctoral Alumni', amount: '500+' },
     ]}
   />
+
+  <!-- Why Join -->
+  <Features2
+    tagline="Membership Benefits"
+    title="Why Join Our Community?"
+    subtitle="Connect with the global international marketing community and advance your research and career."
+    items={[
+      {
+        title: 'Network Globally',
+        description:
+          'Connect with international marketing scholars and practitioners from leading universities and organizations worldwide. Build relationships across continents.',
+      },
+      {
+        title: 'Present Your Research',
+        description:
+          'Share your work at annual conferences in exciting international locations — from Nice to Osaka, Sydney to Buenos Aires.',
+      },
+      {
+        title: 'Doctoral Development',
+        description:
+          'Participate in our consortium for research feedback, career guidance, and professional network development. Travel stipends available.',
+      },
+      {
+        title: 'Research Recognition',
+        description:
+          'Compete for the Hans B. Thorelli Award and S. Tamer Cavusgil Award recognizing exceptional contributions to international marketing.',
+      },
+      {
+        title: 'Professional Development',
+        description:
+          'Engage through conferences, meet-the-editor sessions, panel discussions, and networking opportunities.',
+      },
+      {
+        title: 'Journal Collaboration',
+        description: 'Collaborate on Journal of International Marketing special issues addressing cutting-edge topics.',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-brand-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
 
   <!-- Chair's Message -->
   <Testimonials
