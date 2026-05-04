@@ -7,7 +7,6 @@ description: Complete history of AMA Global Marketing SIG conferences from 1994 
 import Steps from '~/components/widgets/Steps.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-import Callout from '~/components/ui/Callout.astro';
 
 The **AMA Global Marketing SIG** has hosted annual conferences in diverse international locations since its founding in 1994, bringing together scholars and practitioners from around the world to advance international marketing research and education.
 
@@ -22,10 +21,9 @@ The **AMA Global Marketing SIG** has hosted annual conferences in diverse intern
 
 ---
 
-## Past Conferences
+## Recent Conferences (2017–2026)
 
 <Steps
-  title="Recent Conference History (2017–2026)"
   items={[
     { title: '2026 — Nice, France', description: 'Hosted at IAE Nice Graduate School of Management on the French Riviera, May 27–29, 2026.', icon: 'lucide:map-pin' },
     { title: '2025 — Sydney, Australia', description: 'Theme: "Navigating the Global Digital Landscape: Strategies for Cross-Cultural Marketing Success" — Our first conference in Australia, bringing global marketing scholars to the Asia-Pacific region.', icon: 'lucide:map-pin' },
@@ -42,12 +40,10 @@ The **AMA Global Marketing SIG** has hosted annual conferences in diverse intern
 
 ---
 
-## Historical Records (2011–2016)
+## Earlier Conferences (2011–2014)
 
 | Year | Location | Theme |
 | :--- | :--- | :--- |
-| 2016 | *Records being compiled* | |
-| 2015 | *Records being compiled* | |
 | **2014** | Cancun, Mexico | "The Honorable Merchant in International Marketing" |
 | **2013** | Washington, D.C., USA | "Global Marketing in the Digital Age" |
 | **2012** | Cancun, Mexico | "International Marketing and Entrepreneurship: From Theory to Practice" |
@@ -55,15 +51,35 @@ The **AMA Global Marketing SIG** has hosted annual conferences in diverse intern
 
 ---
 
-## 1994–2010 Conferences
+## The Early Years (1994–2010)
 
-From 1994–2010, the SIG organized conferences and special sessions through partnerships with the **Academy of Marketing (UK)** and in conjunction with **AMA Educators' Conferences**. Conference locations during this period included venues in Europe, Latin America, and Asia.
+From 1994–2010, the SIG organized conferences and special sessions through partnerships with the **Academy of Marketing (UK)** and in conjunction with **AMA Educators' Conferences**. The bi-annual joint conferences with the Academy of Marketing established a durable partnership model for conference organization, and venues progressively expanded beyond the United States to international locations across Europe, Latin America, and Asia.
 
-<Callout title="Founding Era Highlights">
+*Complete records from this founding period are being compiled.*
 
-- Bi-annual joint conferences with Academy of Marketing (UK) established
-- Expansion to international venues outside the United States
-- Partnership model developed for conference organization
-- Complete records from this founding period are being compiled
+---
 
-</Callout>
+<CallToAction
+  title="Looking Ahead"
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Osaka 2027',
+      href: '/conferences/osaka-2027',
+    },
+    {
+      variant: 'tertiary',
+      text: 'All Conferences →',
+      href: '/conferences',
+    },
+  ]}
+>
+  <Fragment slot="subtitle">
+    <p class="mb-4 leading-relaxed">
+      The next chapter takes us to Japan. Visit the <span class="font-semibold">Osaka 2027</span> page for the venue, dates, and the upcoming call for papers — the SIG's first conference in Japan.
+    </p>
+    <p class="leading-relaxed">
+      For an overview of past, current, and upcoming events, browse the <span class="font-semibold">Conferences</span> index.
+    </p>
+  </Fragment>
+</CallToAction>
