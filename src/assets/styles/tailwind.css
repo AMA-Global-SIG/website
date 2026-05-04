@@ -191,14 +191,8 @@ h6 {
 }
 
 /* Consistent table styling — unlayered so it overrides Tailwind Typography --- */
-/* display:block + overflow-x:auto on the table itself enables mobile scrolling
-   while keeping thead/tbody as natural table-row-group, ensuring header and
-   body columns share the same width calculation and stay aligned. */
 .prose :where(table) {
-  display: block;
   width: 100%;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
 }
 .prose :where(thead tr) {
   @apply bg-brand-100 dark:bg-brand-700;
