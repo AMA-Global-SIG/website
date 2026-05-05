@@ -6,33 +6,12 @@ description: Guidelines for delivering effective competitive paper presentations
 
 import Features2 from '~/components/widgets/Features.astro';
 import Note from '~/components/widgets/Note.astro';
-import CallToAction from '~/components/widgets/CallToAction.astro';
 import Callout from '~/components/ui/Callout.astro';
 
 <Note
   title="Congratulations on having your work accepted!"
   description="These guidelines will help you deliver an effective presentation that engages the audience and maximizes your research contribution."
 />
-
-## Quick Reference
-
-<Features2
-  columns={2}
-  items={[
-    {
-      title: 'Before the Conference',
-      description: 'Prepare a 15-minute presentation (competitive) or 5-minute overview (poster). Load presentation on USB drive (PowerPoint or PDF only). Use Arial or Times New Roman, minimum 24pt. Practice with timer—plan for 13 minutes to allow buffer.',
-      icon: 'lucide:clipboard-list',
-    },
-    {
-      title: 'Day of Your Session',
-      description: 'Arrive 10 minutes early to meet chair and test equipment. Stay within time limit—chairs will enforce this. Focus on your contribution, not comprehensive coverage. Engage with Q&A; acknowledge good questions even if challenging.',
-      icon: 'lucide:calendar-check',
-    },
-  ]}
-/>
-
----
 
 ## Competitive Paper Presentations
 
@@ -57,7 +36,11 @@ Arrive 10 minutes early to:
 - Confirm presentation order
 - Distribute any handouts
 
-> *If you cannot attend, notify your session chair immediately.*
+<Callout tone="muted">
+
+**Note:** If you cannot attend, notify your session chair immediately.
+
+</Callout>
 
 ### Technical Requirements
 
@@ -68,9 +51,7 @@ Arrive 10 minutes early to:
 | **Colors** | High contrast for readability. Avoid red-green combinations. |
 | **Equipment** | Projector and computer provided. Confirm special needs in advance. |
 
-### Presentation Best Practices
-
-#### Structure Your Talk
+### Structure Your Talk
 
 <Callout title="Structure">
 
@@ -89,43 +70,31 @@ Arrive 10 minutes early to:
 
 </Callout>
 
-#### Effective Delivery
+### Delivery and Slide Design
 
 <Features2
   columns={2}
   items={[
     {
       title: '✓ DO',
-      description: '<strong>Talk to the audience</strong>, not at them—make eye contact. <strong>Describe your contribution</strong>; urge them to read the paper for details. <strong>Pause after key points</strong> to let ideas land. <strong>Acknowledge limitations</strong> candidly. <strong>Plan for 13 minutes</strong> of content—easier to elaborate than cut. <strong>Identify where you want feedback</strong> and ask for it.',
+      description: '<strong>Talk to the audience</strong>, not at them—make eye contact. <strong>Describe your contribution</strong>; urge them to read the paper for details. <strong>Pause after key points</strong> to let ideas land. <strong>Acknowledge limitations</strong> candidly. <strong>Plan for 13 minutes</strong> of content—easier to elaborate than cut. <strong>Identify where you want feedback</strong> and ask for it. <strong>One key idea per slide</strong> with minimal text and large fonts (28+ pt body). <strong>Use simple, clear figures and tables</strong>.',
       icon: 'lucide:check-circle',
     },
     {
       title: '✗ DON\'T',
-      description: '<strong>Read from slides</strong> or provide comprehensive literature review. <strong>Explain every detail</strong> of your methodology. <strong>Describe instrument validation</strong> or sample characteristics. <strong>Save your conclusion</strong> as a surprise ending. <strong>Ignore time warnings</strong> from the chair.',
+      description: '<strong>Read from slides</strong> or provide a comprehensive literature review. <strong>Explain every detail</strong> of your methodology, instrument validation, or sample characteristics. <strong>Save your conclusion</strong> as a surprise ending. <strong>Ignore time warnings</strong> from the chair. <strong>Cram multiple messages</strong> onto one slide or use tiny fonts and dense tables.',
       icon: 'lucide:x-circle',
     },
   ]}
 />
 
-#### Slide Design
+<Callout tone="muted">
 
-<Features2
-  columns={2}
-  items={[
-    {
-      title: '✓ DO',
-      description: 'One key idea per slide. Minimal text—slides support your talk, they do not replace it. Simple, clear figures and tables. Large fonts (28+ point for body text).',
-      icon: 'lucide:check-circle',
-    },
-    {
-      title: '✗ DON\'T',
-      description: 'Cram multiple messages onto one slide. Use slides with tiny fonts or dense tables. Include every detail from your paper.',
-      icon: 'lucide:x-circle',
-    },
-  ]}
-/>
+**Accessibility:** Use high-contrast color schemes, describe visual elements verbally (charts, graphs, images), speak at a moderate pace, and define discipline-specific jargon when you cannot avoid it.
 
-#### Handling Q&A
+</Callout>
+
+### Handling Q&A
 
 - Listen carefully; repeat questions if needed for the room to hear
 - Acknowledge good points even when they challenge your work
@@ -133,11 +102,15 @@ Arrive 10 minutes early to:
 - Invite questioners to continue the conversation afterward
 - Keep responses concise to allow multiple questions
 
+### After Your Session
+
+Stay available to continue conversations, exchange contact information, and follow up within a week with anyone who showed interest. Consider audience feedback as you revise the paper.
+
 ---
 
 ## Interactive (Poster) Presentations
 
-Interactive sessions provide in-depth, informal feedback on work-in-progress through poster or roundtable format. Senior scholars attend specifically to provide feedback.
+Interactive sessions provide in-depth, informal feedback on work-in-progress through poster format. Senior scholars attend specifically to provide feedback.
 
 ### Poster Specifications
 
@@ -174,35 +147,6 @@ Interactive sessions provide in-depth, informal feedback on work-in-progress thr
 - **Engage visitors proactively:** *"Would you like me to walk you through it?"*
 - **Be ready to discuss** limitations, alternative approaches, and next steps
 - **If few people visit:** Use the time to visit other posters, build connections, and observe effective designs
-
----
-
-## Maximizing Engagement
-
-<Features2
-  columns={3}
-  items={[
-    { title: 'Before Your Presentation', description: 'Arrive early to chat with attendees. Gauge familiarity with your topic. Identify potential discussants.', icon: 'lucide:clock' },
-    { title: 'During Your Presentation', description: 'Watch for reactions; adjust pacing. Connect to other session papers. Use inclusive language.', icon: 'lucide:presentation' },
-    { title: 'After Your Presentation', description: 'Stay available after session. Exchange contact info. Follow up within a week. Consider feedback for revision.', icon: 'lucide:mail' },
-  ]}
-/>
-
----
-
-## Accessibility Considerations
-
-Create presentations that work for all attendees:
-
-<Callout tone="muted">
-
-- Use **high-contrast color schemes** (avoid light text on light backgrounds)
-- **Describe all visual elements** verbally (charts, graphs, images)
-- Speak clearly at a **moderate pace**
-- Avoid discipline-specific jargon when possible; define necessary terms
-- Provide **handouts** for those who want to follow along
-
-</Callout>
 
 ---
 
@@ -248,14 +192,8 @@ Create presentations that work for all attendees:
 **Can I distribute handouts?**
 Yes. Bring 30-40 copies. A 1-page summary with your key contribution, methods, and contact information is most effective.
 
-**What if my co-author is presenting instead of me?**
-Either author can present. Coordinate in advance and ensure the presenter can answer methodology questions.
-
 **Are sessions recorded?**
 Check the current year's conference policies. If sessions are recorded, presenters will be notified in advance.
 
 **Can I include video or multimedia?**
 Yes, but embed all media files in your presentation and test thoroughly beforehand. Have a static backup slide in case of technical issues.
-
-**What's the dress code?**
-Smart casual for all events. Conference rooms can vary in temperature; bring layers.
