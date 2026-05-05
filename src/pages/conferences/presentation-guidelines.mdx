@@ -5,6 +5,7 @@ description: Guidelines for delivering effective competitive paper presentations
 ---
 
 import Features2 from '~/components/widgets/Features.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
 
 **Congratulations on having your work accepted.** These guidelines will help you deliver an effective presentation that engages the audience and maximizes your research contribution.
 
@@ -90,17 +91,28 @@ Interactive sessions provide in-depth, informal feedback on work-in-progress thr
 
 ## Frequently Asked Questions
 
-**What if my presentation won't load?**
-Download the backup you emailed yourself. PDF tends to be more reliable than PowerPoint when compatibility issues arise, and a printed 1-page handout is a useful fallback if all else fails.
-
-**What if I'm running out of time?**
-Skip ahead to your conclusion and summarize findings briefly; offer to discuss details during Q&A or afterward. Never speak faster—it reduces comprehension.
-
-**How should I handle aggressive or hostile questioning?**
-Listen fully, acknowledge the valid elements of the critique, and remember you do not need to defend every choice in real time. *"That is an excellent point I will consider as I revise"* is always appropriate. If a question turns hostile, the session chair should redirect it—make eye contact if you need support.
-
-**Can I distribute handouts?**
-Yes. Bring 30–40 copies. A 1-page summary with your key contribution, methods, and contact information is most effective.
-
-**Can I include video or multimedia?**
-Yes, but embed all media files in your presentation and test thoroughly beforehand. Have a static backup slide in case of technical issues.
+<FAQs
+  classes={{ container: '!py-0' }}
+  items={[
+    {
+      title: 'What if my presentation won\'t load?',
+      description: 'Download the backup you emailed yourself. PDF tends to be more reliable than PowerPoint when compatibility issues arise, and a printed 1-page handout is a useful fallback if all else fails.',
+    },
+    {
+      title: 'What if I\'m running out of time?',
+      description: 'Skip ahead to your conclusion and summarize findings briefly; offer to discuss details during Q&A or afterward. Never speak faster—it reduces comprehension.',
+    },
+    {
+      title: 'How should I handle aggressive or hostile questioning?',
+      description: 'Listen fully, acknowledge the valid elements of the critique, and remember you do not need to defend every choice in real time. "That is an excellent point I will consider as I revise" is always appropriate. If a question turns hostile, the session chair should redirect it—make eye contact if you need support.',
+    },
+    {
+      title: 'Can I distribute handouts?',
+      description: 'Yes. Bring 30–40 copies. A 1-page summary with your key contribution, methods, and contact information is most effective.',
+    },
+    {
+      title: 'Can I include video or multimedia?',
+      description: 'Yes, but embed all media files in your presentation and test thoroughly beforehand. Have a static backup slide in case of technical issues.',
+    },
+  ]}
+/>
