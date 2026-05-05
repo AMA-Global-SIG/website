@@ -4,6 +4,8 @@ title: "Awards Overview"
 description: "Overview of awards presented by the AMA Global Marketing SIG and the Journal of International Marketing recognizing excellence in global marketing scholarship."
 ---
 
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
 The global marketing community recognizes outstanding scholarship through two distinct sets of awards, each presented annually at major AMA conferences.
 
 ---
@@ -22,7 +24,13 @@ Honors distinguished scholars who have made sustained, **career-long contributio
 
 Recognizes outstanding published research that has made a **significant contribution to the advancement of global marketing knowledge**, demonstrating exceptional scholarly rigor and impact.
 
-[View past recipients →](/awards/excellence-research)
+<CallToAction
+  subtitle="Learn more about each award and browse the full list of scholars honored since the awards were established."
+  actions={[
+    { variant: 'tertiary', text: 'Significant Contributions', href: '/awards/significant-contributions' },
+    { variant: 'tertiary', text: 'Excellence in Research', href: '/awards/excellence-research' },
+  ]}
+/>
 
 ---
 
@@ -40,4 +48,10 @@ Recognizes the article that has made the most significant **long-term contributi
 
 Established in 1998, honors the article published each calendar year that has made the most significant contribution to **advancing the practice of international marketing management**.
 
-[View past recipients →](/awards/cavusgil-award)
+<CallToAction
+  subtitle="Learn more about each award and browse the articles recognized since inception."
+  actions={[
+    { variant: 'tertiary', text: 'Hans B. Thorelli Award', href: '/awards/thorelli-award' },
+    { variant: 'tertiary', text: 'S. Tamer Cavusgil Award', href: '/awards/cavusgil-award' },
+  ]}
+/>
