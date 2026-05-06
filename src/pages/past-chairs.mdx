@@ -147,12 +147,20 @@ Email: [kaufmann.r@unic.ac.cy](mailto:kaufmann.r@unic.ac.cy)
       variant: 'primary',
       text: 'Current Board of Directors',
       href: '/board-of-directors',
-      icon: 'lucide:users',
     },
     {
-      text: 'SIG History',
+      variant: 'tertiary',
+      text: 'SIG History →',
       href: '/history',
-      icon: 'lucide:history',
     },
   ]}
-/>
+>
+  <Fragment slot="subtitle">
+    <p class="mb-4 leading-relaxed">
+      The scholars featured here laid the groundwork for the SIG that exists today. Visit the <span class="font-semibold">current Board of Directors</span> page to meet the members carrying that legacy forward.
+    </p>
+    <p class="leading-relaxed">
+      For the broader story of how the SIG has evolved over three decades — its milestones, growth, and changing priorities — see our <span class="font-semibold">SIG history</span> page.
+    </p>
+  </Fragment>
+</CallToAction>
