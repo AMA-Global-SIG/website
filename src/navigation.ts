@@ -107,11 +107,12 @@ export const footerData = {
       ],
     },
     {
-      title: 'Conferences',
+      title: 'Events',
       links: [
-        { text: 'Osaka 2027', href: getPermalink('/conferences/osaka-2027') },
+        { text: 'Osaka 2027 Conference', href: getPermalink('/conferences/osaka-2027') },
+        { text: 'Osaka 2027 Consortium', href: getPermalink('/doctoral-consortium/osaka-2027') },
         { text: 'Conference History', href: getPermalink('/conferences/history') },
-        { text: 'Submission Guidelines', href: getPermalink('/conferences/submission-guidelines') },
+        { text: 'Consortia History', href: getPermalink('/doctoral-consortium/consortia-history') },
       ],
     },
     {
