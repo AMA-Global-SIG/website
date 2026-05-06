@@ -138,7 +138,6 @@ export const footerData = {
   ],
   socialLinks: [
     { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
   ],
   footNote: `
     © ${new Date().getFullYear()} AMA Global Marketing SIG. All rights reserved.
