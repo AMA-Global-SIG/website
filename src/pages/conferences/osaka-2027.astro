@@ -1,0 +1,646 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Content from '~/components/widgets/Content.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Brands from '~/components/widgets/Brands.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: '2027 Osaka Conference — AMA Global Marketing SIG',
+  description:
+    '2027 AMA Global Conference — May 20–23, 2027 — Future Plaza, Ritsumeikan University OIC Campus, Osaka, Japan',
+  ignoreTitleTemplate: true,
+};
+
+const tracks = [
+  'Cross-cultural Consumer Behavior',
+  'Export and Import Management',
+  'Firm Internationalization, Market Entry, and Market Exit',
+  'Global Brand Management',
+  'Global Consumer Research',
+  'Global Entrepreneurship',
+  'Global Ethics, Sustainability, and Corporate Social Responsibility',
+  'Global Innovation and New Product Development',
+  'Global Marketing Communications',
+  'Global Marketing Research, Big Data, and Analytics',
+  'Global Marketing Strategy',
+  'Global Relationship Marketing, Sales, and Channel Management',
+  'Global Retailing, Services, and E-Commerce',
+  'Global Supply Chain Research',
+  'Global Luxury Marketing',
+  'Global Marketing Education',
+  'Marketing in Emerging Markets',
+  'Special Session Proposals',
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <section class="relative md:-mt-[76px] not-prose overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+      <div class="absolute inset-0 bg-page"></div>
+      <div
+        class="absolute inset-0 opacity-60 dark:opacity-40"
+        style="background: radial-gradient(ellipse at 85% 15%, rgb(76 117 193 / 0.10) 0%, transparent 55%), radial-gradient(ellipse at 10% 90%, rgb(61 94 155 / 0.06) 0%, transparent 50%);"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[76px] pointer-events-none"></div>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center py-16 md:py-24 lg:py-28">
+        <div
+          class="lg:col-span-7 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+        >
+          <p
+            class="font-sans text-xs md:text-sm font-semibold tracking-[0.22em] uppercase text-primary dark:text-brand-250 mb-6"
+          >
+            May 20–23, 2027 · Osaka, Japan
+          </p>
+          <h1
+            class="font-heading font-semibold text-heading leading-[0.95] tracking-tight text-[clamp(2.75rem,7vw,5.5rem)] mb-6"
+          >
+            Osaka<br />
+            <span class="italic font-normal text-accent dark:text-brand-250">2027</span>
+          </h1>
+          <p class="font-sans text-lg md:text-xl text-muted max-w-xl leading-relaxed mb-8">
+            The first AMA Global Conference held in Japan. Join international marketing scholars at Future Plaza,
+            Ritsumeikan University's OIC Campus, for four days of competitive sessions, a doctoral consortium, and a
+            <em>Journal of International Marketing</em> special issue.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button
+              variant="primary"
+              text="Submit Your Paper"
+              href="/conferences/submission-guidelines"
+              class="sm:w-auto"
+            />
+            <Button variant="tertiary" text="Key Dates ↓" href="#key-dates" class="sm:w-auto" />
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-5 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+        >
+          <div
+            class="relative aspect-[4/5] w-full rounded-2xl border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 overflow-hidden"
+            role="img"
+            aria-label="Placeholder for Osaka 2027 hero image"
+          >
+            <div
+              class="absolute inset-0 opacity-40"
+              style="background-image: repeating-linear-gradient(135deg, transparent 0, transparent 14px, rgb(61 94 155 / 0.08) 14px, rgb(61 94 155 / 0.08) 15px);"
+            >
+            </div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
+              <span class="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-muted mb-2">
+                Placeholder
+              </span>
+              <span class="font-heading text-lg md:text-xl text-heading max-w-[22ch] leading-snug">
+                Osaka skyline or OIC Campus photo
+              </span>
+              <span class="font-sans text-xs md:text-sm text-muted mt-3 max-w-[28ch] leading-snug">
+                Drop a 4:5 portrait image (~1600×2000&nbsp;px) at /conferences/osaka-hero.jpg
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conference Overview -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+        Conference Overview
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">A Historic First in Japan</h2>
+      <p class="text-lg text-muted leading-relaxed mb-4">
+        We are delighted to announce that <strong>Osaka, Japan</strong> will host the 2027 AMA Global Marketing SIG Conference
+        — <strong>the first time this conference will be held in Japan</strong>. The conference will take place at <strong
+          >Future Plaza, Ritsumeikan University's Osaka Ibaraki Campus (OIC)</strong
+        > from <strong>May 20–23, 2027</strong>.
+      </p>
+      <p class="text-lg text-muted leading-relaxed">
+        Join us for a rigorous academic program — competitive sessions, a doctoral consortium, and a <em
+          >Journal of International Marketing</em
+        > special issue session — paired with the rich culture and hospitality of the Kansai region.
+      </p>
+    </div>
+  </section>
+
+  <Stats
+    stats={[
+      { title: 'Conference Dates', amount: 'May 20–23' },
+      { title: 'Conference Tracks', amount: '18' },
+      { title: 'Historic First', amount: 'Japan' },
+    ]}
+  />
+
+  <!-- Program -->
+  <section class="relative bg-brand-50 dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Program</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">18 Thematic Tracks</h2>
+        <p class="text-lg text-muted leading-relaxed">
+          The 2027 conference combines competitive paper sessions and interactive presentations across 18 thematic
+          tracks. The track list below is tentative; the final tracks and track chairs will be announced in Fall 2026.
+          Each submission must be submitted to only one track.
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto overflow-hidden rounded-xl border border-brand-200 dark:border-brand-500 bg-page">
+        <table class="w-full text-left">
+          <thead class="bg-brand-100 dark:bg-brand-650 text-heading">
+            <tr>
+              <th class="px-4 py-3 text-sm font-semibold w-12">#</th>
+              <th class="px-4 py-3 text-sm font-semibold">Track</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              tracks.map((track, i) => (
+                <tr class="border-t border-brand-100 dark:border-brand-700">
+                  <td class="px-4 py-3 text-sm text-muted font-mono">{i + 1}</td>
+                  <td class="px-4 py-3 text-sm">{track}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Doctoral Consortium -->
+  <Features2
+    tagline="Doctoral Consortium"
+    title="Held the Day Before the Main Conference"
+    subtitle="The Doctoral Consortium offers PhD students focusing on international and cross-cultural marketing the chance to present their work, learn from senior scholars, and build a professional network. Application requirements and deadlines will be announced when the call for papers opens."
+    columns={3}
+    items={[
+      {
+        title: 'Research Feedback',
+        description:
+          'Receive constructive feedback on your ongoing research projects from senior international marketing scholars.',
+        icon: 'lucide:message-square',
+      },
+      {
+        title: 'Panel Discussions',
+        description:
+          'Senior faculty share insights on research trends, publishing strategies, and career development.',
+        icon: 'lucide:users',
+      },
+      {
+        title: 'Networking',
+        description:
+          'Connect with fellow doctoral students as well as top scholars in the field from around the world.',
+        icon: 'lucide:globe',
+      },
+    ]}
+  />
+
+  <!-- JIM Special Issue -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+        Journal of International Marketing
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">JIM Special Issue Session</h2>
+      <p class="text-lg text-muted leading-relaxed">
+        A dedicated special session for the <em>Journal of International Marketing</em> (JIM) special issue will take place
+        during the conference. Authors of presented papers are welcome to submit their work for possible publication. The
+        special-issue theme and guest editors will be announced in advance of the conference.
+      </p>
+    </div>
+  </section>
+
+  <!-- Submission & Review -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+        Submission & Review
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">How to Submit</h2>
+      <p class="text-lg text-muted leading-relaxed mb-8">
+        Papers and extended abstracts will be submitted electronically through the <strong>EasyChair</strong> conference
+        system, expected to open in Fall 2026. Each manuscript may be submitted to <strong>only one track</strong> and is
+        reviewed through <strong>blind peer review</strong> by program committee members; acceptance decisions are communicated
+        several months before the conference. Submissions may take the form of full papers (max 40 double-spaced pages),
+        extended abstracts for advanced work-in-progress (max 10 pages), or special-session proposals.
+      </p>
+      <Button variant="secondary" text="View Full Submission Guidelines →" href="/conferences/submission-guidelines" />
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Registration</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Opens Early 2027</h2>
+      <p class="text-lg text-muted leading-relaxed mb-4">
+        Registration will open in <strong>early 2027</strong>. Anticipated rate categories include <strong
+          >Early Bird</strong
+        >, <strong>Regular</strong>, <strong>Student</strong>, and <strong>Accompanying Person</strong> tiers, with discounted
+        rates for students and PhD candidates. Final rates will be announced in late 2026.
+      </p>
+      <p class="text-lg text-muted leading-relaxed">
+        The registration fee includes access to all conference sessions, conference materials, coffee breaks and
+        lunches, the welcome reception, and the conference gala dinner. Accommodation is not included.
+      </p>
+    </div>
+  </section>
+
+  <!-- Key Dates -->
+  <section id="key-dates" class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto text-center mb-8">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Key Dates</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading">Timeline</h2>
+    </div>
+    <Steps
+      classes={{ container: '!py-0' }}
+      items={[
+        { title: 'Submission Deadline', description: 'Early December 2026', icon: 'lucide:send' },
+        { title: 'Acceptance Notifications', description: 'Late January 2027', icon: 'lucide:mail' },
+        { title: 'Author Registration Opens', description: 'Early February 2027', icon: 'lucide:credit-card' },
+        { title: 'Main Conference', description: 'May 20–23, 2027', icon: 'lucide:calendar' },
+      ]}
+    />
+    <p class="max-w-3xl mx-auto text-center text-sm text-muted italic mt-6">
+      Tentative dates will be confirmed as the conference approaches.
+    </p>
+  </section>
+
+  <!-- Conference Organizers -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 md:pt-20 pb-16 md:pb-20">
+      <div class="max-w-3xl mx-auto text-center mb-8">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Conference Organizers
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-4">Meet the Team</h2>
+        <p class="text-lg text-muted leading-relaxed">Program chairs will be announced in late 2026.</p>
+      </div>
+    </div>
+    <Features2
+      title="Doctoral Consortium Organizers"
+      columns={3}
+      classes={{ container: '!py-0 !pb-12' }}
+      items={[
+        {
+          title: 'Fabian Bartsch',
+          description: 'MBS School of Business\nf.bartsch@mbs-education.com',
+          image: { src: '/people/fbartsch_215x215.jpg', alt: 'Fabian Bartsch' },
+        },
+        {
+          title: 'Annie Peng Cui',
+          description: 'West Virginia University\nannie.cui@mail.wvu.edu',
+          image: { src: '/people/acui_215x215.jpg', alt: 'Annie Peng Cui' },
+        },
+        {
+          title: 'Katharina Zeugner-Roth',
+          description: 'SKEMA Business School\nkatharina.zeugner@skema.edu',
+          image: { src: '/people/kzeugnerroth_215x215.jpg', alt: 'Katharina Zeugner-Roth' },
+        },
+      ]}
+    />
+    <Features2
+      title="Local Host Organizers"
+      columns={2}
+      classes={{ container: '!pt-0 pb-16 md:pb-20' }}
+      items={[
+        {
+          title: 'Ryuta Ishii, Ph.D.',
+          description:
+            'Associate Professor, College of Business Administration, Ritsumeikan University\n\nr-ishii@fc.ritsumei.ac.jp',
+          image: { src: '/people/rishii_430x430.jpg', alt: 'Ryuta Ishii' },
+        },
+        {
+          title: 'Mai Kikumori, Ph.D.',
+          description:
+            'Associate Professor, College of Business Administration, Ritsumeikan University\n\nkikumori@fc.ritsumei.ac.jp',
+          image: { src: '/people/mkikumori_430x430.jpg', alt: 'Mai Kikumori' },
+        },
+      ]}
+    />
+  </section>
+
+  <!-- Welcome from the Hosts -->
+  <Testimonials
+    tagline="Welcome"
+    title="From the Host Organizers"
+    columns={1}
+    isDark={true}
+    testimonials={[
+      {
+        testimonial:
+          "We are honored to host the first AMA Global Conference in Japan. Osaka and Ritsumeikan University offer an exceptional setting for scholarly exchange, blending Japan's rich traditions with modern innovation. We look forward to welcoming participants from around the world to Future Plaza in May 2027.",
+        name: 'Ryuta Ishii & Mai Kikumori',
+        job: 'Local Host Organizers, Ritsumeikan University',
+      },
+    ]}
+  />
+
+  <!-- Host Institution -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto text-center mb-12">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+        Host Institution
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-4">Ritsumeikan University</h2>
+      <p class="text-base italic text-muted mb-6">Freedom and innovation, the spirit of Ritsumeikan.</p>
+      <p class="text-lg text-muted leading-relaxed mb-4">
+        Ritsumeikan University traces its roots to a private academy — <strong>"Ritsumeikan" (立命館)</strong> — established
+        by Prince Saionji Kinmochi in 1869 within his residence in the Kyoto Imperial Garden, and formally founded as a higher
+        education institution by Kojuro Nakagawa in 1900.
+      </p>
+      <p class="text-lg text-muted leading-relaxed">
+        Today Ritsumeikan is <strong>the largest university in western Japan</strong>, with main campuses in Kyoto,
+        Osaka, and Shiga. It serves more than <strong>36,000 students</strong> and <strong>3,500 faculty members</strong>,
+        and was ranked <strong>4th among private universities in Japan</strong> in the 2023 QS World University Rankings.
+      </p>
+    </div>
+  </section>
+
+  <Stats
+    stats={[
+      { title: 'Founded', amount: '1869' },
+      { title: 'Students', amount: '36,000+' },
+      { title: 'Faculty', amount: '3,500+' },
+      { title: 'QS Ranking (Private)', amount: '#4' },
+    ]}
+  />
+
+  <!-- Conference Venue -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+        Conference Venue
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Future Plaza, OIC Campus</h2>
+      <p class="text-lg text-muted leading-relaxed">
+        The conference will be held at <strong>Future Plaza</strong> on the <strong>Osaka Ibaraki Campus (OIC)</strong>
+        of Ritsumeikan University — a symbol of the university's commitment to regional and social collaboration, established
+        through public-private cooperation with Ibaraki City. The OIC Campus is developed as a <em
+          >"campus open to the community":</em
+        > the former beer factory site was integrated into a disaster-prevention park surrounded by university facilities in
+        an L-shaped layout, bringing higher education and civic life together on the same site.
+      </p>
+    </div>
+  </section>
+
+  <!-- About Osaka -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">About Osaka</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">The Nation's Kitchen</h2>
+      <p class="text-lg text-muted leading-relaxed mb-4">
+        Osaka is <strong>the largest city in Western Japan</strong> — home to roughly <strong>2.75 million residents</strong>
+        (World Population Review, 2023) — and Japan's third-largest city overall. Known affectionately as <strong
+          >"the nation's kitchen"</strong
+        > (<em>tenka no daidokoro</em>) for its exceptional culinary scene, Osaka is a dynamic blend of modern innovation
+        and traditional culture, with world-class dining, historic temples and castles, and a welcoming, entrepreneurial spirit.
+        As a major commercial center serving as headquarters for leading multinationals and innovative startups, the city
+        provides an ideal backdrop for exploring contemporary issues in international marketing — particularly in the <strong
+          >Asia-Pacific context</strong
+        >.
+      </p>
+      <p class="text-lg text-muted leading-relaxed">
+        In <em>The Economist Intelligence Unit's</em>
+        <strong>Safe Cities Index 2021</strong>, Osaka ranked as the <strong>17th safest city in the world</strong>, with a
+        <strong>top-five score in health security</strong>. The city has also placed in the top ten of the EIU's
+        <strong>Global Liveability Index</strong> every year since 2018.
+      </p>
+    </div>
+  </section>
+
+  <Stats
+    stats={[
+      { title: 'Population', amount: '~2.75M' },
+      { title: 'Safe Cities Index 2021', amount: '#17' },
+      { title: 'Liveability (top 10 since)', amount: '2018' },
+      { title: 'Health Security', amount: 'Top 5' },
+    ]}
+  />
+
+  <!-- Travel & Stay -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Travel & Stay
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Getting There</h2>
+        <p class="text-lg text-muted leading-relaxed mb-4">
+          Osaka is exceptionally well-connected. <strong>Kansai International Airport (KIX)</strong> handles more than <strong
+            >1,200 international flights weekly</strong
+          > from over <strong>60 cities</strong> in around 20 countries on 80+ airlines, reaching central Osaka in roughly
+          50–60 minutes. From Tokyo, the <strong>Shinkansen</strong> reaches Osaka in 2.5 hours; from Kyoto, just 15 minutes.
+          The OIC Campus sits within walking distance of multiple stations served by <strong>JR</strong>, <strong
+            >Hankyu Railway</strong
+          >, and the <strong>Osaka Monorail</strong>.
+        </p>
+        <p class="text-lg text-muted leading-relaxed">
+          <strong>Visa requirements</strong> vary by nationality. Allow 6–8 weeks for processing if needed; the conference
+          can provide visa support letters on request.
+        </p>
+      </div>
+
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tighter font-heading text-center mb-2">Accommodation</h3>
+      <p class="text-base text-muted text-center max-w-2xl mx-auto mb-10">
+        Three recommended options for conference participants — from on-campus convenience to nearby business hotels.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 flex flex-col"
+        >
+          <h4 class="font-heading text-xl font-semibold mb-2">OIC Seminar House</h4>
+          <p class="text-sm font-semibold text-primary dark:text-brand-200 mb-4">
+            0 min from Future Plaza — on campus
+          </p>
+          <ul class="text-sm text-muted space-y-1 mb-4">
+            <li><strong>Students:</strong> USD 12/night (20 rooms, ~100 pax)</li>
+            <li><strong>Faculty:</strong> USD 27/night (25 rooms)</li>
+          </ul>
+          <p class="text-sm text-muted leading-relaxed">
+            The most convenient option, especially for younger participants — just a one-minute walk from the main
+            venue.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 flex flex-col"
+        >
+          <h4 class="font-heading text-xl font-semibold mb-2">Candeo Hotels Kishibe</h4>
+          <p class="text-sm font-semibold text-primary dark:text-brand-200 mb-4">
+            USD 90/night · 111 rooms · 18 min from OIC
+          </p>
+          <p class="text-sm text-muted leading-relaxed">
+            Candeo Hotels has been repeatedly ranked <strong>Japan's #1 in customer satisfaction</strong> by <em
+              >Nikkei Business</em
+            > magazine, balancing the luxury of five-star hotels with the convenience of three-star hotels. Known for its
+            <strong>rooftop open-air spa</strong>, allowing guests to experience Japan's bathing culture as if in a luxury
+            hot-spring ryokan.
+          </p>
+        </div>
+
+        <div
+          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 flex flex-col"
+        >
+          <h4 class="font-heading text-xl font-semibold mb-2">Remm Shin-Osaka</h4>
+          <p class="text-sm font-semibold text-primary dark:text-brand-200 mb-4">
+            USD 80/night · 296 rooms · 24 min from OIC
+          </p>
+          <p class="text-sm text-muted leading-relaxed">
+            Produced by Hankyu Hanshin Daiichi Hotel Group, Remm Hotels are designed around the concept of a <em
+              >"good night's sleep."</em
+            > Every room includes a <strong>massage chair</strong>, a <strong>high-quality mattress</strong>, a
+            <strong>choice of pillows</strong>, and a <strong>gentle rain-shower booth</strong>.
+          </p>
+        </div>
+      </div>
+
+      <p class="text-sm text-muted italic text-center mt-8">
+        Booking instructions and any negotiated conference rates will be shared closer to the conference dates.
+      </p>
+    </div>
+  </section>
+
+  <!-- Optional Excursions -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-7xl mx-auto">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Optional Excursions
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Beyond the Conference</h2>
+        <p class="text-lg text-muted leading-relaxed">
+          Osaka is the travel hub of the Kansai region. Major destinations such as <strong>Kyoto</strong> and <strong
+            >Kobe</strong
+          > are just a short train ride away, so participants can use the conference as a base for exploring this fascinating
+          part of Japan — rich in culture, history, nature, and city life.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
+          <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Osaka</p>
+          <h4 class="font-heading text-xl font-semibold mb-3">CUPNOODLES Museum</h4>
+          <p class="text-sm text-muted leading-relaxed">
+            The instant noodles you see in supermarkets worldwide were invented here. <strong>Dr. Momofuku Ando</strong>,
+            founder of Nissin Foods and a <strong>Ritsumeikan University alumnus</strong>, created <strong
+              >Chicken Ramen</strong
+            > — the world's first instant noodles — in 1958 to help post-war Japan recover from food shortages. The CUPNOODLES
+            Museum tells the full story and lets visitors design their own custom cup.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
+          <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Kyoto</p>
+          <h4 class="font-heading text-xl font-semibold mb-3">Japanese Potted Gardening</h4>
+          <p class="text-sm text-muted leading-relaxed">
+            A hands-on cultural experience guided by gardeners who maintain some of Kyoto's most famous gardens. Tour
+            garden masterpieces, learn about the spirit and history of Japanese gardens, then collaborate in small
+            groups to design and craft a <strong>potted garden of your own</strong> — a memorable team-building
+            experience that opens a window into the depth of Japanese culture.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
+          <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Kobe</p>
+          <h4 class="font-heading text-xl font-semibold mb-3">Takenaka Carpentry Tools Museum</h4>
+          <p class="text-sm text-muted leading-relaxed">
+            Two stars in the <em>Michelin Green Guide Japan</em> and ranked <strong
+              >#1 on TripAdvisor for Kobe (2019)</strong
+            >, this is the only museum of its kind in Japan. Explore around <strong
+              >1,000 carefully selected tools and creations</strong
+            > drawn from a collection of more than <strong>35,000 pieces</strong>, with a focus on the traditional <strong
+              >Miya</strong
+            > and <strong>Sukiya</strong> carpentry behind Japan's shrines, temples, and castles.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <FAQs
+    tagline="Frequently Asked Questions"
+    title="Good to Know"
+    classes={{ container: 'bg-brand-50 dark:bg-transparent' }}
+    items={[
+      {
+        title: 'Do I need a visa to attend the conference in Japan?',
+        description:
+          'Visa requirements depend on your nationality. Many countries have visa exemption agreements with Japan for short stays — check with the Japanese embassy or consulate in your country. We can provide visa support letters upon request.',
+      },
+      {
+        title: 'Is English widely spoken in Japan?',
+        description:
+          'Conference sessions are conducted in English, and English signage is common at major transportation hubs, hotels, and tourist areas. Translation apps and pocket Wi-Fi are helpful for everyday interactions.',
+      },
+      {
+        title: 'Are there accommodation options on campus?',
+        description:
+          'Yes — the OIC Seminar House is located on the OIC Campus itself, just one minute from Future Plaza, with especially affordable rates for students (USD 12/night) and faculty (USD 27/night). See the Travel & Stay section above for nearby business hotels.',
+      },
+      {
+        title: 'What currency is used, and are credit cards accepted?',
+        description:
+          "Japan's currency is the Japanese Yen (JPY). Major credit cards are widely accepted in hotels, larger restaurants, and stores, though some smaller establishments remain cash-only — it is worth carrying a modest amount of cash.",
+      },
+      {
+        title: 'What is the weather like in Osaka in late May?',
+        description:
+          'Late May is typically mild and humid, with daytime temperatures between 18–26°C (64–79°F). Light layers and a compact umbrella are recommended.',
+      },
+      {
+        title: 'Any etiquette tips for first-time visitors?',
+        description:
+          'Business cards (meishi) are important — bring plenty for academic and social exchanges. Punctuality is highly valued. Wi-Fi is widely available, but a portable Wi-Fi router or local SIM card makes everyday navigation much easier.',
+      },
+    ]}
+  />
+
+  <!-- Partners & Sponsors -->
+  <Brands
+    title="Conference Partners"
+    subtitle="We thank our partners for supporting the 2027 conference"
+    icons={['tabler:school', 'tabler:building-community', 'tabler:book']}
+  />
+
+  <!-- Final CTA -->
+  <CallToAction
+    title="Join us in Osaka"
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Submit Your Paper',
+        href: '/conferences/submission-guidelines',
+      },
+      {
+        variant: 'tertiary',
+        text: 'Contact the Hosts →',
+        href: 'mailto:r-ishii@fc.ritsumei.ac.jp',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      <p class="leading-relaxed">
+        Submission deadline: <span class="font-semibold">Early December 2026</span>. Mark your calendar for <span
+          class="font-semibold">May 20–23, 2027</span
+        > and join the global marketing community at Ritsumeikan University.
+      </p>
+    </Fragment>
+  </CallToAction>
+</Layout>
