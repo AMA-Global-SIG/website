@@ -90,26 +90,18 @@ const tracks = [
           class="lg:col-span-5 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
         >
           <div
-            class="relative aspect-[4/5] w-full rounded-2xl border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 overflow-hidden"
-            role="img"
-            aria-label="Placeholder for Osaka 2027 hero image"
+            class="relative aspect-[4/5] w-full rounded-2xl overflow-hidden shadow-lg border border-brand-200 dark:border-brand-500"
           >
-            <div
-              class="absolute inset-0 opacity-40"
-              style="background-image: repeating-linear-gradient(135deg, transparent 0, transparent 14px, rgb(61 94 155 / 0.08) 14px, rgb(61 94 155 / 0.08) 15px);"
-            >
-            </div>
-            <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-              <span class="font-mono text-[10px] md:text-xs tracking-[0.2em] uppercase text-muted mb-2">
-                Placeholder
-              </span>
-              <span class="font-heading text-lg md:text-xl text-heading max-w-[22ch] leading-snug">
-                Osaka skyline or OIC Campus photo
-              </span>
-              <span class="font-sans text-xs md:text-sm text-muted mt-3 max-w-[28ch] leading-snug">
-                Drop a 4:5 portrait image (~1600×2000&nbsp;px) at /conferences/osaka-hero.jpg
-              </span>
-            </div>
+            <img
+              id="osaka-hero-image"
+              src="/places/osaka_hero1_1600x2000.jpg"
+              alt="Osaka, Japan — host of the 2027 AMA Global Conference"
+              width="1600"
+              height="2000"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
           </div>
         </div>
       </div>
@@ -643,4 +635,19 @@ const tracks = [
       </p>
     </Fragment>
   </CallToAction>
+
+  <script is:inline>
+    (function () {
+      const heroes = [
+        '/places/osaka_hero1_1600x2000.jpg',
+        '/places/osaka_hero2_1600x2000.jpg',
+        '/places/osaka_hero3_1600x2000.jpg',
+      ];
+      const img = document.getElementById('osaka-hero-image');
+      if (img) {
+        const pick = heroes[Math.floor(Math.random() * heroes.length)];
+        if (img.getAttribute('src') !== pick) img.setAttribute('src', pick);
+      }
+    })();
+  </script>
 </Layout>
