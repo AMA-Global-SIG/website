@@ -6,6 +6,7 @@ description: "2027 AMA Global Conference — May 20–23, 2027 — Future Plaza,
 
 import Features2 from '~/components/widgets/Features2.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
@@ -203,13 +204,35 @@ The registration fee includes access to all conference sessions, conference mate
 
 ## Key Dates
 
-| Milestone | Date |
-| :--- | :--- |
-| Call for Papers Opens | Fall 2026 |
-| Submission Deadline | TBD (typically 6–7 months before conference) |
-| Acceptance Notification | TBD |
-| Registration Opens | Early 2027 |
-| **Conference Dates** | **May 20–23, 2027** |
+<Steps
+  items={[
+    {
+      title: 'Call for Papers Opens',
+      description: 'Fall 2026',
+      icon: 'lucide:file-text',
+    },
+    {
+      title: 'Submission Deadline',
+      description: 'TBD — typically 6–7 months before the conference.',
+      icon: 'lucide:send',
+    },
+    {
+      title: 'Acceptance Notification',
+      description: 'TBD — communicated several months before the conference.',
+      icon: 'lucide:mail',
+    },
+    {
+      title: 'Registration Opens',
+      description: 'Early 2027',
+      icon: 'lucide:credit-card',
+    },
+    {
+      title: 'Conference Dates',
+      description: 'May 20–23, 2027 — Future Plaza, Ritsumeikan University OIC Campus, Osaka, Japan.',
+      icon: 'lucide:calendar',
+    },
+  ]}
+/>
 
 *Tentative dates will be confirmed as the conference approaches.*
 
