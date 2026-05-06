@@ -118,7 +118,6 @@ export const footerData = {
     {
       title: 'Awards',
       links: [
-        { text: 'Awards Overview', href: getPermalink('/awards/overview') },
         { text: 'Significant Contributions Award', href: getPermalink('/awards/significant-contributions') },
         { text: 'Excellence in Research Award', href: getPermalink('/awards/excellence-research') },
         { text: 'Hans B. Thorelli Award', href: getPermalink('/awards/thorelli-award') },
