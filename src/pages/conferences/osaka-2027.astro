@@ -202,9 +202,12 @@ const tracks = [
   />
 
   <!-- JIM Special Issue -->
-  <section class="bg-brand-50 dark:bg-transparent">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
-      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+  <section class="relative not-prose">
+    <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+      <div class="absolute inset-0 bg-dark dark:bg-brand-50"></div>
+    </div>
+    <div class="section-accent relative max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
+      <p class="text-base text-accent font-semibold tracking-wide uppercase mb-2">
         Journal of International Marketing
       </p>
       <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">JIM Special Issue Session</h2>
@@ -333,7 +336,6 @@ const tracks = [
     tagline="Welcome"
     title="From the Host Organizers"
     columns={1}
-    isDark={true}
     testimonials={[
       {
         testimonial:
@@ -345,11 +347,12 @@ const tracks = [
   />
 
   <!-- Host Institution -->
-  <section class="px-4 sm:px-6 py-16 md:py-20">
-    <div class="max-w-4xl mx-auto text-center mb-12">
-      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
-        Host Institution
-      </p>
+  <section class="relative not-prose">
+    <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+      <div class="absolute inset-0 bg-dark dark:bg-brand-50"></div>
+    </div>
+    <div class="section-accent relative max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20 text-center">
+      <p class="text-base text-accent font-semibold tracking-wide uppercase mb-2">Host Institution</p>
       <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-4">Ritsumeikan University</h2>
       <p class="text-base italic text-muted mb-6">Freedom and innovation, the spirit of Ritsumeikan.</p>
       <p class="text-lg text-muted leading-relaxed mb-4">
