@@ -31,7 +31,7 @@ const gridCols =
   <div class={twMerge(`grid gap-4 md:gap-6 ${gridCols}`)}>
     {
       items.map(({ title: itemTitle, description, image, callToAction }, i) => (
-        <div class="relative flex flex-col rounded-xl shadow-sm border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 p-6 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-400 transition-all duration-200 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+        <div class={twMerge('relative flex flex-col rounded-xl shadow-sm border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 p-6 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-400 transition-all duration-200 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade', classes?.panel as string)}>
           {image ? (
             <img
               src={image.src}
