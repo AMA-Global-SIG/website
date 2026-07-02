@@ -38,6 +38,51 @@ const tracks = [
   'Marketing in Emerging Markets',
   'Special Session Proposals',
 ];
+
+const stars = (n: number) => '★'.repeat(n) + '☆'.repeat(5 - n);
+
+const areas = [
+  {
+    name: 'Shin-Osaka',
+    oic: 5,
+    things: 1,
+    dest: 5,
+    description:
+      'If your priority is convenience, Shin-Osaka is the best choice. It is only about 10–15 minutes from JR Ibaraki Station via the JR Kyoto Line, making the commute to OIC simple and straightforward. Shin-Osaka is also the only Shinkansen (bullet train) station in Osaka, providing excellent access to destinations throughout Japan, including Kyoto, Kobe, Tokyo, and Hiroshima — also Kansai International Airport. On the other hand, Shin-Osaka itself is primarily a transportation hub with relatively few tourist attractions. (The word "Shin" means "new" in Japanese.)',
+  },
+  {
+    name: 'Umeda (JR Osaka)',
+    oic: 4,
+    things: 3,
+    dest: 5,
+    description:
+      "Umeda (JR Osaka Station) offers the best overall balance between convenience and enjoyment, making it our top recommendation for most conference participants. It takes only about 15–20 minutes to reach JR Ibaraki Station via the JR Kyoto Line. Umeda is Osaka's largest transportation hub and one of Japan's premier shopping and entertainment districts, with countless restaurants, department stores, and hotels. It is also an excellent base for exploring the Kansai region, with convenient rail connections to Kyoto, Kobe, Nara, Kansai International Airport, and many other destinations.",
+  },
+  {
+    name: 'Honmachi',
+    oic: 2,
+    things: 5,
+    dest: 3,
+    description:
+      "Located in the heart of Osaka, Honmachi is an excellent choice if you want to experience the city's vibrant urban atmosphere. It is within walking distance of Shinsaibashi and close to Dotonbori, where you will find countless restaurants, cafés, bars, and shopping streets. Honmachi also offers convenient access to Umeda and other parts of Osaka, making it easy to explore the city. However, reaching OIC requires taking both the Osaka Metro Midosuji Line and the JR Kyoto Line, making the commute less convenient than staying in Umeda or Shin-Osaka.",
+  },
+  {
+    name: 'Namba',
+    oic: 1,
+    things: 5,
+    dest: 4,
+    description:
+      "Namba is Osaka's most famous entertainment district and offers one of the city's liveliest atmospheres. It is home to iconic attractions such as Dotonbori, Kuromon Market, and numerous shopping arcades, making it an ideal base for visitors who want to experience Osaka's nightlife, food culture, and entertainment. Compared with Honmachi, Namba is farther from OIC, resulting in a longer commute. On the other hand, Namba provides excellent access to Kansai International Airport, with direct services on the Nankai Railway, making it especially convenient for international travelers.",
+  },
+  {
+    name: 'Kyoto',
+    oic: 3,
+    things: 5,
+    dest: 4,
+    description:
+      "Although OIC is located in Osaka Prefecture, it sits roughly midway between Osaka and Kyoto, making Kyoto a practical accommodation option as well. From JR Kyoto Station, JR Ibaraki Station can be reached in approximately 30 minutes via the JR Kyoto Line, with no transfers required. If you choose to stay in Kyoto, we recommend selecting a hotel near JR Kyoto Station for the most convenient access to OIC. Kyoto is Japan's cultural capital and home to an unparalleled collection of historic temples and gardens. It is an exceptional destination for sightseeing before or after the conference. Kyoto is also served by the Shinkansen, providing convenient access to other major cities. However, access to Kansai International Airport is less convenient than from Osaka, typically taking around 75–90 minutes by train. Likewise, for travel within the Kansai region, Shin-Osaka and Umeda generally offer more convenient transportation connections.",
+  },
+];
 ---
 
 <Layout metadata={metadata}>
@@ -455,64 +500,42 @@ const tracks = [
         </p>
       </div>
 
-      <h3 class="text-2xl md:text-3xl font-bold tracking-tighter font-heading text-center mb-2">Accommodation</h3>
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tighter font-heading text-center mb-2">
+        Recommended Areas to Stay
+      </h3>
       <p class="text-base text-muted text-center max-w-2xl mx-auto mb-10">
-        Three recommended options for conference participants — from on-campus convenience to nearby business hotels.
+        Osaka offers a wide range of accommodation options, from luxury hotels to budget-friendly stays. While several
+        hotels are located near the Ritsumeikan Osaka Ibaraki Campus (OIC), we recommend the following five areas based
+        on their convenience for accessing OIC, sightseeing opportunities, neighborhood atmosphere, and connectivity to
+        other destinations in the Kansai region.
       </p>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div
-          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 flex flex-col"
-        >
-          <h4 class="font-heading text-xl font-semibold mb-2">OIC Seminar House</h4>
-          <p class="text-sm font-semibold text-primary dark:text-brand-200 mb-4">
-            0 min from the conference venue — on campus
-          </p>
-          <ul class="text-sm text-muted space-y-1 mb-4">
-            <li><strong>Students:</strong> USD 12/night (20 rooms, ~100 pax)</li>
-            <li><strong>Faculty:</strong> USD 27/night (25 rooms)</li>
-          </ul>
-          <p class="text-sm text-muted leading-relaxed">
-            The most convenient option, especially for younger participants — just a one-minute walk from the main
-            venue.
-          </p>
-        </div>
-
-        <div
-          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 flex flex-col"
-        >
-          <h4 class="font-heading text-xl font-semibold mb-2">Candeo Hotels Kishibe</h4>
-          <p class="text-sm font-semibold text-primary dark:text-brand-200 mb-4">
-            USD 90/night · 111 rooms · 18 min from OIC
-          </p>
-          <p class="text-sm text-muted leading-relaxed">
-            Candeo Hotels has been repeatedly ranked <strong>Japan's #1 in customer satisfaction</strong> by <em
-              >Nikkei Business</em
-            > magazine, balancing the luxury of five-star hotels with the convenience of three-star hotels. Known for its
-            <strong>rooftop open-air spa</strong>, allowing guests to experience Japan's bathing culture as if in a luxury
-            hot-spring ryokan.
-          </p>
-        </div>
-
-        <div
-          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 flex flex-col"
-        >
-          <h4 class="font-heading text-xl font-semibold mb-2">Remm Shin-Osaka</h4>
-          <p class="text-sm font-semibold text-primary dark:text-brand-200 mb-4">
-            USD 80/night · 296 rooms · 24 min from OIC
-          </p>
-          <p class="text-sm text-muted leading-relaxed">
-            Produced by Hankyu Hanshin Daiichi Hotel Group, Remm Hotels are designed around the concept of a <em
-              >"good night's sleep."</em
-            > Every room includes a <strong>massage chair</strong>, a <strong>high-quality mattress</strong>, a
-            <strong>choice of pillows</strong>, and a <strong>gentle rain-shower booth</strong>.
-          </p>
-        </div>
+      <div class="space-y-6">
+        {
+          areas.map((area) => (
+            <div class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6 grid md:grid-cols-3 gap-6">
+              <div class="md:col-span-1">
+                <h4 class="font-heading text-xl font-semibold mb-4">{area.name}</h4>
+                <dl class="text-sm space-y-1.5">
+                  <div class="flex items-center justify-between gap-2">
+                    <dt class="text-muted">Access to OIC</dt>
+                    <dd class="text-accent tracking-wide">{stars(area.oic)}</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-2">
+                    <dt class="text-muted">Things to Do</dt>
+                    <dd class="text-accent tracking-wide">{stars(area.things)}</dd>
+                  </div>
+                  <div class="flex items-center justify-between gap-2">
+                    <dt class="text-muted">Access to Other Destinations</dt>
+                    <dd class="text-accent tracking-wide">{stars(area.dest)}</dd>
+                  </div>
+                </dl>
+              </div>
+              <p class="md:col-span-2 text-sm text-muted leading-relaxed">{area.description}</p>
+            </div>
+          ))
+        }
       </div>
-
-      <p class="text-sm text-muted italic text-center mt-8">
-        Booking instructions and any negotiated conference rates will be shared closer to the conference dates.
-      </p>
     </div>
   </section>
 
@@ -525,48 +548,69 @@ const tracks = [
         </p>
         <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Beyond the Conference</h2>
         <p class="text-lg text-muted leading-relaxed">
-          Osaka is the travel hub of the Kansai region. Major destinations such as <strong>Kyoto</strong> and <strong
+          Osaka is the travel hub of the Kansai region. Major destinations such as <strong>Kyoto</strong>, <strong
             >Kobe</strong
-          > are just a short train ride away, so participants can use the conference as a base for exploring this fascinating
+          >, and <strong>Nara</strong> are just a short train ride away, so participants can use the conference as a base for exploring this fascinating
           part of Japan — rich in culture, history, nature, and city life.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
-          <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Osaka</p>
-          <h4 class="font-heading text-xl font-semibold mb-3">CUPNOODLES Museum</h4>
-          <p class="text-sm text-muted leading-relaxed">
-            The instant noodles you see in supermarkets worldwide were invented here. <strong>Dr. Momofuku Ando</strong>,
-            founder of Nissin Foods and a <strong>Ritsumeikan University alumnus</strong>, created <strong
-              >Chicken Ramen</strong
-            > — the world's first instant noodles — in 1958 to help post-war Japan recover from food shortages. The CUPNOODLES
-            Museum tells the full story and lets visitors design their own custom cup.
-          </p>
-        </div>
-
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
           <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Kyoto</p>
-          <h4 class="font-heading text-xl font-semibold mb-3">Japanese Potted Gardening</h4>
+          <h4 class="font-heading text-xl font-semibold mb-3">Kyoto World Heritage Tour</h4>
           <p class="text-sm text-muted leading-relaxed">
-            A hands-on cultural experience guided by gardeners who maintain some of Kyoto's most famous gardens. Tour
-            garden masterpieces, learn about the spirit and history of Japanese gardens, then collaborate in small
-            groups to design and craft a <strong>potted garden of your own</strong> — a memorable team-building
-            experience that opens a window into the depth of Japanese culture.
+            For more than 1,000 years (794–1868), Kyoto was Japan's imperial capital. As the cultural heart of Japan for
+            over a millennium, the city is home to <strong>17 UNESCO World Heritage Sites</strong>, including <strong
+              >Kinkaku-ji</strong
+            > (the Golden Pavilion), <strong>Kiyomizu-dera Temple</strong>, and <strong>Nijo Castle</strong>. This bus
+            tour offers a convenient way to experience these iconic landmarks, along with Kyoto's historic streets and
+            enduring cultural traditions.
           </p>
         </div>
 
         <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
           <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Kobe</p>
-          <h4 class="font-heading text-xl font-semibold mb-3">Takenaka Carpentry Tools Museum</h4>
+          <h4 class="font-heading text-xl font-semibold mb-3">Taste of Kobe: Sake, Beef & Sweet Delights</h4>
           <p class="text-sm text-muted leading-relaxed">
-            Two stars in the <em>Michelin Green Guide Japan</em> and ranked <strong
-              >#1 on TripAdvisor for Kobe (2019)</strong
-            >, this is the only museum of its kind in Japan. Explore around <strong
-              >1,000 carefully selected tools and creations</strong
-            > drawn from a collection of more than <strong>35,000 pieces</strong>, with a focus on the traditional <strong
-              >Miya</strong
-            > and <strong>Sukiya</strong> carpentry behind Japan's shrines, temples, and castles.
+            Since the opening of Kobe Port in 1868, Kobe has been one of Japan's leading international gateway cities,
+            where Japanese and Western cultures have blended for more than 150 years. The city's abundant spring water
+            from the Rokko Mountains helped make nearby <strong>Nada</strong> Japan's most renowned sake-producing
+            region, while its cosmopolitan atmosphere fostered a rich culinary culture, from world-famous <strong
+              >Kobe beef</strong
+            > to artisan bakeries and elegant pastries. This excursion offers the opportunity to experience Kobe's
+            celebrated food culture through <strong>sake tasting</strong>, <strong>Kobe beef</strong>, and <strong
+              >local sweets</strong
+            >.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
+          <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">Nara</p>
+          <h4 class="font-heading text-xl font-semibold mb-3">Nara: Japan's First Ancient Capital</h4>
+          <p class="text-sm text-muted leading-relaxed">
+            Nara was Japan's first permanent capital (710–784), laying the foundations of the nation's history, culture,
+            and Buddhism. Today, the city preserves some of Japan's oldest and most treasured temples, including <strong
+              >Todai-ji</strong
+            >, home to the Great Buddha. Beyond its temples, Nara is renowned for its elegant Japanese gardens, including
+            <strong>Isuien Garden</strong>, one of Japan's finest traditional gardens. Visitors can also stroll through
+            <strong>Nara Park</strong>, home to hundreds of free-roaming deer, before unwinding in a traditional
+            townhouse with a cup of locally produced Yamato tea.
+          </p>
+        </div>
+
+        <div class="rounded-2xl border border-brand-200 dark:border-brand-500 p-6 flex flex-col">
+          <p class="text-xs font-semibold tracking-[0.18em] uppercase text-primary dark:text-brand-200 mb-2">
+            Wakayama
+          </p>
+          <h4 class="font-heading text-xl font-semibold mb-3">Wakayama: Sacred Mountains & Waterfalls</h4>
+          <p class="text-sm text-muted leading-relaxed">
+            Wakayama is home to some of Japan's most sacred landscapes and spiritual traditions. The prefecture is home
+            to two UNESCO World Heritage Sites: <strong>Koyasan</strong>, the 1,200-year-old center of Shingon Buddhism
+            founded by Kobo Daishi (Kukai), and the <strong>Kumano Kodo</strong> pilgrimage routes, walked by emperors
+            and pilgrims for over a thousand years. The tour also features the breathtaking <strong>Nachi Falls</strong>,
+            Japan's tallest waterfall, offering a unique opportunity to experience the natural beauty and spiritual
+            heritage that have inspired visitors for centuries.
           </p>
         </div>
       </div>
@@ -590,9 +634,9 @@ const tracks = [
           'Conference sessions are conducted in English, and English signage is common at major transportation hubs, hotels, and tourist areas. Translation apps and pocket Wi-Fi are helpful for everyday interactions.',
       },
       {
-        title: 'Are there accommodation options on campus?',
+        title: 'Where do you recommend staying?',
         description:
-          'Yes — the OIC Seminar House is located on the OIC Campus itself, just one minute from the conference venue, with especially affordable rates for students (USD 12/night) and faculty (USD 27/night). See the Travel & Stay section above for nearby business hotels.',
+          'Rather than recommending specific hotels, we suggest five areas — Shin-Osaka, Umeda, Honmachi, Namba, and Kyoto — chosen for their convenience to OIC, sightseeing, neighborhood atmosphere, and connectivity across the Kansai region. Osaka and Kyoto offer abundant accommodation across all budgets, so once you pick an area you will have no trouble finding a suitable place. See the Recommended Areas to Stay section above for details.',
       },
       {
         title: 'What currency is used, and are credit cards accepted?',
