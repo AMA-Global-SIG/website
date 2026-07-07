@@ -462,7 +462,7 @@ const areas = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
         <img
           src="/places/amaglobal2027_oic1_1024x768.jpg"
           alt="Osaka Ibaraki Campus (OIC), Ritsumeikan University"
@@ -481,42 +481,28 @@ const areas = [
           loading="lazy"
           decoding="async"
         />
-      </div>
-
-      <div class="max-w-4xl mx-auto mt-16">
-        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-8 sm:gap-10">
-          <button
-            type="button"
-            data-route-map-trigger
-            aria-haspopup="dialog"
-            aria-label="View full-size map of the route to OIC"
-            class="shrink-0 block w-40 sm:w-48 rounded-lg border border-brand-200 dark:border-brand-500 shadow-sm overflow-hidden cursor-zoom-in transition hover:shadow-md hover:scale-[1.02]"
+        <button
+          type="button"
+          data-route-map-trigger
+          aria-haspopup="dialog"
+          aria-label="View full-size map of the route to OIC"
+          class="group relative block w-full aspect-[4/3] rounded-2xl border border-brand-200 dark:border-brand-500 shadow-sm overflow-hidden cursor-zoom-in transition hover:shadow-md bg-white dark:bg-brand-800"
+        >
+          <img
+            src="/places/amaglobal2027_route_to_oic_preview.png"
+            alt="Route from Kansai International Airport to Osaka Ibaraki Campus (OIC)"
+            width="250"
+            height="336"
+            class="absolute inset-0 w-full h-full object-contain p-3 transition group-hover:scale-[1.04]"
+            loading="lazy"
+            decoding="async"
+          />
+          <span
+            class="absolute inset-x-0 bottom-0 bg-brand-900/75 text-white text-xs font-semibold tracking-wide uppercase py-1.5 text-center"
           >
-            <img
-              src="/places/amaglobal2027_route_to_oic_preview.png"
-              alt="Route from Kansai International Airport to Osaka Ibaraki Campus (OIC)"
-              width="250"
-              height="336"
-              class="w-full h-auto"
-              loading="lazy"
-              decoding="async"
-            />
-          </button>
-          <div class="text-center sm:text-left">
-            <h3 class="text-2xl md:text-3xl font-bold tracking-tighter font-heading mb-4">Getting There</h3>
-            <p class="text-lg text-muted leading-relaxed mb-4">
-              Osaka is exceptionally well-connected. <strong>Kansai International Airport (KIX)</strong> handles more than
-              <strong>1,200 international flights weekly</strong> from over <strong>60 cities</strong> in around 20 countries
-              on 80+ airlines, reaching central Osaka in roughly 50–60 minutes. From Tokyo, the <strong>Shinkansen</strong> reaches
-              Osaka in 2.5 hours; from Kyoto, just 15 minutes. The OIC Campus sits within walking distance of multiple stations
-              served by <strong>JR</strong>, <strong>Hankyu Railway</strong>, and the <strong>Osaka Monorail</strong>.
-            </p>
-            <p class="text-lg text-muted leading-relaxed">
-              <strong>Visa requirements</strong> vary by nationality. Allow 6–8 weeks for processing if needed; the conference
-              can provide visa support letters on request.
-            </p>
-          </div>
-        </div>
+            Route to OIC
+          </span>
+        </button>
       </div>
     </div>
 
@@ -630,14 +616,31 @@ const areas = [
         <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
           Travel & Stay
         </p>
-        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Recommended Areas to Stay</h2>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Getting There</h2>
+        <p class="text-lg text-muted leading-relaxed mb-4">
+          Osaka is exceptionally well-connected. <strong>Kansai International Airport (KIX)</strong> handles more than <strong
+            >1,200 international flights weekly</strong
+          > from over <strong>60 cities</strong> in around 20 countries on 80+ airlines, reaching central Osaka in roughly
+          50–60 minutes. From Tokyo, the <strong>Shinkansen</strong> reaches Osaka in 2.5 hours; from Kyoto, just 15 minutes.
+          The OIC Campus sits within walking distance of multiple stations served by <strong>JR</strong>, <strong
+            >Hankyu Railway</strong
+          >, and the <strong>Osaka Monorail</strong>.
+        </p>
         <p class="text-lg text-muted leading-relaxed">
-          Osaka offers a wide range of accommodation options, from luxury hotels to budget-friendly stays. While several
-          hotels are located near the Ritsumeikan Osaka Ibaraki Campus (OIC), we recommend the following five areas based
-          on their convenience for accessing OIC, sightseeing opportunities, neighborhood atmosphere, and connectivity to
-          other destinations in the Kansai region.
+          <strong>Visa requirements</strong> vary by nationality. Allow 6–8 weeks for processing if needed; the conference
+          can provide visa support letters on request.
         </p>
       </div>
+
+      <h3 class="text-2xl md:text-3xl font-bold tracking-tighter font-heading text-center mb-2">
+        Recommended Areas to Stay
+      </h3>
+      <p class="text-base text-muted text-center max-w-2xl mx-auto mb-10">
+        Osaka offers a wide range of accommodation options, from luxury hotels to budget-friendly stays. While several
+        hotels are located near the Ritsumeikan Osaka Ibaraki Campus (OIC), we recommend the following five areas based
+        on their convenience for accessing OIC, sightseeing opportunities, neighborhood atmosphere, and connectivity to
+        other destinations in the Kansai region.
+      </p>
 
       <div class="space-y-6">
         {
