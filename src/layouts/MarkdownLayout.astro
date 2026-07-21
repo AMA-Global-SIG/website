@@ -6,6 +6,7 @@ import type { MetaData } from '~/types';
 export interface Props {
   frontmatter: {
     title?: string;
+    backdrop?: boolean;
   };
 }
 
@@ -17,14 +18,27 @@ const metadata: MetaData = {
 ---
 
 <Layout metadata={metadata}>
-  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
-    <h1 class="font-bold font-heading text-heading text-4xl md:text-5xl leading-tighter tracking-tighter">
-      {frontmatter.title}
-    </h1>
-    <div
-      class="mx-auto prose prose-lg max-w-4xl dark:prose-invert prose-headings:text-heading dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-brand-500 dark:prose-a:text-brand-250 prose-img:rounded-md prose-img:shadow-lg mt-8"
-    >
-      <slot />
-    </div>
-  </section>
+  <div class="relative">
+    {
+      frontmatter?.backdrop && (
+        <div class="absolute inset-0 -z-[1] pointer-events-none" aria-hidden="true">
+          <div class="absolute inset-0 bg-page" />
+          <div
+            class="absolute inset-0 opacity-60 dark:opacity-40"
+            style="background: radial-gradient(ellipse at 85% 15%, rgb(76 117 193 / 0.10) 0%, transparent 55%), radial-gradient(ellipse at 10% 90%, rgb(61 94 155 / 0.06) 0%, transparent 50%);"
+          />
+        </div>
+      )
+    }
+    <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-4xl">
+      <h1 class="font-bold font-heading text-heading text-4xl md:text-5xl leading-tighter tracking-tighter">
+        {frontmatter.title}
+      </h1>
+      <div
+        class="mx-auto prose prose-lg max-w-4xl dark:prose-invert prose-headings:text-heading dark:prose-headings:text-slate-300 prose-md prose-headings:font-heading prose-headings:leading-tighter prose-headings:tracking-tighter prose-headings:font-bold prose-a:text-brand-500 dark:prose-a:text-brand-250 prose-img:rounded-md prose-img:shadow-lg mt-8"
+      >
+        <slot />
+      </div>
+    </section>
+  </div>
 </Layout>
