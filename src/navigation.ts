@@ -31,8 +31,8 @@ export const headerData = {
           href: getPermalink('/conferences/osaka-2027'),
         },
         {
-          text: 'Conference History',
-          href: getPermalink('/conferences/history'),
+          text: 'Past Conferences',
+          href: getPermalink('/conferences/past-conferences'),
         },
         {
           text: 'Submission Guidelines',
@@ -52,8 +52,8 @@ export const headerData = {
           href: getPermalink('/doctoral-consortium/osaka-2027'),
         },
         {
-          text: 'Consortia History',
-          href: getPermalink('/doctoral-consortium/consortia-history'),
+          text: 'Past Consortia',
+          href: getPermalink('/doctoral-consortium/past-consortia'),
         },
       ],
     },
@@ -111,8 +111,8 @@ export const footerData = {
       links: [
         { text: 'Osaka 2027 Conference', href: getPermalink('/conferences/osaka-2027') },
         { text: 'Osaka 2027 Consortium', href: getPermalink('/doctoral-consortium/osaka-2027') },
-        { text: 'Conference History', href: getPermalink('/conferences/history') },
-        { text: 'Consortia History', href: getPermalink('/doctoral-consortium/consortia-history') },
+        { text: 'Past Conferences', href: getPermalink('/conferences/past-conferences') },
+        { text: 'Past Consortia', href: getPermalink('/doctoral-consortium/past-consortia') },
       ],
     },
     {
