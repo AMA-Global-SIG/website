@@ -53,6 +53,10 @@ Use `FILE_ACCEPT` from `dcClient.js` for the `accept` attribute, and show the se
 
 `file_upload_failed` is the one error where the applicant must not retry blindly — their row exists. Show the message from `ERROR_MESSAGES` and include the organizers' contact address.
 
+### Error copy pattern
+
+`ERROR_MESSAGES` in `dcClient.js` maps `required` and `missing_file` to one generic sentence each — it has no per-field text, since the field name isn't known at that layer. Both pages wrap `errorMessage(code)` in a local `fieldMessage(field, code)` helper that supplies specific copy for those two codes only ("Please enter your first name.", "Please upload your manuscript.", etc.) and falls through to `errorMessage(code)` for every other code. Add new per-field copy the same way rather than adding more codes to `dcClient.js`.
+
 ## Step 2 — `confirm.astro`
 
 Token-gated. Read `?t=` from the query string on mount and call `validateToken(t)` before rendering anything.
