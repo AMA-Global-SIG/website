@@ -1,0 +1,418 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Features2 from '~/components/widgets/Features2.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
+
+const metadata = {
+  title: '2027 Osaka Doctoral Consortium — AMA Global Marketing SIG',
+  description:
+    'AMA Global Marketing SIG Doctoral Consortium — June 17, 2027 — Ritsumeikan University, Osaka, Japan',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero -->
+  <section class="relative md:-mt-[4.75rem] not-prose overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none -z-[1]" aria-hidden="true">
+      <div class="absolute inset-0 bg-page"></div>
+      <div
+        class="absolute inset-0 opacity-60 dark:opacity-40"
+        style="background: radial-gradient(ellipse at 85% 15%, rgb(76 117 193 / 0.10) 0%, transparent 55%), radial-gradient(ellipse at 10% 90%, rgb(61 94 155 / 0.06) 0%, transparent 50%);"
+      >
+      </div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6">
+      <div class="pt-0 md:pt-[4.75rem] pointer-events-none"></div>
+
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-10 items-center py-16 md:py-24 lg:py-28">
+        <div
+          class="lg:col-span-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+        >
+          <p
+            class="font-sans text-xs md:text-sm font-semibold tracking-[0.22em] uppercase text-primary dark:text-brand-250 mb-6"
+          >
+            June 17, 2027 · Osaka, Japan
+          </p>
+          <h1
+            class="font-heading font-semibold text-heading leading-[0.95] tracking-tight text-[clamp(2.75rem,7vw,5.5rem)] mb-6"
+          >
+            2027 Osaka<br />
+            <span class="italic font-normal text-accent dark:text-brand-250">Doctoral Consortium</span>
+          </h1>
+          <p class="font-sans text-lg md:text-xl text-muted max-w-xl leading-relaxed mb-8">
+            A workshop for PhD students specializing in international and cross-cultural marketing. Held the day before
+            the AMA Global Conference at Ritsumeikan University, it brings together 15–25 doctoral students with leading
+            scholars in the field.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
+            <Button
+              variant="primary"
+              text="Apply Now"
+              href="/doctoral-consortium/osaka-2027/apply"
+              class="sm:w-auto"
+            />
+            <Button variant="tertiary" text="Key Dates ↓" href="#key-dates" class="sm:w-auto" />
+          </div>
+        </div>
+
+        <div
+          class="lg:col-span-6 intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade"
+        >
+          <div
+            class="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-lg border border-brand-200 dark:border-brand-500"
+          >
+            <img
+              src="/places/amaglobal2027_oic1_1024x768.jpg"
+              alt="Ritsumeikan University — Osaka Ibaraki Campus (OIC), host of the 2027 Doctoral Consortium"
+              width="1024"
+              height="768"
+              class="absolute inset-0 w-full h-full object-cover"
+              loading="eager"
+              decoding="async"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+        Doctoral Consortium
+      </p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">Fostering the Next Generation</h2>
+      <p class="text-lg text-muted leading-relaxed">
+        The AMA Global Marketing SIG invites applications for its <strong>2027 Doctoral Consortium</strong>, a workshop
+        designed for PhD students specializing in international and cross-cultural marketing. The Consortium aims to
+        foster the next generation of scholars by providing an enriching environment to develop research ideas, navigate
+        the complexities of international marketing research, and establish the foundation for a successful academic
+        career. The event takes place on the day preceding the main conference and brings together 15–25 doctoral
+        students with leading scholars in the field.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
+      <figure class="rounded-2xl overflow-hidden shadow-sm border border-brand-200 dark:border-brand-500 bg-page">
+        <img
+          src="/places/amaglobal2027_oic1_1024x768.jpg"
+          alt="Ritsumeikan University Osaka Ibaraki Campus (OIC)"
+          width="1024"
+          height="768"
+          class="w-full aspect-[4/3] object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="text-sm text-center py-2 text-muted">
+          Ritsumeikan University — Osaka Ibaraki Campus (OIC)
+        </figcaption>
+      </figure>
+      <figure class="rounded-2xl overflow-hidden shadow-sm border border-brand-200 dark:border-brand-500 bg-page">
+        <img
+          src="/places/amaglobal2027_nationskitchen1_1024x768.jpg"
+          alt="Osaka, Japan"
+          width="1024"
+          height="768"
+          class="w-full aspect-[4/3] object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption class="text-sm text-center py-2 text-muted">
+          Osaka, Japan — host city of the 2027 conference
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <Stats
+    isDark={true}
+    stats={[
+      { title: 'Participants', amount: '15–25' },
+      { title: 'Consortium Day', amount: 'June 17' },
+      { title: 'Host City', amount: 'Osaka' },
+    ]}
+  />
+
+  <!-- Objectives -->
+  <section class="relative bg-brand-50 dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="max-w-3xl mx-auto text-center mb-12">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Objectives</p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">What We Explore Together</h2>
+        <p class="text-lg text-muted leading-relaxed">
+          The Consortium facilitates in-depth discussions between doctoral students and distinguished faculty on the
+          topics that shape an early academic career:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+        {
+          [
+            'Emerging trends in international and cross-cultural marketing research',
+            'Challenges of conducting high-impact research for top-tier journals',
+            'Best practices for managing dissertation work and the academic job market',
+            'Essentials for kick-starting an academic career',
+          ].map((objective) => (
+            <div class="flex items-start gap-3 rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6">
+              <span class="text-accent text-xl leading-none mt-0.5" aria-hidden="true">
+                ✦
+              </span>
+              <p class="text-muted leading-relaxed">{objective}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Format -->
+  <Features2
+    tagline="Format"
+    title="An Intimate, Collaborative Setting"
+    subtitle="The Consortium offers an intimate, collaborative atmosphere for direct engagement with established leaders in the field. Past mentors have included current and former editors from premier journals such as the Journal of Marketing, Journal of Marketing Research, Journal of International Marketing, and Journal of International Business Studies."
+    columns={3}
+    items={[
+      {
+        title: 'Small-Group Sessions',
+        description:
+          "The cornerstone of the event — personalized faculty feedback on each participant's research project.",
+        icon: 'lucide:users',
+      },
+      {
+        title: 'Panel Discussions',
+        description:
+          'Senior scholars share insights on emerging research trends, publishing strategies, and career development.',
+        icon: 'lucide:message-square',
+      },
+      {
+        title: 'Networking Opportunity',
+        description: 'Build relationships with faculty and fellow doctoral students from around the world.',
+        icon: 'lucide:wine',
+      },
+    ]}
+  />
+
+  <!-- Key Dates -->
+  <section id="key-dates" class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto text-center mb-8">
+      <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Key Dates</p>
+      <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading">Timeline</h2>
+    </div>
+    <Steps
+      classes={{ container: '!py-0 !max-w-2xl' }}
+      items={[
+        { title: 'Submission Deadline', description: 'Early December 2026', icon: 'lucide:send' },
+        { title: 'Acceptance Notifications', description: 'Late January 2027', icon: 'lucide:mail' },
+        { title: 'Author Registration Opens', description: 'Early February 2027', icon: 'lucide:credit-card' },
+        { title: 'Doctoral Consortium', description: 'June 17, 2027', icon: 'lucide:graduation-cap' },
+        { title: 'Main Conference', description: 'June 18–21, 2027', icon: 'lucide:calendar' },
+      ]}
+    />
+  </section>
+
+  <!-- Eligibility & Application Requirements -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+      <div class="text-center mb-8">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Eligibility & Application
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading">Who Should Apply</h2>
+      </div>
+      <p class="text-lg text-muted leading-relaxed mb-6">
+        The Consortium welcomes doctoral students in marketing or international business who have a research focus on
+        international, cross-cultural, or global marketing and who are actively shaping their dissertation research
+        agenda. Students at all stages of the doctoral program are welcome, provided they have a well-defined research
+        idea.
+      </p>
+      <p class="text-lg text-muted leading-relaxed mb-6">
+        Applications are submitted through our
+        <a
+          href="/doctoral-consortium/osaka-2027/apply"
+          class="text-brand-500 dark:text-brand-250 underline underline-offset-2">online application form</a
+        > and must include:
+      </p>
+      <ul class="space-y-4 mb-6">
+        <li class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6">
+          <span class="font-heading font-semibold text-heading">Cover Letter:</span>
+          <span class="text-muted leading-relaxed">
+            State your stage in the doctoral program, your research interests, what you hope to gain from participating,
+            and whether you wish to be considered for a travel stipend.
+          </span>
+        </li>
+        <li class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6">
+          <span class="font-heading font-semibold text-heading">Manuscript (max 5 pages):</span>
+          <span class="text-muted leading-relaxed">
+            A research project focused on international marketing. Begin with title, author information, abstract, and
+            keywords, then cover the research question and motivation, theoretical background, proposed methodology or
+            research design, and intended contribution. Place diagrams, tables, and references in appendices at the end.
+          </span>
+        </li>
+      </ul>
+      <p class="text-lg text-muted leading-relaxed mb-6">
+        Upload the cover letter and manuscript as two separate files (PDF or Word, max 10 MB each), and complete your
+        applicant details directly on the form.
+      </p>
+      <p class="text-lg text-muted leading-relaxed">
+        The submission deadline is strict; <strong>late applications will not be accepted.</strong> Note that submitting
+        to the main conference alone does <strong>not</strong> constitute an application to the Doctoral Consortium — students
+        wishing to participate in the Consortium must submit a separate application through the process described above.
+      </p>
+    </div>
+  </section>
+
+  <!-- Selection & Travel Stipends -->
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-8">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Selection & Stipends
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading">Review & Support</h2>
+      </div>
+      <p class="text-lg text-muted leading-relaxed mb-6">
+        Applications are evaluated holistically, with particular attention to topic fit (research relating to global,
+        international, or cross-cultural marketing), the strength and clarity of the intended contribution, and the
+        overall coherence of the submitted abstract. The selection committee strives to assemble a diverse cohort
+        representing a range of research topics, methodological approaches, and institutional backgrounds.
+      </p>
+      <p class="text-lg text-muted leading-relaxed">
+        The AMA Global Marketing SIG provides a limited number of <strong>travel stipends</strong> based on individual
+        funding need. To be considered, indicate your need clearly in your cover letter. Stipends are typically disbursed
+        upon the student's presentation at the Consortium and may be applied toward travel expenses and/or conference
+        registration fees.
+      </p>
+    </div>
+  </section>
+
+  <!-- What Past Participants Say -->
+  <Testimonials
+    tagline="Testimonials"
+    title="What Past Participants Say"
+    columns={2}
+    testimonials={[
+      {
+        testimonial:
+          'Participating in the doctoral consortium was an enriching and eye-opening experience. The feedback I received from my mentors enhanced the scope and direction of my project. As a PhD student, I also found the potential for collaborations with peers from around the globe very exciting.',
+        name: 'Diana Sanchez Riera',
+        job: 'University of Chile, Chile',
+        image: { src: '/people/dsanchezriera_215x215.jpg', alt: 'Diana Sanchez Riera' },
+      },
+      {
+        testimonial:
+          'I truly enjoyed hearing from the panel speakers regarding their insights on managing an impactful academic career. The definitive highlight for me was the mentoring session, where I received invaluable, constructive feedback on my research project from two top scholars in the field.',
+        name: 'Kiwoong Yoo',
+        job: 'University of Tennessee, US',
+        image: { src: '/people/kyoo_215x215.jpg', alt: 'Kiwoong Yoo' },
+      },
+      {
+        testimonial:
+          'I found participating in the doctoral consortium highly valuable. The group session was particularly useful as we received feedback from top authors and experts in our research areas. Additionally, the consortium facilitated networking with other doctoral students, enabling me to establish a strong network from onset of the conference.',
+        name: 'Freja Lindemann',
+        job: 'University of Hamburg, Germany',
+        image: { src: '/people/flindemann_215x215.jpg', alt: 'Freja Lindemann' },
+      },
+      {
+        testimonial:
+          'It was a huge honor to present my work in progress; the experience of discovering and learning from the best academics was amazing. In particular, the mentors provided profound and thought-provoking feedback. I am also happy to have forged great friendships with PhD students from all over the world!',
+        name: 'Jiseon Han',
+        job: 'Bayes Business School, UK',
+        image: { src: '/people/jhan_215x215.jpg', alt: 'Jiseon Han' },
+      },
+    ]}
+  />
+
+  <!-- FAQ -->
+  <FAQs
+    tagline="Frequently Asked Questions"
+    title="Good to Know"
+    classes={{ container: 'bg-brand-50 dark:bg-transparent' }}
+    items={[
+      {
+        title: 'When should I apply to the Doctoral Consortium?',
+        description:
+          'Students at any stage of their doctoral program are welcome, though those who have begun developing their dissertation research tend to benefit most. Ideally, you should have a well-defined research question and preliminary theoretical framework.',
+      },
+      {
+        title: 'Do I need to register for the main conference as well?',
+        description:
+          'Yes. Consortium participants are expected to register for and attend the main conference, which begins the day after the Consortium. This allows participants to attend all conference sessions and engage in broader networking opportunities.',
+      },
+      {
+        title: 'How competitive is the selection process?',
+        description:
+          'We typically receive more applications than available spots. However, we strive to include a diverse cohort representing various research topics and backgrounds. A strong, well-articulated research proposal significantly improves your chances.',
+      },
+      {
+        title: "What if I don't receive a travel stipend?",
+        description:
+          'Even without a stipend, the Consortium experience is highly valuable. Many participants seek funding from their home institutions. We encourage you to apply regardless of financial support availability.',
+      },
+    ]}
+  />
+
+  <!-- Consortium Organizers -->
+  <section class="bg-brand-50 dark:bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 md:pt-20 pb-4 md:pb-6">
+      <div class="max-w-3xl mx-auto text-center">
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Consortium Organizers
+        </p>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading">Meet the Team</h2>
+      </div>
+    </div>
+    <Features2
+      columns={3}
+      classes={{ container: '!py-0 !pb-8', panel: '!bg-page' }}
+      items={[
+        {
+          title: 'Fabian Bartsch',
+          description: 'MBS School of Business<br />f.bartsch@mbs-education.com',
+          image: { src: '/people/fbartsch_215x215.jpg', alt: 'Fabian Bartsch' },
+        },
+        {
+          title: 'Annie Peng Cui',
+          description: 'West Virginia University<br />annie.cui@mail.wvu.edu',
+          image: { src: '/people/acui_215x215.jpg', alt: 'Annie Peng Cui' },
+        },
+        {
+          title: 'Katharina Zeugner-Roth',
+          description: 'SKEMA Business School<br />katharina.zeugner@skema.edu',
+          image: { src: '/people/kzeugnerroth_215x215.jpg', alt: 'Katharina Zeugner-Roth' },
+        },
+      ]}
+    />
+    <p class="max-w-3xl mx-auto px-4 sm:px-6 text-center text-muted pb-16 md:pb-20">
+      For questions about the Doctoral Consortium, please contact any of the Consortium Organizers listed above.
+    </p>
+  </section>
+
+  <!-- Final CTA -->
+  <CallToAction
+    title="Ready to apply?"
+    classes={{ container: '!pt-12 md:!pt-16 lg:!pt-20' }}
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Apply Now',
+        href: '/doctoral-consortium/osaka-2027/apply',
+      },
+    ]}
+  >
+    <Fragment slot="subtitle">
+      <p class="leading-relaxed">
+        Submit your application by <span class="font-semibold">early December 2026</span> and join the global marketing community
+        in Osaka.
+      </p>
+    </Fragment>
+  </CallToAction>
+</Layout>
