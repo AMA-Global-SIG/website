@@ -23,3 +23,6 @@ pnpm-debug.log*
 pnpm-lock.yaml
 
 .astro
+
+# throwaway local scripts
+scripts/smoke-test.mjs

@@ -42,6 +42,11 @@ export const MAX_PROGRAM_YEAR = 7;
  * code. Anything unmapped falls back to GENERIC_ERROR.
  */
 export const ERROR_MESSAGES = {
+  // Client-side validation codes, emitted by validateStep1/validateStep2/checkFile.
+  required: 'This field is required.',
+  missing_file: 'Please choose a file to upload.',
+
+  // Server-side codes.
   missing_fields: 'Some required fields are still empty. Please check the highlighted fields.',
   invalid_email: 'That email address does not look valid. Please check it and try again.',
   invalid_program_year: 'Please select which year of your doctoral program you are in.',
