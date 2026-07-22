@@ -44,7 +44,7 @@ const metadata = {
           <h1
             class="font-heading font-semibold text-heading leading-[0.95] tracking-tight text-[clamp(2.75rem,7vw,5.5rem)] mb-6"
           >
-            2027 Osaka<br />
+            2027 AMA<br />
             <span class="italic font-normal text-accent dark:text-brand-250">Doctoral Consortium</span>
           </h1>
           <p class="font-sans text-lg md:text-xl text-muted max-w-xl leading-relaxed mb-8">
@@ -70,8 +70,9 @@ const metadata = {
             class="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-lg border border-brand-200 dark:border-brand-500"
           >
             <img
+              id="dc-hero-image"
               src="/places/amaglobal2027_oic1_1024x768.jpg"
-              alt="Ritsumeikan University — Osaka Ibaraki Campus (OIC), host of the 2027 Doctoral Consortium"
+              alt="Ritsumeikan University and Osaka, Japan — host of the 2027 Doctoral Consortium"
               width="1024"
               height="768"
               class="absolute inset-0 w-full h-full object-cover"
@@ -100,45 +101,14 @@ const metadata = {
         students with leading scholars in the field.
       </p>
     </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12 max-w-5xl mx-auto">
-      <figure class="rounded-2xl overflow-hidden shadow-sm border border-brand-200 dark:border-brand-500 bg-page">
-        <img
-          src="/places/amaglobal2027_oic1_1024x768.jpg"
-          alt="Ritsumeikan University Osaka Ibaraki Campus (OIC)"
-          width="1024"
-          height="768"
-          class="w-full aspect-[4/3] object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption class="text-sm text-center py-2 text-muted">
-          Ritsumeikan University — Osaka Ibaraki Campus (OIC)
-        </figcaption>
-      </figure>
-      <figure class="rounded-2xl overflow-hidden shadow-sm border border-brand-200 dark:border-brand-500 bg-page">
-        <img
-          src="/places/amaglobal2027_nationskitchen1_1024x768.jpg"
-          alt="Osaka, Japan"
-          width="1024"
-          height="768"
-          class="w-full aspect-[4/3] object-cover"
-          loading="lazy"
-          decoding="async"
-        />
-        <figcaption class="text-sm text-center py-2 text-muted">
-          Osaka, Japan — host city of the 2027 conference
-        </figcaption>
-      </figure>
-    </div>
   </section>
 
   <Stats
     isDark={true}
     stats={[
-      { title: 'Participants', amount: '15–25' },
+      { title: 'Doctoral Researchers', amount: '15–25' },
+      { title: 'Senior Scholars', amount: '10–20' },
       { title: 'Consortium Day', amount: 'June 17' },
-      { title: 'Host City', amount: 'Osaka' },
     ]}
   />
 
@@ -154,7 +124,7 @@ const metadata = {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-4xl mx-auto">
+      <ul class="max-w-2xl mx-auto space-y-4">
         {
           [
             'Emerging trends in international and cross-cultural marketing research',
@@ -162,15 +132,15 @@ const metadata = {
             'Best practices for managing dissertation work and the academic job market',
             'Essentials for kick-starting an academic career',
           ].map((objective) => (
-            <div class="flex items-start gap-3 rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6">
-              <span class="text-accent text-xl leading-none mt-0.5" aria-hidden="true">
+            <li class="flex items-start gap-3">
+              <span class="text-accent text-lg leading-none mt-1" aria-hidden="true">
                 ✦
               </span>
-              <p class="text-muted leading-relaxed">{objective}</p>
-            </div>
+              <span class="text-lg text-muted leading-relaxed">{objective}</span>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </div>
   </section>
 
@@ -202,7 +172,7 @@ const metadata = {
   />
 
   <!-- Key Dates -->
-  <section id="key-dates" class="px-4 sm:px-6 py-16 md:py-20">
+  <section id="key-dates" class="bg-brand-50 dark:bg-transparent px-4 sm:px-6 py-16 md:py-20">
     <div class="max-w-3xl mx-auto text-center mb-8">
       <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Key Dates</p>
       <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading">Timeline</h2>
@@ -220,7 +190,7 @@ const metadata = {
   </section>
 
   <!-- Eligibility & Application Requirements -->
-  <section class="bg-brand-50 dark:bg-transparent">
+  <section>
     <div class="max-w-3xl mx-auto px-4 sm:px-6 py-16 md:py-20">
       <div class="text-center mb-8">
         <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
@@ -271,7 +241,7 @@ const metadata = {
   </section>
 
   <!-- Selection & Travel Stipends -->
-  <section class="px-4 sm:px-6 py-16 md:py-20">
+  <section class="bg-brand-50 dark:bg-transparent px-4 sm:px-6 py-16 md:py-20">
     <div class="max-w-3xl mx-auto">
       <div class="text-center mb-8">
         <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
@@ -361,7 +331,7 @@ const metadata = {
   />
 
   <!-- Consortium Organizers -->
-  <section class="bg-brand-50 dark:bg-transparent">
+  <section>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-16 md:pt-20 pb-4 md:pb-6">
       <div class="max-w-3xl mx-auto text-center">
         <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
@@ -415,4 +385,18 @@ const metadata = {
       </p>
     </Fragment>
   </CallToAction>
+
+  <script is:inline>
+    (function () {
+      const heroes = [
+        '/places/amaglobal2027_oic1_1024x768.jpg',
+        '/places/amaglobal2027_nationskitchen1_1024x768.jpg',
+      ];
+      const img = document.getElementById('dc-hero-image');
+      if (img) {
+        const pick = heroes[Math.floor(Math.random() * heroes.length)];
+        if (img.getAttribute('src') !== pick) img.setAttribute('src', pick);
+      }
+    })();
+  </script>
 </Layout>
