@@ -1,0 +1,262 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Button from '~/components/ui/Button.astro';
+import { countries } from '~/data/countries.js';
+
+const metadata = {
+  title: 'Confirm Your Details — Osaka 2027 Doctoral Consortium — AMA Global Marketing SIG',
+  description: 'Post-acceptance confirmation form for the AMA Global Marketing SIG 2027 Doctoral Consortium in Osaka, Japan.',
+};
+
+const inputClass =
+  'py-3 px-4 block w-full text-md rounded-lg border border-brand-100 dark:border-brand-600 bg-white dark:bg-brand-900';
+const labelClass = 'block text-sm font-medium mb-1.5';
+const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-2xl mx-auto">
+      <div id="dc-confirm-loading" class="text-center text-muted py-12">Checking your link…</div>
+
+      <div
+        id="dc-confirm-invalid"
+        class="hidden rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-8 text-center"
+        role="alert"
+      >
+      </div>
+
+      <div id="dc-confirm-already" class="hidden rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-8 text-center">
+        <h1 class="font-heading text-2xl font-semibold mb-3">Details Already Received</h1>
+        <p class="text-muted leading-relaxed">
+          Thanks, <span data-first-name></span> — we already have your details on file. Contact the organizers if
+          you need to change anything.
+        </p>
+      </div>
+
+      <div id="dc-confirm-ready" class="hidden">
+        <h1 class="font-bold font-heading text-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-6">
+          Welcome, <span data-first-name></span>
+        </h1>
+        <p class="text-lg text-muted leading-relaxed mb-10">
+          The details below are used solely to prepare your visa invitation letter for the host institution.
+        </p>
+
+        <div
+          id="dc-confirm-alert"
+          class="hidden mb-6 rounded-lg border border-red-200 bg-red-50 dark:bg-red-950/40 dark:border-red-800 px-4 py-3 text-sm text-red-700 dark:text-red-300"
+          role="alert"
+        >
+        </div>
+
+        <form id="dc-confirm-form" novalidate>
+          <div class="mb-6">
+            <label for="passport_name" class={labelClass}>Full name exactly as it appears in your passport</label>
+            <input
+              type="text"
+              id="passport_name"
+              name="passport_name"
+              required
+              class={inputClass}
+              aria-describedby="passport_name-error"
+            />
+            <p id="passport_name-error" class={errorClass}></p>
+          </div>
+
+          <div class="mb-6">
+            <label for="nationality" class={labelClass}>Nationality</label>
+            <select id="nationality" name="nationality" required class={inputClass} aria-describedby="nationality-error">
+              <option value="">Select a country</option>
+              {countries.map((c) => <option value={c}>{c}</option>)}
+            </select>
+            <p id="nationality-error" class={errorClass}></p>
+          </div>
+
+          <div class="mb-6">
+            <label for="date_of_birth" class={labelClass}>Date of birth</label>
+            <input
+              type="date"
+              id="date_of_birth"
+              name="date_of_birth"
+              required
+              class={inputClass}
+              aria-describedby="date_of_birth-error"
+            />
+            <p id="date_of_birth-error" class={errorClass}></p>
+          </div>
+
+          <div class="mb-6 flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="consent_publish"
+              name="consent_publish"
+              class="mt-1 cursor-pointer w-4 h-4 rounded border border-brand-100 dark:border-brand-600"
+            />
+            <label for="consent_publish" class="text-sm font-medium cursor-pointer select-none">
+              I consent to my name and email address being listed on the AMA Global Marketing SIG website
+            </label>
+          </div>
+
+          <div class="mb-6 flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="linkedin_interest"
+              name="linkedin_interest"
+              class="mt-1 cursor-pointer w-4 h-4 rounded border border-brand-100 dark:border-brand-600"
+            />
+            <label for="linkedin_interest" class="text-sm font-medium cursor-pointer select-none">
+              I would like an invitation to the AMA Global Marketing SIG LinkedIn community
+            </label>
+          </div>
+
+          <Button id="dc-confirm-submit" variant="primary" type="submit" text="Submit Details" class="w-full sm:w-auto" />
+        </form>
+
+        <div
+          id="dc-confirm-success"
+          tabindex="-1"
+          hidden
+          aria-live="polite"
+          class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-8 text-center"
+        >
+          <h2 class="font-heading text-2xl font-semibold mb-3">Details Received</h2>
+          <p class="text-muted leading-relaxed">Thank you — your details have been submitted.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { validateToken, validateStep2, submitStep2, errorMessage } from '~/lib/dcClient.js';
+
+    const loadingEl = document.getElementById('dc-confirm-loading') as HTMLElement;
+    const invalidEl = document.getElementById('dc-confirm-invalid') as HTMLElement;
+    const alreadyEl = document.getElementById('dc-confirm-already') as HTMLElement;
+    const readyEl = document.getElementById('dc-confirm-ready') as HTMLElement;
+    const form = document.getElementById('dc-confirm-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('dc-confirm-submit') as HTMLButtonElement;
+    const alertRegion = document.getElementById('dc-confirm-alert') as HTMLElement;
+    const successPanel = document.getElementById('dc-confirm-success') as HTMLElement;
+
+    const FIELD_IDS = ['passport_name', 'nationality', 'date_of_birth'];
+
+    function showOnly(el: HTMLElement) {
+      [loadingEl, invalidEl, alreadyEl, readyEl].forEach((e) => e.classList.toggle('hidden', e !== el));
+    }
+
+    function setFirstNames(name: string) {
+      document.querySelectorAll('[data-first-name]').forEach((el) => {
+        el.textContent = name;
+      });
+    }
+
+    function clearErrors() {
+      FIELD_IDS.forEach((id) => {
+        const errEl = document.getElementById(`${id}-error`);
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.classList.add('hidden');
+        }
+        document.getElementById(id)?.removeAttribute('aria-invalid');
+      });
+      alertRegion.textContent = '';
+      alertRegion.classList.add('hidden');
+    }
+
+    // Field-specific copy for the generic 'required' code. dcClient.js only
+    // maps code → one generic sentence; the field name isn't known there, so
+    // per-field wording lives here instead.
+    const REQUIRED_TEXT: Record<string, string> = {
+      passport_name: 'Please enter your full name as it appears in your passport.',
+      nationality: 'Please select your nationality.',
+      date_of_birth: 'Please enter your date of birth.',
+    };
+
+    function fieldMessage(field: string, code: string) {
+      if (code === 'required' && REQUIRED_TEXT[field]) return REQUIRED_TEXT[field];
+      return errorMessage(code);
+    }
+
+    function showFieldErrors(errors: any) {
+      let firstField: any = null;
+      Object.entries(errors).forEach(([field, code]) => {
+        const errEl = document.getElementById(`${field}-error`);
+        const input = document.getElementById(field);
+        if (errEl) {
+          errEl.textContent = fieldMessage(field, code as string);
+          errEl.classList.remove('hidden');
+        }
+        if (input) {
+          input.setAttribute('aria-invalid', 'true');
+          if (!firstField) firstField = input;
+        }
+      });
+      firstField?.focus();
+    }
+
+    function showAlert(message: string) {
+      alertRegion.textContent = message;
+      alertRegion.classList.remove('hidden');
+    }
+
+    async function init() {
+      const token = new URLSearchParams(location.search).get('t');
+      const res = await validateToken(token || '');
+
+      if (!res.ok) {
+        invalidEl.textContent = errorMessage('invalid_link');
+        showOnly(invalidEl);
+        return;
+      }
+
+      if (res.already_submitted) {
+        setFirstNames(res.first_name);
+        showOnly(alreadyEl);
+        return;
+      }
+
+      setFirstNames(res.first_name);
+      showOnly(readyEl);
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        clearErrors();
+
+        const fd = new FormData(form);
+        const formData = {
+          passport_name: fd.get('passport_name') || '',
+          nationality: fd.get('nationality') || '',
+          date_of_birth: fd.get('date_of_birth') || '',
+          consent_publish: (document.getElementById('consent_publish') as HTMLInputElement).checked,
+          linkedin_interest: (document.getElementById('linkedin_interest') as HTMLInputElement).checked,
+        };
+
+        const errors = validateStep2(formData);
+        if (Object.keys(errors).length) {
+          showFieldErrors(errors);
+          return;
+        }
+
+        submitBtn.disabled = true;
+        const result = await submitStep2(token || '', formData);
+
+        if (result.ok) {
+          form.hidden = true;
+          successPanel.hidden = false;
+          successPanel.focus();
+          return;
+        }
+
+        submitBtn.disabled = false;
+        showAlert(errorMessage(result.error));
+
+        const fieldErrors =
+          result.fieldErrors ||
+          (result.fields ? Object.fromEntries(result.fields.map((f: string) => [f, 'required'])) : null);
+        if (fieldErrors) showFieldErrors(fieldErrors);
+      });
+    }
+
+    init();
+  </script>
+</Layout>

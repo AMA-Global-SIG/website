@@ -1,0 +1,382 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Button from '~/components/ui/Button.astro';
+import { countries } from '~/data/countries.js';
+import { FILE_ACCEPT, MIN_PROGRAM_YEAR, MAX_PROGRAM_YEAR } from '~/lib/dcClient.js';
+
+const metadata = {
+  title: 'Apply — Osaka 2027 Doctoral Consortium — AMA Global Marketing SIG',
+  description: 'Application form for the AMA Global Marketing SIG 2027 Doctoral Consortium in Osaka, Japan.',
+};
+
+const programYears = Array.from(
+  { length: MAX_PROGRAM_YEAR - MIN_PROGRAM_YEAR + 1 },
+  (_, i) => MIN_PROGRAM_YEAR + i
+);
+
+const inputClass =
+  'py-3 px-4 block w-full text-md rounded-lg border border-brand-100 dark:border-brand-600 bg-white dark:bg-brand-900';
+const fileInputClass =
+  inputClass +
+  ' file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-medium file:bg-brand-100 file:text-brand-800 dark:file:bg-brand-700 dark:file:text-brand-100';
+const labelClass = 'block text-sm font-medium mb-1.5';
+const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
+---
+
+<Layout metadata={metadata}>
+  <section class="px-4 sm:px-6 py-16 md:py-20">
+    <div class="max-w-2xl mx-auto">
+      <h1 class="font-bold font-heading text-heading text-4xl md:text-5xl leading-tighter tracking-tighter mb-6">
+        Apply — 2027 Osaka Doctoral Consortium
+      </h1>
+      <p class="text-lg text-muted leading-relaxed mb-10">
+        Use this form to submit your application to the AMA Global Marketing SIG 2027 Doctoral Consortium in Osaka,
+        Japan. Read the
+        <a
+          href="/doctoral-consortium/osaka-2027"
+          class="text-brand-500 dark:text-brand-250 font-medium hover:text-brand-600 underline underline-offset-2"
+        >
+          Consortium overview page
+        </a> for eligibility and requirements before applying.
+      </p>
+
+      <div
+        id="dc-apply-alert"
+        class="hidden mb-6 rounded-lg border border-red-200 bg-red-50 dark:bg-red-950/40 dark:border-red-800 px-4 py-3 text-sm text-red-700 dark:text-red-300"
+        role="alert"
+      >
+      </div>
+
+      <form id="dc-apply-form" novalidate>
+        <div class="mb-6">
+          <label for="first_name" class={labelClass}>First name</label>
+          <input type="text" id="first_name" name="first_name" required class={inputClass} aria-describedby="first_name-error" />
+          <p id="first_name-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="last_name" class={labelClass}>Last name</label>
+          <input type="text" id="last_name" name="last_name" required class={inputClass} aria-describedby="last_name-error" />
+          <p id="last_name-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="email" class={labelClass}>Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            class={inputClass}
+            aria-describedby="email-help email-error"
+          />
+          <p id="email-help" class="mt-1.5 text-sm text-muted">This is where your acceptance email will be sent.</p>
+          <p id="email-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="university" class={labelClass}>University</label>
+          <input type="text" id="university" name="university" required class={inputClass} aria-describedby="university-error" />
+          <p id="university-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="university_country" class={labelClass}>University country</label>
+          <select
+            id="university_country"
+            name="university_country"
+            required
+            class={inputClass}
+            aria-describedby="university_country-error"
+          >
+            <option value="">Select a country</option>
+            {countries.map((c) => <option value={c}>{c}</option>)}
+          </select>
+          <p id="university_country-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="citizenship" class={labelClass}>Citizenship</label>
+          <select id="citizenship" name="citizenship" required class={inputClass} aria-describedby="citizenship-error">
+            <option value="">Select a country</option>
+            {countries.map((c) => <option value={c}>{c}</option>)}
+          </select>
+          <p id="citizenship-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="program_year" class={labelClass}>Year of doctoral program</label>
+          <select
+            id="program_year"
+            name="program_year"
+            required
+            class={inputClass}
+            aria-describedby="program_year-error"
+          >
+            <option value="">Select a year</option>
+            {programYears.map((y) => <option value={y}>Year {y}</option>)}
+          </select>
+          <p id="program_year-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="supervisor" class={labelClass}>Doctoral supervisor</label>
+          <input type="text" id="supervisor" name="supervisor" required class={inputClass} aria-describedby="supervisor-error" />
+          <p id="supervisor-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="manuscript" class={labelClass}>Manuscript (PDF or Word, max 10 MB)</label>
+          <input
+            type="file"
+            id="manuscript"
+            name="manuscript"
+            accept={FILE_ACCEPT}
+            required
+            class={fileInputClass}
+            aria-describedby="manuscript-filename manuscript-error"
+          />
+          <p id="manuscript-filename" class="mt-1.5 text-sm text-muted"></p>
+          <p id="manuscript-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
+          <label for="cover_letter" class={labelClass}>Cover letter (PDF or Word, max 10 MB)</label>
+          <input
+            type="file"
+            id="cover_letter"
+            name="cover_letter"
+            accept={FILE_ACCEPT}
+            required
+            class={fileInputClass}
+            aria-describedby="cover_letter-filename cover_letter-error"
+          />
+          <p id="cover_letter-filename" class="mt-1.5 text-sm text-muted"></p>
+          <p id="cover_letter-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6 flex items-start gap-3">
+          <input
+            type="checkbox"
+            id="stipend_requested"
+            name="stipend_requested"
+            class="mt-1 cursor-pointer w-4 h-4 rounded border border-brand-100 dark:border-brand-600"
+          />
+          <label for="stipend_requested" class="text-sm font-medium cursor-pointer select-none">
+            I would like to be considered for a travel stipend
+          </label>
+        </div>
+
+        <div id="stipend-confirm-wrap" class="mb-6 hidden pl-7">
+          <div class="flex items-start gap-3">
+            <input
+              type="checkbox"
+              id="stipend_no_uni_funding"
+              name="stipend_no_uni_funding"
+              aria-describedby="stipend_no_uni_funding-error"
+              class="mt-1 cursor-pointer w-4 h-4 rounded border border-brand-100 dark:border-brand-600"
+            />
+            <div>
+              <label for="stipend_no_uni_funding" class="text-sm font-medium cursor-pointer select-none">
+                I confirm that my university is unable to fund my attendance.
+              </label>
+              <p id="stipend_no_uni_funding-error" class={errorClass}></p>
+            </div>
+          </div>
+        </div>
+
+        <p id="dc-apply-progress" class="hidden mb-4 text-sm text-muted" aria-live="polite"></p>
+
+        <Button id="dc-apply-submit" variant="primary" type="submit" text="Submit Application" class="w-full sm:w-auto" />
+      </form>
+
+      <div
+        id="dc-apply-success"
+        tabindex="-1"
+        hidden
+        aria-live="polite"
+        class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-8 text-center"
+      >
+        <h2 class="font-heading text-2xl font-semibold mb-3">Application Received</h2>
+        <p class="text-muted leading-relaxed">
+          Your application has been received. Your reference number is <strong data-ref></strong>. A confirmation
+          email is on its way to <strong data-email></strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    import { validateStep1, submitStep1, errorMessage } from '~/lib/dcClient.js';
+
+    const form = document.getElementById('dc-apply-form') as HTMLFormElement;
+    const submitBtn = document.getElementById('dc-apply-submit') as HTMLButtonElement;
+    const alertRegion = document.getElementById('dc-apply-alert') as HTMLElement;
+    const progressText = document.getElementById('dc-apply-progress') as HTMLElement;
+    const successPanel = document.getElementById('dc-apply-success') as HTMLElement;
+    const stipendCheckbox = document.getElementById('stipend_requested') as HTMLInputElement;
+    const stipendConfirmWrap = document.getElementById('stipend-confirm-wrap') as HTMLElement;
+    const stipendConfirmCheckbox = document.getElementById('stipend_no_uni_funding') as HTMLInputElement;
+
+    const FIELD_IDS = [
+      'first_name',
+      'last_name',
+      'email',
+      'university',
+      'university_country',
+      'citizenship',
+      'program_year',
+      'supervisor',
+      'manuscript',
+      'cover_letter',
+      'stipend_no_uni_funding',
+    ];
+
+    function toggleStipendConfirm() {
+      const show = stipendCheckbox.checked;
+      stipendConfirmWrap.classList.toggle('hidden', !show);
+      if (!show) stipendConfirmCheckbox.checked = false;
+    }
+    stipendCheckbox.addEventListener('change', toggleStipendConfirm);
+    toggleStipendConfirm();
+
+    function bindFilePreview(inputId: string, previewId: string) {
+      const input = document.getElementById(inputId) as HTMLInputElement;
+      const preview = document.getElementById(previewId) as HTMLElement;
+      input.addEventListener('change', () => {
+        const file = input.files?.[0];
+        if (!file) {
+          preview.textContent = '';
+          return;
+        }
+        const sizeLabel =
+          file.size > 1024 * 1024 ? `${(file.size / (1024 * 1024)).toFixed(1)} MB` : `${Math.ceil(file.size / 1024)} KB`;
+        preview.textContent = `${file.name} (${sizeLabel})`;
+      });
+    }
+    bindFilePreview('manuscript', 'manuscript-filename');
+    bindFilePreview('cover_letter', 'cover_letter-filename');
+
+    function clearErrors() {
+      FIELD_IDS.forEach((id) => {
+        const errEl = document.getElementById(`${id}-error`);
+        if (errEl) {
+          errEl.textContent = '';
+          errEl.classList.add('hidden');
+        }
+        document.getElementById(id)?.removeAttribute('aria-invalid');
+      });
+      alertRegion.textContent = '';
+      alertRegion.classList.add('hidden');
+    }
+
+    // Field-specific copy for the generic 'required' / 'missing_file' codes.
+    // dcClient.js only maps code → one generic sentence; the field name isn't
+    // known there, so per-field wording lives here instead.
+    const REQUIRED_TEXT: Record<string, string> = {
+      first_name: 'Please enter your first name.',
+      last_name: 'Please enter your last name.',
+      email: 'Please enter your email address.',
+      university: 'Please enter your university.',
+      university_country: "Please select your university's country.",
+      citizenship: 'Please select your citizenship.',
+      program_year: 'Please select your year of doctoral program.',
+      supervisor: 'Please enter your doctoral supervisor.',
+    };
+    const MISSING_FILE_TEXT: Record<string, string> = {
+      manuscript: 'Please upload your manuscript.',
+      cover_letter: 'Please upload your cover letter.',
+    };
+
+    function fieldMessage(field: string, code: string) {
+      if (code === 'required' && REQUIRED_TEXT[field]) return REQUIRED_TEXT[field];
+      if (code === 'missing_file' && MISSING_FILE_TEXT[field]) return MISSING_FILE_TEXT[field];
+      return errorMessage(code);
+    }
+
+    function showFieldErrors(errors: any) {
+      let firstField: any = null;
+      Object.entries(errors).forEach(([field, code]) => {
+        const errEl = document.getElementById(`${field}-error`);
+        const input = document.getElementById(field);
+        if (errEl) {
+          errEl.textContent = fieldMessage(field, code as string);
+          errEl.classList.remove('hidden');
+        }
+        if (input) {
+          input.setAttribute('aria-invalid', 'true');
+          if (!firstField) firstField = input;
+        }
+      });
+      firstField?.focus();
+    }
+
+    function showAlert(message: string) {
+      alertRegion.textContent = message;
+      alertRegion.classList.remove('hidden');
+    }
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      clearErrors();
+
+      const fd = new FormData(form);
+      const formData = {
+        first_name: fd.get('first_name') || '',
+        last_name: fd.get('last_name') || '',
+        email: fd.get('email') || '',
+        university: fd.get('university') || '',
+        university_country: fd.get('university_country') || '',
+        citizenship: fd.get('citizenship') || '',
+        program_year: fd.get('program_year') || '',
+        supervisor: fd.get('supervisor') || '',
+        stipend_requested: stipendCheckbox.checked,
+        stipend_no_uni_funding: stipendConfirmCheckbox.checked,
+      };
+      const files = {
+        manuscript: (document.getElementById('manuscript') as HTMLInputElement).files?.[0],
+        cover_letter: (document.getElementById('cover_letter') as HTMLInputElement).files?.[0],
+      };
+
+      const errors = validateStep1(formData, files);
+      if (Object.keys(errors).length) {
+        showFieldErrors(errors);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      progressText.classList.remove('hidden');
+
+      const res = await submitStep1(formData, files, (phase?: string) => {
+        if (phase === 'encoding') progressText.textContent = 'Preparing your files…';
+        else if (phase === 'uploading') progressText.textContent = 'Uploading…';
+      });
+
+      progressText.classList.add('hidden');
+
+      if (res.ok) {
+        form.hidden = true;
+        successPanel.hidden = false;
+        (successPanel.querySelector('[data-ref]') as HTMLElement).textContent = res.submission_id;
+        (successPanel.querySelector('[data-email]') as HTMLElement).textContent = String(formData.email);
+        successPanel.focus();
+        return;
+      }
+
+      submitBtn.disabled = false;
+
+      if (res.error === 'file_upload_failed') {
+        const contact = '<a href="mailto:amaglobaldc@gmail.com" class="underline underline-offset-2">amaglobaldc@gmail.com</a>';
+        const refPart = res.submission_id ? ` Your reference number is <strong>${res.submission_id}</strong>.` : '';
+        alertRegion.innerHTML = `${errorMessage('file_upload_failed')}${refPart} Contact ${contact}.`;
+        alertRegion.classList.remove('hidden');
+      } else {
+        showAlert(errorMessage(res.error));
+      }
+
+      const fieldErrors =
+        res.fieldErrors || (res.fields ? Object.fromEntries(res.fields.map((f: string) => [f, 'required'])) : null);
+      if (fieldErrors) showFieldErrors(fieldErrors);
+    });
+  </script>
+</Layout>
