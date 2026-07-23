@@ -257,7 +257,9 @@ export async function submitStep1(form, files, onProgress = () => {}) {
     stipend_no_uni_funding: !!form.stipend_no_uni_funding,
     manuscript,
     cover_letter,
-    user_agent: navigator.userAgent
+    user_agent: navigator.userAgent,
+    dc_ref_code: form.dc_ref_code,
+    rendered_at: form.rendered_at
   });
 
   onProgress('done');
