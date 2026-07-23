@@ -125,6 +125,14 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
           <p id="supervisor-error" class={errorClass}></p>
         </div>
 
+        <!-- Bot trap. Must remain empty. Do not remove, do not give it a visible label. -->
+        <div aria-hidden="true"
+             style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+          <label for="dc_ref_code">Reference code</label>
+          <input type="text" id="dc_ref_code" name="dc_ref_code"
+                 tabindex="-1" autocomplete="off" />
+        </div>
+
         <div class="mb-6">
           <label for="manuscript" class={labelClass}>Manuscript (PDF or Word, max 10 MB)</label>
           <input
@@ -208,6 +216,8 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
 
   <script>
     import { validateStep1, submitStep1, errorMessage } from '~/lib/dcClient.js';
+
+    const renderedAt = Date.now();
 
     const form = document.getElementById('dc-apply-form') as HTMLFormElement;
     const submitBtn = document.getElementById('dc-apply-submit') as HTMLButtonElement;
@@ -332,6 +342,8 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         supervisor: fd.get('supervisor') || '',
         stipend_requested: stipendCheckbox.checked,
         stipend_no_uni_funding: stipendConfirmCheckbox.checked,
+        dc_ref_code: (document.getElementById('dc_ref_code') as HTMLInputElement).value,
+        rendered_at: renderedAt,
       };
       const files = {
         manuscript: (document.getElementById('manuscript') as HTMLInputElement).files?.[0],
