@@ -246,6 +246,7 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   video?: Video;
   items?: Array<Item>;
   columns?: number;
+  centered?: boolean;
   defaultIcon?: string;
   callToAction1?: CallToAction;
   callToAction2?: CallToAction;

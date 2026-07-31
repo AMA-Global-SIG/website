@@ -11,6 +11,7 @@ const {
   tagline = await Astro.slots.render('tagline'),
   items = [],
   columns = 3,
+  centered = false,
 
   id,
   isDark = false,
@@ -24,14 +25,27 @@ const gridCols =
     : columns === 2
       ? 'sm:grid-cols-2'
       : '';
+
+// `centered` keeps every card at the width it would have in a `columns`-wide grid,
+// but lays them out with wrapping flex so an incomplete last row is centered
+// instead of hanging to the left. Useful when sibling groups have different
+// item counts and should still read as one set of equally sized cards.
+const centeredWidths: Record<number, string> = {
+  1: 'w-full',
+  2: 'w-full sm:w-[calc((100%-1.5rem)/2)]',
+  3: 'w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)]',
+  4: 'w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-4.5rem)/4)]',
+};
+const containerLayout = centered ? 'flex flex-wrap justify-center gap-6' : `grid gap-4 md:gap-6 ${gridCols}`;
+const itemLayout = centered ? (centeredWidths[columns] ?? centeredWidths[3]) : '';
 ---
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-7xl mx-auto ${!title && !subtitle && !tagline ? 'pt-2 md:pt-3 lg:pt-4 pb-4 md:pb-4 lg:pb-4' : ''} ${classes?.container ?? ''}`} bg={bg}>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
-  <div class={twMerge(`grid gap-4 md:gap-6 ${gridCols}`)}>
+  <div class={twMerge(containerLayout)}>
     {
       items.map(({ title: itemTitle, description, image, callToAction }, i) => (
-        <div class={twMerge('relative flex flex-col rounded-xl shadow-sm border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 p-6 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-400 transition-all duration-200 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade', classes?.panel as string)}>
+        <div class={twMerge('relative flex flex-col rounded-xl shadow-sm border border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-650 p-6 hover:shadow-md hover:border-brand-300 dark:hover:border-brand-400 transition-all duration-200 intersect-once intersect-quarter intersect-no-queue motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade', itemLayout, classes?.panel as string)}>
           {image ? (
             <img
               src={image.src}

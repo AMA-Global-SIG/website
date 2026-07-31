@@ -11,7 +11,9 @@
       "Bash(git rm *)",
       "Bash(dir \"C:\\\\Users\\\\Mandler\\\\OneDrive\\\\Dokumente\\\\AMA Global Marketing SIG\\\\GitHub\\\\website\\\\public\\\\people\\\\*lindemann*\")",
       "mcp__Claude_in_Chrome__tabs_context_mcp",
-      "WebSearch"
+      "WebSearch",
+      "PowerShell(npm run build 2>&1)",
+      "PowerShell(npm install 2>&1)"
     ]
   }
 }
