@@ -352,15 +352,37 @@ const areas = [
       </div>
     </div>
     <Features2
-      title="Conference Organizers"
-      columns={3}
+      title="Conference Chairs"
+      columns={4}
       classes={{ container: '!py-0 !pb-12', panel: '!bg-page' }}
       items={[
+        {
+          title: 'Magnus Hultman',
+          description: 'Brock University<br />mhultman@brocku.ca',
+          image: { src: '/people/mhultman_215x215.jpg', alt: 'Magnus Hultman' },
+        },
+        {
+          title: 'Peter Magnusson',
+          description: 'University<br />peter.magnusson@utrgv.edu',
+          image: { src: '/people/pmagnusson_215x215.jpg', alt: 'Peter Magnusson' },
+        },
+        {
+          title: 'Timo Mandler',
+          description: 'NEOMA Business School<br />timo.mandler@neoma-bs.fr',
+          image: { src: '/people/tmandler_215x215.jpg', alt: 'Timo Mandler' },
+        },
         {
           title: 'Goksel Yalcinkaya',
           description: 'University of New Hampshire<br />goksel.yalcinkaya@unh.edu',
           image: { src: '/people/gyalcinkaya_215x215.jpg', alt: 'Goksel Yalcinkaya' },
         },
+      ]}
+    />
+    <Features2
+      title="Conference Local Chairs"
+      columns={2}
+      classes={{ container: '!py-0 !pb-12', panel: '!bg-page' }}
+      items={[
         {
           title: 'Ryuta Ishii',
           description: 'Ritsumeikan University<br />r-ishii@fc.ritsumei.ac.jp',
