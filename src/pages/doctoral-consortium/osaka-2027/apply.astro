@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Button from '~/components/ui/Button.astro';
 import { countries } from '~/data/countries.js';
-import { FILE_ACCEPT, MIN_PROGRAM_YEAR, MAX_PROGRAM_YEAR } from '~/lib/dcClient.js';
+import { FILE_ACCEPT, MIN_PROGRAM_YEAR, MAX_PROGRAM_YEAR, GENDER_OPTIONS } from '~/lib/dcClient.js';
 
 const metadata = {
   title: 'Apply — Osaka 2027 Doctoral Consortium — AMA Global Marketing SIG',
@@ -105,6 +105,15 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         </div>
 
         <div class="mb-6">
+          <label for="gender" class={labelClass}>Gender</label>
+          <select id="gender" name="gender" required class={inputClass} aria-describedby="gender-error">
+            <option value="">Select an option</option>
+            {GENDER_OPTIONS.map((g) => <option value={g}>{g}</option>)}
+          </select>
+          <p id="gender-error" class={errorClass}></p>
+        </div>
+
+        <div class="mb-6">
           <label for="program_year" class={labelClass}>Year of doctoral program</label>
           <select
             id="program_year"
@@ -134,7 +143,7 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         </div>
 
         <div class="mb-6">
-          <label for="manuscript" class={labelClass}>Manuscript (PDF or Word, max 10 MB)</label>
+          <label for="manuscript" class={labelClass}>Manuscript (PDF, max 10 MB)</label>
           <input
             type="file"
             id="manuscript"
@@ -149,7 +158,7 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         </div>
 
         <div class="mb-6">
-          <label for="cover_letter" class={labelClass}>Cover letter (PDF or Word, max 10 MB)</label>
+          <label for="cover_letter" class={labelClass}>Cover letter (PDF, max 10 MB)</label>
           <input
             type="file"
             id="cover_letter"
@@ -235,6 +244,7 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       'university',
       'university_country',
       'citizenship',
+      'gender',
       'program_year',
       'supervisor',
       'manuscript',
@@ -290,6 +300,7 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       university: 'Please enter your university.',
       university_country: "Please select your university's country.",
       citizenship: 'Please select your citizenship.',
+      gender: 'Please select an option.',
       program_year: 'Please select your year of doctoral program.',
       supervisor: 'Please enter your doctoral supervisor.',
     };
@@ -338,6 +349,7 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         university: fd.get('university') || '',
         university_country: fd.get('university_country') || '',
         citizenship: fd.get('citizenship') || '',
+        gender: fd.get('gender') || '',
         program_year: fd.get('program_year') || '',
         supervisor: fd.get('supervisor') || '',
         stipend_requested: stipendCheckbox.checked,
