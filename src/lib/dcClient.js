@@ -21,17 +21,17 @@ const ENDPOINT = import.meta.env.PUBLIC_DC_ENDPOINT;
 
 export const MAX_FILE_BYTES = 10 * 1024 * 1024; // must match CONFIG.MAX_FILE_BYTES server-side
 
-export const ALLOWED_MIME = [
-  'application/pdf',
-  'application/msword',
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
-];
+// PDF only — must match CONFIG.ALLOWED_MIME server-side.
+export const ALLOWED_MIME = ['application/pdf'];
 
 /** Value for the <input type="file"> accept attribute. */
-export const FILE_ACCEPT = '.pdf,.doc,.docx';
+export const FILE_ACCEPT = '.pdf';
 
 export const MIN_PROGRAM_YEAR = 1;
 export const MAX_PROGRAM_YEAR = 7;
+
+/** Options for the gender select. Stored in the sheet exactly as shown. */
+export const GENDER_OPTIONS = ['Female', 'Male', 'Non-binary', 'Prefer not to say'];
 
 // ─────────────────────────────────────────────────────────────
 // ERROR COPY
@@ -42,17 +42,12 @@ export const MAX_PROGRAM_YEAR = 7;
  * code. Anything unmapped falls back to GENERIC_ERROR.
  */
 export const ERROR_MESSAGES = {
-  // Client-side validation codes, emitted by validateStep1/validateStep2/checkFile.
-  required: 'This field is required.',
-  missing_file: 'Please choose a file to upload.',
-
-  // Server-side codes.
   missing_fields: 'Some required fields are still empty. Please check the highlighted fields.',
   invalid_email: 'That email address does not look valid. Please check it and try again.',
   invalid_program_year: 'Please select which year of your doctoral program you are in.',
   stipend_requires_funding_confirmation:
     'To request a stipend, please also confirm that your university cannot fund your attendance.',
-  unsupported_file_type: 'Please upload PDF or Word documents only.',
+  unsupported_file_type: 'Please upload PDF files only.',
   file_too_large: 'That file is larger than 10 MB. Please compress it or upload a smaller version.',
   submissions_closed: 'The submission deadline has passed and applications are now closed.',
   file_upload_failed:
@@ -134,20 +129,16 @@ export function checkFile(file) {
   if (!file) return 'missing_file';
   if (file.size > MAX_FILE_BYTES) return 'file_too_large';
 
-  // Some browsers report an empty type for .doc/.docx, so fall back to extension.
+  // A few browsers report an empty type, so fall back to the extension.
   if (file.type && !ALLOWED_MIME.includes(file.type)) return 'unsupported_file_type';
-  if (!file.type && !/\.(pdf|docx?)$/i.test(file.name)) return 'unsupported_file_type';
+  if (!file.type && !/\.pdf$/i.test(file.name)) return 'unsupported_file_type';
 
   return null;
 }
 
 function mimeFor_(file) {
-  if (file.type && ALLOWED_MIME.includes(file.type)) return file.type;
-  if (/\.pdf$/i.test(file.name)) return 'application/pdf';
-  if (/\.docx$/i.test(file.name)) {
-    return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-  }
-  return 'application/msword';
+  // checkFile() has already rejected anything that isn't a PDF.
+  return 'application/pdf';
 }
 
 async function filePayload_(file) {
@@ -160,7 +151,7 @@ async function filePayload_(file) {
 
 const REQUIRED_STEP1 = [
   'first_name', 'last_name', 'email', 'university',
-  'university_country', 'citizenship', 'program_year', 'supervisor'
+  'university_country', 'citizenship', 'gender', 'program_year', 'supervisor'
 ];
 
 /**
@@ -251,15 +242,14 @@ export async function submitStep1(form, files, onProgress = () => {}) {
     university: String(form.university).trim(),
     university_country: form.university_country,
     citizenship: form.citizenship,
+    gender: form.gender,
     program_year: parseInt(form.program_year, 10),
     supervisor: String(form.supervisor).trim(),
     stipend_requested: !!form.stipend_requested,
     stipend_no_uni_funding: !!form.stipend_no_uni_funding,
     manuscript,
     cover_letter,
-    user_agent: navigator.userAgent,
-    dc_ref_code: form.dc_ref_code,
-    rendered_at: form.rendered_at
+    user_agent: navigator.userAgent
   });
 
   onProgress('done');
@@ -293,8 +283,6 @@ export async function submitStep2(token, form) {
     passport_name: String(form.passport_name).trim(),
     nationality: form.nationality,
     date_of_birth: String(form.date_of_birth).trim(),
-    consent_publish: !!form.consent_publish,
-    linkedin_interest: !!form.linkedin_interest,
     user_agent: navigator.userAgent
   });
 }
