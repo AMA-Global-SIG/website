@@ -3,7 +3,7 @@ title: 'Terms and Conditions'
 layout: '~/layouts/MarkdownLayout.astro'
 ---
 
-_Last updated_: February 5, 2026
+_Last updated_: August 24, 2026
 
 Please read these terms and conditions carefully before using the AMA Global Marketing SIG website.
 
@@ -19,17 +19,11 @@ For the purposes of these Terms and Conditions:
 
 - **AMA** refers to the American Marketing Association, the parent organization under which the SIG operates.
 
-- **Country** refers to: Illinois, United States
-
 - **SIG** (referred to as either "the SIG", "We", "Us" or "Our" in this Agreement) refers to the AMA Global Marketing Special Interest Group, a special interest group of the American Marketing Association, 130 E. Randolph St., 22nd Floor, Chicago, IL 60601.
-
-- **Device** means any device that can access the Service such as a computer, a cellphone or a digital tablet.
 
 - **Service** refers to the Website.
 
 - **Terms and Conditions** (also referred as "Terms") mean these Terms and Conditions that form the entire agreement between You and the SIG regarding the use of the Service.
-
-- **Third-party Social Media Service** means any services or content (including data, information, products or services) provided by a third-party that may be displayed, included or made available by the Service.
 
 - **Website** refers to the AMA Global Marketing SIG website.
 
@@ -71,11 +65,9 @@ The SIG strives to ensure that information on this Website is accurate and curre
 
 If You identify any inaccuracies, please contact us so that we may correct them.
 
-## Termination
+## Restricting Access
 
-We may terminate or suspend Your access immediately, without prior notice or liability, for any reason whatsoever, including without limitation if You breach these Terms and Conditions.
-
-Upon termination, Your right to use the Service will cease immediately.
+Because this Website does not use accounts or logins, there is no account for us to deactivate. However, We reserve the right to restrict or block access to the Website — for example, at the network level — for anyone who misuses it or breaches these Terms and Conditions.
 
 ## Limitation of Liability
 
