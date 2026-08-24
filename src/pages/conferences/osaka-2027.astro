@@ -125,8 +125,11 @@ const areas = [
               variant="primary"
               text="Submit Your Paper"
               href="/conferences/submission-guidelines"
-              class="sm:w-auto"
+              disabled
+              aria-disabled="true"
+              class="opacity-60 pointer-events-none" 
             />
+            <!-- class="sm:w-auto" -->
             <Button variant="tertiary" text="Key Dates ↓" href="#key-dates" class="sm:w-auto" />
           </div>
         </div>
@@ -873,7 +876,7 @@ const areas = [
     actions={[
       {
         variant: 'primary',
-        text: 'Submit Your Paper',
+        text: 'Submission Guidelines',
         href: '/conferences/submission-guidelines',
       },
       {
@@ -883,6 +886,7 @@ const areas = [
       },
     ]}
   >
+  <!-- Submission Guidelines could be replaced by Submit Your Paper (EasyChair) -->
     <Fragment slot="subtitle">
       <p class="leading-relaxed">
         Mark your calendar for <span class="font-semibold">June 18–21, 2027</span> and join the global marketing community at Ritsumeikan University.
