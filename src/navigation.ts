@@ -137,7 +137,7 @@ export const footerData = {
     { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: '#' },
+    { ariaLabel: 'LinkedIn', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/ama-global-marketing-sig/' },
   ],
   footNote: `
     © ${new Date().getFullYear()} AMA Global Marketing SIG. All rights reserved.
