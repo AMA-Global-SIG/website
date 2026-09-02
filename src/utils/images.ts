@@ -74,6 +74,16 @@ export const adaptOpenGraphImages = async (
           };
         }
 
+        // Files served from /public are used as-is: no image transform pipeline,
+        // just an absolute URL against the site origin.
+        if (typeof resolvedImage === 'string' && resolvedImage.startsWith('/')) {
+          return {
+            url: String(new URL(resolvedImage, astroSite)),
+            width: image?.width,
+            height: image?.height,
+          };
+        }
+
         let _image: OptimizedImage | undefined;
 
         if (
