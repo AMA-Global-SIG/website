@@ -66,11 +66,11 @@ const metadata = {
               variant="primary"
               text="Apply Now"
               href="/doctoral-consortium/osaka-2027/apply"
-              disabled
-              aria-disabled="true"
-              class="opacity-60 pointer-events-none" 
+              class="sm:w-auto"
             />
-            <!-- class="sm:w-auto" -->
+            <!-- disabled
+              aria-disabled="true"
+              class="opacity-60 pointer-events-none"  -->
             <Button variant="tertiary" text="Key Dates ↓" href="#key-dates" class="sm:w-auto" />
           </div>
         </div>
@@ -219,9 +219,8 @@ const metadata = {
         idea.
       </p>
       <p class="text-lg text-muted leading-relaxed mb-6">
-        Applications are submitted through our online application form and must include:
+        Applications are submitted through our <a href="/doctoral-consortium/osaka-2027/apply" class="text-brand-500 dark:text-brand-250 underline underline-offset-2">online application form</a> and must include:
       </p>
-      <!-- <a href="/doctoral-consortium/osaka-2027/apply" class="text-brand-500 dark:text-brand-250 underline underline-offset-2">online application form</a> -->
       <ul class="space-y-4 mb-6">
         <li class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6">
           <span class="font-heading font-semibold text-heading">Cover Letter:</span>
@@ -377,8 +376,7 @@ const metadata = {
     </p>
   </section>
 
-  <!-- Final CTA 
-  <CallToAction
+    <CallToAction
     title="Ready to apply?"
     actions={[
       {
