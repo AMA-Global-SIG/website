@@ -187,6 +187,7 @@ export interface CallToAction extends Omit<HTMLAttributes<'a'>, 'slot'> {
   icon?: string;
   classes?: Record<string, string>;
   type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
 }
 
 export interface ItemGrid {
@@ -233,6 +234,7 @@ export interface Pricing extends Omit<Headline, 'classes'>, Widget {
 
 export interface Testimonials extends Omit<Headline, 'classes'>, Widget {
   testimonials?: Array<Testimonial>;
+  columns?: number;
   callToAction?: CallToAction;
 }
 

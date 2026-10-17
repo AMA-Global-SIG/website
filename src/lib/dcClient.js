@@ -57,7 +57,7 @@ export const ERROR_MESSAGES = {
   invalid_date_of_birth: 'Please enter your date of birth.',
   corrupt_upload: 'That file could not be read. Please try uploading it again.',
   network: 'We could not reach the server. Please check your connection and try again.',
-  server_error: 'Something went wrong on our side. Please try again in a moment.'
+  server_error: 'Something went wrong on our side. Please try again in a moment.',
 };
 
 export const GENERIC_ERROR = ERROR_MESSAGES.server_error;
@@ -86,11 +86,11 @@ async function postJson_(payload) {
   try {
     const res = await fetch(ENDPOINT, {
       method: 'POST',
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
     });
     if (!res.ok) return { ok: false, error: 'server_error' };
     return await res.json();
-  } catch (err) {
+  } catch {
     return { ok: false, error: 'network' };
   }
 }
@@ -101,7 +101,7 @@ async function getJson_(params) {
     const res = await fetch(url);
     if (!res.ok) return { ok: false, error: 'server_error' };
     return await res.json();
-  } catch (err) {
+  } catch {
     return { ok: false, error: 'network' };
   }
 }
@@ -136,13 +136,13 @@ export function checkFile(file) {
   return null;
 }
 
-function mimeFor_(file) {
+function mimeFor_() {
   // checkFile() has already rejected anything that isn't a PDF.
   return 'application/pdf';
 }
 
 async function filePayload_(file) {
-  return { mime_type: mimeFor_(file), data: await toBase64(file) };
+  return { mime_type: mimeFor_(), data: await toBase64(file) };
 }
 
 // ─────────────────────────────────────────────────────────────
@@ -150,8 +150,15 @@ async function filePayload_(file) {
 // ─────────────────────────────────────────────────────────────
 
 const REQUIRED_STEP1 = [
-  'first_name', 'last_name', 'email', 'university',
-  'university_country', 'citizenship', 'gender', 'program_year', 'supervisor'
+  'first_name',
+  'last_name',
+  'email',
+  'university',
+  'university_country',
+  'citizenship',
+  'gender',
+  'program_year',
+  'supervisor',
 ];
 
 /**
@@ -229,7 +236,7 @@ export async function submitStep1(form, files, onProgress = () => {}) {
   try {
     manuscript = await filePayload_(files.manuscript);
     cover_letter = await filePayload_(files.cover_letter);
-  } catch (err) {
+  } catch {
     return { ok: false, error: 'corrupt_upload' };
   }
 
@@ -249,7 +256,7 @@ export async function submitStep1(form, files, onProgress = () => {}) {
     stipend_no_uni_funding: !!form.stipend_no_uni_funding,
     manuscript,
     cover_letter,
-    user_agent: navigator.userAgent
+    user_agent: navigator.userAgent,
   });
 
   onProgress('done');
@@ -283,7 +290,7 @@ export async function submitStep2(token, form) {
     passport_name: String(form.passport_name).trim(),
     nationality: form.nationality,
     date_of_birth: String(form.date_of_birth).trim(),
-    user_agent: navigator.userAgent
+    user_agent: navigator.userAgent,
   });
 }
 

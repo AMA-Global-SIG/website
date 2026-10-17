@@ -18,15 +18,15 @@ const {
   bg = await Astro.slots.render('bg'),
 } = Astro.props;
 
-const gridCols =
-  columns >= 3
-    ? 'lg:grid-cols-3 sm:grid-cols-2'
-    : columns === 2
-      ? 'sm:grid-cols-2'
-      : '';
+const gridCols = columns >= 3 ? 'lg:grid-cols-3 sm:grid-cols-2' : columns === 2 ? 'sm:grid-cols-2' : '';
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${!title && !subtitle && !tagline ? 'pt-2 md:pt-3 lg:pt-4 pb-8 md:pb-10 lg:pb-12' : ''} ${classes?.container ?? ''}`} bg={bg}>
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-5xl ${!title && !subtitle && !tagline ? 'pt-2 md:pt-3 lg:pt-4 pb-8 md:pb-10 lg:pb-12' : ''} ${classes?.container ?? ''}`}
+  bg={bg}
+>
   <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
   <div class={twMerge(`grid gap-6 gap-x-10 sm:gap-y-8 ${gridCols}`)}>
     {
@@ -46,7 +46,9 @@ const gridCols =
               {String(i + 1).padStart(2, '0')}
             </span>
           )}
-          <div class="font-heading text-xl md:text-[1.3rem] font-semibold text-heading leading-snug break-words">{itemTitle}</div>
+          <div class="font-heading text-xl md:text-[1.3rem] font-semibold text-heading leading-snug break-words">
+            {itemTitle}
+          </div>
           {description && <p class="text-muted mt-2 break-words" set:html={description} />}
           {callToAction && (
             <div class="mt-auto pt-4">

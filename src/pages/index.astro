@@ -6,7 +6,6 @@ import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
-import Brands from '~/components/widgets/Brands.astro';
 import Button from '~/components/ui/Button.astro';
 
 const metadata = {
@@ -60,7 +59,12 @@ const metadata = {
               target="_blank"
               class="sm:w-auto"
             />
-            <Button variant="tertiary" text="Osaka 2027 Conference →" href="/conferences/osaka-2027" class="sm:w-auto" />
+            <Button
+              variant="tertiary"
+              text="Osaka 2027 Conference →"
+              href="/conferences/osaka-2027"
+              class="sm:w-auto"
+            />
           </div>
         </div>
 
@@ -206,7 +210,7 @@ const metadata = {
     icons={['tabler:building-community', 'tabler:book', 'tabler:school', 'tabler:world']}
   />
   -->
-  <br>
+  <br />
 
   <!-- Get Involved CTA -->
   <CallToAction
@@ -228,8 +232,8 @@ const metadata = {
     <Fragment slot="subtitle">
       <p class="mb-4 leading-relaxed">
         Membership in the Global Marketing SIG is open to all AMA members. Simply indicate your desire to join when
-        initiating or renewing your annual AMA membership. <span class="font-semibold">International scholars</span> who are not AMA members may apply for affiliated (non-voting)
-        membership. Contact the Membership Coordinator for details.
+        initiating or renewing your annual AMA membership. <span class="font-semibold">International scholars</span> who are
+        not AMA members may apply for affiliated (non-voting) membership. Contact the Membership Coordinator for details.
       </p>
     </Fragment>
   </CallToAction>

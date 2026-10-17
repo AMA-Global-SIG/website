@@ -5,7 +5,8 @@ import { countries } from '~/data/countries.js';
 
 const metadata = {
   title: 'Confirm Your Details — Osaka 2027 Doctoral Consortium — AMA Global Marketing SIG',
-  description: 'Post-acceptance confirmation form for the AMA Global Marketing SIG 2027 Doctoral Consortium in Osaka, Japan.',
+  description:
+    'Post-acceptance confirmation form for the AMA Global Marketing SIG 2027 Doctoral Consortium in Osaka, Japan.',
   openGraph: {
     images: [{ url: '/og/default_osaka_dc.jpg', width: 1200, height: 630 }],
   },
@@ -29,11 +30,14 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       >
       </div>
 
-      <div id="dc-confirm-already" class="hidden rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-8 text-center">
+      <div
+        id="dc-confirm-already"
+        class="hidden rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-8 text-center"
+      >
         <h1 class="font-heading text-2xl font-semibold mb-3">Details Already Received</h1>
         <p class="text-muted leading-relaxed">
-          Thanks, <span data-first-name></span> — we already have your details on file. Contact the organizers if
-          you need to change anything.
+          Thanks, <span data-first-name></span> — we already have your details on file. Contact the organizers if you need
+          to change anything.
         </p>
       </div>
 
@@ -68,7 +72,13 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
 
           <div class="mb-6">
             <label for="nationality" class={labelClass}>Nationality</label>
-            <select id="nationality" name="nationality" required class={inputClass} aria-describedby="nationality-error">
+            <select
+              id="nationality"
+              name="nationality"
+              required
+              class={inputClass}
+              aria-describedby="nationality-error"
+            >
               <option value="">Select a country</option>
               {countries.map((c) => <option value={c}>{c}</option>)}
             </select>
@@ -112,7 +122,13 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
             </label>
           </div>
 
-          <Button id="dc-confirm-submit" variant="primary" type="submit" text="Submit Details" class="w-full sm:w-auto" />
+          <Button
+            id="dc-confirm-submit"
+            variant="primary"
+            type="submit"
+            text="Submit Details"
+            class="w-full sm:w-auto"
+          />
         </form>
 
         <div
@@ -180,8 +196,8 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       return errorMessage(code);
     }
 
-    function showFieldErrors(errors: any) {
-      let firstField: any = null;
+    function showFieldErrors(errors: object) {
+      const invalidFields: HTMLElement[] = [];
       Object.entries(errors).forEach(([field, code]) => {
         const errEl = document.getElementById(`${field}-error`);
         const input = document.getElementById(field);
@@ -191,10 +207,10 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         }
         if (input) {
           input.setAttribute('aria-invalid', 'true');
-          if (!firstField) firstField = input;
+          invalidFields.push(input);
         }
       });
-      firstField?.focus();
+      invalidFields[0]?.focus();
     }
 
     function showAlert(message: string) {

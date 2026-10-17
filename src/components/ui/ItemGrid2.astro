@@ -46,8 +46,10 @@ const {
               alt={image.alt ?? title ?? ''}
               class="w-16 h-16 rounded-full object-cover mb-4 shadow-sm ring-2 ring-brand-200 dark:ring-brand-500"
             />
-          ) : (icon || defaultIcon) && (
-            <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
+          ) : (
+            (icon || defaultIcon) && (
+              <Icon name={icon || defaultIcon} class={twMerge('mb-2 w-10 h-10', defaultIconClass, itemClasses?.icon)} />
+            )
           )}
           <div class={twMerge('text-xl font-bold', titleClass, itemClasses?.title)}>{title}</div>
           {description && (

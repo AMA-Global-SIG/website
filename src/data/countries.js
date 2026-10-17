@@ -89,7 +89,7 @@ export const countries = [
   'Kazakhstan',
   'Kenya',
   'Kiribati',
-  'Korea, Democratic People\'s Republic of',
+  "Korea, Democratic People's Republic of",
   'Korea, Republic of',
   'Kosovo',
   'Kuwait',
@@ -196,5 +196,5 @@ export const countries = [
   'Viet Nam',
   'Yemen',
   'Zambia',
-  'Zimbabwe'
+  'Zimbabwe',
 ];
