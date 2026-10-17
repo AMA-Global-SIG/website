@@ -44,7 +44,7 @@ export interface Props {
 const { kicker, title, icon, tone = 'soft', class: className = '', image, imageAlt = '' } = Astro.props;
 
 const base =
-  'rounded-xl border p-5 md:p-6 my-6 shadow-sm transition-shadow duration-200 hover:shadow-md';
+  'surface-card rounded-xl border p-5 md:p-6 my-6 shadow-sm transition-shadow duration-200 hover:shadow-md';
 
 const toneClasses = {
   soft:
@@ -56,14 +56,14 @@ const toneClasses = {
 
 <div class:list={[base, toneClasses, className]}>
   {kicker && (
-    <div class="text-base font-medium font-heading text-primary dark:text-brand-250 mb-1">
+    <div class="text-base font-medium font-heading text-primary dark:text-brand-200 mb-1">
       {kicker}
     </div>
   )}
   {(title || icon) && (
     <div class="flex items-center gap-3 mb-2">
       {icon && (
-        <Icon name={icon} class="w-6 h-6 text-primary dark:text-brand-250 shrink-0" />
+        <Icon name={icon} class="w-6 h-6 text-primary dark:text-brand-200 shrink-0" />
       )}
       {title && (
         <h4 class="text-lg md:text-xl font-bold font-heading text-heading dark:text-slate-100 m-0">

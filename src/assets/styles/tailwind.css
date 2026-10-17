@@ -91,16 +91,16 @@
   --aw-color-text-heading: rgb(241 244 249); /* brand-50  */
   --aw-color-text-default: rgb(224 231 242); /* brand-100 */
   --aw-color-text-muted: rgb(198 212 233 / 80%); /* brand-150 */
-  --aw-color-primary: rgb(118 147 191); /* brand-300 */
+  --aw-color-primary: rgb(138 163 204); /* brand-250 (5.1:1 on brand-800) */
   --aw-color-accent: rgb(138 163 204); /* brand-250 */
 }
 /* Dark mode: light background, dark text                                     */
 .dark .section-accent {
   --aw-color-text-heading: rgb(31 48 79); /* brand-800 */
   --aw-color-text-default: rgb(31 48 79);
-  --aw-color-text-muted: rgb(31 48 79 / 66%);
+  --aw-color-text-muted: rgb(31 48 79 / 72%);
   --aw-color-primary: rgb(61 94 155); /* brand-500 */
-  --aw-color-accent: rgb(76 117 193); /* brand-400 */
+  --aw-color-accent: rgb(61 94 155); /* brand-500 (brand-400 is 4.1:1 on brand-50) */
 }
 /* CTA cards sit on their own surface inside an accent section — reset the    */
 /* inherited accent text vars so they follow the page theme, not the section. */
@@ -109,14 +109,14 @@
   --aw-color-text-default: rgb(31 48 79);
   --aw-color-text-muted: rgb(31 48 79 / 72%);
   --aw-color-primary: rgb(61 94 155); /* brand-500 */
-  --aw-color-accent: rgb(76 117 193); /* brand-400 */
+  --aw-color-accent: rgb(61 94 155); /* brand-500 (brand-400 is 4.1:1 on brand-50) */
 }
 .dark .section-accent .cta-card {
   --aw-color-text-heading: rgb(241 244 249); /* brand-50  */
   --aw-color-text-default: rgb(224 231 242); /* brand-100 */
   --aw-color-text-muted: rgb(198 212 233 / 80%); /* brand-150 */
-  --aw-color-primary: rgb(118 147 191); /* brand-300 */
-  --aw-color-accent: rgb(138 163 204); /* brand-250 */
+  --aw-color-primary: rgb(166 185 214); /* brand-200 (5.0:1 on brand-650) */
+  --aw-color-accent: rgb(166 185 214); /* brand-200 */
 }
 /* Buttons inside accent sections should follow the section's context         */
 .dark .section-accent .btn {
@@ -136,6 +136,17 @@
 }
 /* -------------------------------------------------------------------------- */
 
+/* Dark card surfaces (brand-650) are lighter than the page, so brand-250   */
+/* links and labels drop to 3.9:1 there. Use brand-200 (5.0:1) inside them. */
+.dark .surface-card {
+  --aw-color-primary: rgb(166 185 214); /* brand-200 */
+  --aw-color-accent: rgb(166 185 214); /* brand-200 */
+}
+.dark .surface-card a:not(.btn):not(.btn-primary):not(.btn-secondary):not(.btn-tertiary) {
+  color: rgb(166 185 214); /* brand-200 */
+}
+/* -------------------------------------------------------------------------- */
+
 /* Button text must override Tailwind Typography prose-a link color ---------- */
 /* Unlayered rules beat @layer utilities regardless of specificity, so a      */
 /* single-class selector suffices (buttons only ever get btn-primary alone).  */
@@ -152,7 +163,7 @@
 /* Active navigation link — brand color text + underline for top-level,      */
 /* background highlight for dropdown items                                    */
 .aw-link-active {
-  @apply text-primary dark:text-brand-300 font-semibold;
+  @apply text-primary dark:text-brand-250 font-semibold;
 }
 /* Top-level direct link: animated underline bar at bottom of link */
 nav > ul > li > .aw-link-active {
@@ -165,7 +176,7 @@ nav > ul > li > .aw-link-active::after {
   left: 1rem;
   right: 1rem;
   height: 2px;
-  @apply bg-primary dark:bg-brand-300 rounded-full;
+  @apply bg-primary dark:bg-brand-250 rounded-full;
 }
 /* Dropdown item: subtle background highlight */
 .dropdown-menu .aw-link-active {
