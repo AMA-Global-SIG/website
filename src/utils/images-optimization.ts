@@ -223,9 +223,20 @@ export const astroAssetsOptimizer: ImagesOptimizer = async (
     return [];
   }
 
+  // Public-folder paths ("/people/x.jpg") are treated like remote images since Astro 6
+  // and need an explicit height; derive it from the requested aspect ratio.
+  const heightFor = (w: number) =>
+    typeof image === 'string' && _width && _height ? Math.round((w * _height) / _width) : undefined;
+
   return Promise.all(
     breakpoints.map(async (w: number) => {
-      const result = await getImage({ src: image, width: w, inferSize: true, ...(format ? { format: format } : {}) });
+      const h = heightFor(w);
+      const result = await getImage({
+        src: image,
+        width: w,
+        ...(h ? { height: h } : { inferSize: true }),
+        ...(format ? { format: format } : {}),
+      });
 
       return {
         src: result?.src,
