@@ -144,7 +144,7 @@ return null;
 function mimeFor_(file) {
 if (file.type && ALLOWED_MIME.includes(file.type)) return file.type;
 if (/\.pdf$/i.test(file.name)) return 'application/pdf';
-  if (/\.docx$/i.test(file.name)) {
+if (/\.docx$/i.test(file.name)) {
 return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
 }
 return 'application/msword';
