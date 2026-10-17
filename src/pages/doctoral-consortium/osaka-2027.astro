@@ -11,8 +11,7 @@ import Button from '~/components/ui/Button.astro';
 
 const metadata = {
   title: '2027 Osaka Doctoral Consortium — AMA Global Marketing SIG',
-  description:
-    'AMA Global Marketing SIG Doctoral Consortium — June 18, 2027 — Ritsumeikan University, Osaka, Japan',
+  description: 'AMA Global Marketing SIG Doctoral Consortium — June 18, 2027 — Ritsumeikan University, Osaka, Japan',
   ignoreTitleTemplate: true,
   openGraph: {
     images: [{ url: '/og/default_osaka_dc.jpg', width: 1200, height: 630 }],
@@ -51,9 +50,9 @@ const metadata = {
             <span class="italic font-normal text-accent dark:text-brand-250">Doctoral Consortium</span>
           </h1>
           <p class="font-sans text-lg md:text-xl text-muted max-w-xl leading-relaxed mb-8">
-            A workshop for Ph.D. students specializing in international and cross-cultural marketing. Held the day before
-            the AMA Global Conference at Ritsumeikan University, it brings together over 20 doctoral students with leading
-            scholars in the field.
+            A workshop for Ph.D. students specializing in international and cross-cultural marketing. Held the day
+            before the AMA Global Conference at Ritsumeikan University, it brings together over 20 doctoral students
+            with leading scholars in the field.
           </p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button
@@ -62,12 +61,7 @@ const metadata = {
               href="/documents/CFP_2027_AMA_Global_Doctoral_Consortium.pdf"
               target="_blank"
             />
-            <Button
-              variant="primary"
-              text="Apply Now"
-              href="/doctoral-consortium/osaka-2027/apply"
-              class="sm:w-auto"
-            />
+            <Button variant="primary" text="Apply Now" href="/doctoral-consortium/osaka-2027/apply" class="sm:w-auto" />
             <!-- disabled
               aria-disabled="true"
               class="opacity-60 pointer-events-none"  -->
@@ -128,7 +122,9 @@ const metadata = {
   <section class="relative bg-brand-50 dark:bg-transparent">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
       <div class="max-w-3xl mx-auto text-center mb-12">
-        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Objectives</p>
+        <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">
+          Objectives
+        </p>
         <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">What We Explore Together</h2>
         <p class="text-lg text-muted leading-relaxed">
           The Consortium facilitates in-depth discussions between doctoral students and distinguished faculty on the
@@ -219,7 +215,10 @@ const metadata = {
         idea.
       </p>
       <p class="text-lg text-muted leading-relaxed mb-6">
-        Applications are submitted through our <a href="/doctoral-consortium/osaka-2027/apply" class="text-brand-500 dark:text-brand-250 underline underline-offset-2">online application form</a> and must include:
+        Applications are submitted through our <a
+          href="/doctoral-consortium/osaka-2027/apply"
+          class="text-brand-500 dark:text-brand-250 underline underline-offset-2">online application form</a
+        > and must include:
       </p>
       <ul class="space-y-4 mb-6">
         <li class="rounded-2xl border border-brand-200 dark:border-brand-500 bg-page p-6">
@@ -243,8 +242,8 @@ const metadata = {
         applicant details directly on the form.
       </p>
       <p class="text-lg text-muted leading-relaxed">
-        The submission deadline is strict; <strong>late applications will not be accepted.</strong> Note that submitting
-        to the main conference alone does <strong>not</strong> constitute an application to the Doctoral Consortium — students
+        The submission deadline is strict; <strong>late applications will not be accepted.</strong> Note that submitting to
+        the main conference alone does <strong>not</strong> constitute an application to the Doctoral Consortium — students
         wishing to participate in the Consortium must submit a separate application through the process described above.
       </p>
     </div>
@@ -266,10 +265,10 @@ const metadata = {
         representing a range of research topics, methodological approaches, and institutional backgrounds.
       </p>
       <p class="text-lg text-muted leading-relaxed">
-        The AMA Global Marketing SIG provides a limited number of <strong>travel stipends</strong> based on individual
-        funding need. To be considered, indicate your need clearly in your cover letter. Stipends are typically disbursed
-        upon the student's presentation at the Consortium and may be applied toward travel expenses and/or conference
-        registration fees.
+        The AMA Global Marketing SIG provides a limited number of <strong>travel stipends</strong> based on individual funding
+        need. To be considered, indicate your need clearly in your cover letter. Stipends are typically disbursed upon the
+        student's presentation at the Consortium and may be applied toward travel expenses and/or conference registration
+        fees.
       </p>
     </div>
   </section>
@@ -376,7 +375,7 @@ const metadata = {
     </p>
   </section>
 
-    <CallToAction
+  <CallToAction
     title="Ready to apply?"
     actions={[
       {
@@ -392,14 +391,11 @@ const metadata = {
         in Osaka.
       </p>
     </Fragment>
-  </CallToAction> -->
+  </CallToAction>
 
   <script is:inline>
     (function () {
-      const heroes = [
-        '/places/amaglobal2027_oic2_1024x736.jpg',
-        '/places/amaglobal2027_oic1_1024x768.jpg',
-      ];
+      const heroes = ['/places/amaglobal2027_oic2_1024x736.jpg', '/places/amaglobal2027_oic1_1024x768.jpg'];
       const img = document.getElementById('dc-hero-image');
       if (img) {
         const pick = heroes[Math.floor(Math.random() * heroes.length)];

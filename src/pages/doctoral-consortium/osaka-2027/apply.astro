@@ -12,10 +12,7 @@ const metadata = {
   },
 };
 
-const programYears = Array.from(
-  { length: MAX_PROGRAM_YEAR - MIN_PROGRAM_YEAR + 1 },
-  (_, i) => MIN_PROGRAM_YEAR + i
-);
+const programYears = Array.from({ length: MAX_PROGRAM_YEAR - MIN_PROGRAM_YEAR + 1 }, (_, i) => MIN_PROGRAM_YEAR + i);
 
 const inputClass =
   'py-3 px-4 block w-full text-md rounded-lg border border-brand-100 dark:border-brand-600 bg-white dark:bg-brand-900';
@@ -53,13 +50,27 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       <form id="dc-apply-form" novalidate>
         <div class="mb-6">
           <label for="first_name" class={labelClass}>First name</label>
-          <input type="text" id="first_name" name="first_name" required class={inputClass} aria-describedby="first_name-error" />
+          <input
+            type="text"
+            id="first_name"
+            name="first_name"
+            required
+            class={inputClass}
+            aria-describedby="first_name-error"
+          />
           <p id="first_name-error" class={errorClass}></p>
         </div>
 
         <div class="mb-6">
           <label for="last_name" class={labelClass}>Last name</label>
-          <input type="text" id="last_name" name="last_name" required class={inputClass} aria-describedby="last_name-error" />
+          <input
+            type="text"
+            id="last_name"
+            name="last_name"
+            required
+            class={inputClass}
+            aria-describedby="last_name-error"
+          />
           <p id="last_name-error" class={errorClass}></p>
         </div>
 
@@ -79,7 +90,14 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
 
         <div class="mb-6">
           <label for="university" class={labelClass}>University</label>
-          <input type="text" id="university" name="university" required class={inputClass} aria-describedby="university-error" />
+          <input
+            type="text"
+            id="university"
+            name="university"
+            required
+            class={inputClass}
+            aria-describedby="university-error"
+          />
           <p id="university-error" class={errorClass}></p>
         </div>
 
@@ -133,16 +151,21 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
 
         <div class="mb-6">
           <label for="supervisor" class={labelClass}>Doctoral supervisor</label>
-          <input type="text" id="supervisor" name="supervisor" required class={inputClass} aria-describedby="supervisor-error" />
+          <input
+            type="text"
+            id="supervisor"
+            name="supervisor"
+            required
+            class={inputClass}
+            aria-describedby="supervisor-error"
+          />
           <p id="supervisor-error" class={errorClass}></p>
         </div>
 
         <!-- Bot trap. Must remain empty. Do not remove, do not give it a visible label. -->
-        <div aria-hidden="true"
-             style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;">
           <label for="dc_ref_code">Reference code</label>
-          <input type="text" id="dc_ref_code" name="dc_ref_code"
-                 tabindex="-1" autocomplete="off" />
+          <input type="text" id="dc_ref_code" name="dc_ref_code" tabindex="-1" autocomplete="off" />
         </div>
 
         <div class="mb-6">
@@ -207,7 +230,13 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
 
         <p id="dc-apply-progress" class="hidden mb-4 text-sm text-muted" aria-live="polite"></p>
 
-        <Button id="dc-apply-submit" variant="primary" type="submit" text="Submit Application" class="w-full sm:w-auto" />
+        <Button
+          id="dc-apply-submit"
+          variant="primary"
+          type="submit"
+          text="Submit Application"
+          class="w-full sm:w-auto"
+        />
       </form>
 
       <div
@@ -219,8 +248,8 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       >
         <h2 class="font-heading text-2xl font-semibold mb-3">Application Received</h2>
         <p class="text-muted leading-relaxed">
-          Your application has been received. Your reference number is <strong data-ref></strong>. A confirmation
-          email is on its way to <strong data-email></strong>.
+          Your application has been received. Your reference number is <strong data-ref></strong>. A confirmation email
+          is on its way to <strong data-email></strong>.
         </p>
       </div>
     </div>
@@ -273,7 +302,9 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
           return;
         }
         const sizeLabel =
-          file.size > 1024 * 1024 ? `${(file.size / (1024 * 1024)).toFixed(1)} MB` : `${Math.ceil(file.size / 1024)} KB`;
+          file.size > 1024 * 1024
+            ? `${(file.size / (1024 * 1024)).toFixed(1)} MB`
+            : `${Math.ceil(file.size / 1024)} KB`;
         preview.textContent = `${file.name} (${sizeLabel})`;
       });
     }
@@ -318,8 +349,8 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       return errorMessage(code);
     }
 
-    function showFieldErrors(errors: any) {
-      let firstField: any = null;
+    function showFieldErrors(errors: object) {
+      const invalidFields: HTMLElement[] = [];
       Object.entries(errors).forEach(([field, code]) => {
         const errEl = document.getElementById(`${field}-error`);
         const input = document.getElementById(field);
@@ -329,10 +360,10 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
         }
         if (input) {
           input.setAttribute('aria-invalid', 'true');
-          if (!firstField) firstField = input;
+          invalidFields.push(input);
         }
       });
-      firstField?.focus();
+      invalidFields[0]?.focus();
     }
 
     function showAlert(message: string) {
@@ -393,7 +424,8 @@ const errorClass = 'mt-1.5 text-sm text-red-600 hidden';
       submitBtn.disabled = false;
 
       if (res.error === 'file_upload_failed') {
-        const contact = '<a href="mailto:amaglobaldc@gmail.com" class="underline underline-offset-2">amaglobaldc@gmail.com</a>';
+        const contact =
+          '<a href="mailto:amaglobaldc@gmail.com" class="underline underline-offset-2">amaglobaldc@gmail.com</a>';
         const refPart = res.submission_id ? ` Your reference number is <strong>${res.submission_id}</strong>.` : '';
         alertRegion.innerHTML = `${errorMessage('file_upload_failed')}${refPart} Contact ${contact}.`;
         alertRegion.classList.remove('hidden');

@@ -10,13 +10,13 @@ Add two pages to the AMA Global Marketing SIG Astro site: a public application f
 
 ## Files
 
-| Path | Purpose |
-|---|---|
-| `src/lib/dcClient.js` | Provided — drop in as-is |
-| `src/data/countries.js` | Create — ISO 3166-1 English short names, alphabetical, exported as a string array |
-| `src/pages/doctoral-consortium/osaka-2027/apply.astro` | Step 1 application form |
-| `src/pages/doctoral-consortium/osaka-2027/confirm.astro` | Step 2 post-acceptance form |
-| `.env` / `.env.example` | `PUBLIC_DC_ENDPOINT=` — the Apps Script /exec URL |
+| Path                                                     | Purpose                                                                           |
+| -------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| `src/lib/dcClient.js`                                    | Provided — drop in as-is                                                          |
+| `src/data/countries.js`                                  | Create — ISO 3166-1 English short names, alphabetical, exported as a string array |
+| `src/pages/doctoral-consortium/osaka-2027/apply.astro`   | Step 1 application form                                                           |
+| `src/pages/doctoral-consortium/osaka-2027/confirm.astro` | Step 2 post-acceptance form                                                       |
+| `.env` / `.env.example`                                  | `PUBLIC_DC_ENDPOINT=` — the Apps Script /exec URL                                 |
 
 Add a prominent link to `/apply` from the existing `osaka-2027` consortium page.
 
@@ -24,20 +24,20 @@ Add a prominent link to `/apply` from the existing `osaka-2027` consortium page.
 
 ### Fields, in order
 
-| Field | Control | Notes |
-|---|---|---|
-| `first_name` | text | required |
-| `last_name` | text | required |
-| `email` | email | required; this is where the acceptance email goes — say so in help text |
-| `university` | text | required |
-| `university_country` | select | required; from `countries.js` |
-| `citizenship` | select | required; from `countries.js` |
-| `program_year` | select 1–7 | required |
-| `supervisor` | text | required; label "Doctoral supervisor" |
-| `manuscript` | file | required; PDF or Word, max 10 MB |
-| `cover_letter` | file | required; PDF or Word, max 10 MB |
-| `stipend_requested` | checkbox | "I would like to be considered for a travel stipend" |
-| `stipend_no_uni_funding` | checkbox | **conditional** — only rendered when `stipend_requested` is checked |
+| Field                    | Control    | Notes                                                                   |
+| ------------------------ | ---------- | ----------------------------------------------------------------------- |
+| `first_name`             | text       | required                                                                |
+| `last_name`              | text       | required                                                                |
+| `email`                  | email      | required; this is where the acceptance email goes — say so in help text |
+| `university`             | text       | required                                                                |
+| `university_country`     | select     | required; from `countries.js`                                           |
+| `citizenship`            | select     | required; from `countries.js`                                           |
+| `program_year`           | select 1–7 | required                                                                |
+| `supervisor`             | text       | required; label "Doctoral supervisor"                                   |
+| `manuscript`             | file       | required; PDF or Word, max 10 MB                                        |
+| `cover_letter`           | file       | required; PDF or Word, max 10 MB                                        |
+| `stipend_requested`      | checkbox   | "I would like to be considered for a travel stipend"                    |
+| `stipend_no_uni_funding` | checkbox   | **conditional** — only rendered when `stipend_requested` is checked     |
 
 The conditional checkbox reads: "I confirm that my university is unable to fund my attendance." When `stipend_requested` is unchecked, hide it and clear its value — do not submit a stale `true`.
 
@@ -70,13 +70,13 @@ Four states:
 
 ### Fields
 
-| Field | Control | Notes |
-|---|---|---|
-| `passport_name` | text | required; label "Full name exactly as it appears in your passport" |
-| `nationality` | select | required; from `countries.js` |
-| `date_of_birth` | date | required; must submit as `YYYY-MM-DD` |
-| `consent_publish` | checkbox | "I consent to my name and email address being listed on the AMA Global Marketing SIG website" |
-| `linkedin_interest` | checkbox | "I would like an invitation to the AMA Global Marketing SIG LinkedIn community" |
+| Field               | Control  | Notes                                                                                         |
+| ------------------- | -------- | --------------------------------------------------------------------------------------------- |
+| `passport_name`     | text     | required; label "Full name exactly as it appears in your passport"                            |
+| `nationality`       | select   | required; from `countries.js`                                                                 |
+| `date_of_birth`     | date     | required; must submit as `YYYY-MM-DD`                                                         |
+| `consent_publish`   | checkbox | "I consent to my name and email address being listed on the AMA Global Marketing SIG website" |
+| `linkedin_interest` | checkbox | "I would like an invitation to the AMA Global Marketing SIG LinkedIn community"               |
 
 Explain above the form why the first three are collected: they are used solely to prepare the visa invitation letter for the host institution. The two checkboxes are genuinely optional — unchecked is a valid answer and the form must submit fine without them.
 
