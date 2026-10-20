@@ -119,6 +119,16 @@
   --aw-color-accent: rgb(166 185 214); /* brand-200 */
 }
 /* Buttons inside accent sections should follow the section's context         */
+.section-accent .btn-primary {
+  background-color: rgb(241 244 249); /* brand-50 */
+  border-color: rgb(241 244 249);
+  color: rgb(24 37 61); /* brand-900 */
+}
+.section-accent .btn-primary:hover {
+  background-color: white;
+  border-color: white;
+}
+.dark .section-accent .btn-primary,
 .dark .section-accent .btn {
   background-color: rgb(61 94 155);
   border-color: rgb(61 94 155);
@@ -127,6 +137,7 @@
     0 4px 6px -1px rgb(0 0 0 / 0.1),
     0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+.dark .section-accent .btn-primary:hover,
 .dark .section-accent .btn:hover {
   background-color: rgb(31 48 79);
   border-color: rgb(31 48 79);

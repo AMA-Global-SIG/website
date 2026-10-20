@@ -190,7 +190,7 @@ const areas = [
     isDark={true}
     stats={[
       { title: 'Conference Dates', amount: 'June 18–21' },
-      { title: 'Conference Tracks', amount: '18' },
+      { title: 'Conference Tracks', amount: '19' },
       { title: 'Historic First', amount: 'Japan' },
     ]}
   />
@@ -200,9 +200,9 @@ const areas = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
       <div class="max-w-3xl mx-auto text-center mb-12">
         <p class="text-base text-secondary dark:text-brand-200 font-semibold tracking-wide uppercase mb-2">Program</p>
-        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">18 Thematic Tracks</h2>
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">19 Thematic Tracks</h2>
         <p class="text-lg text-muted leading-relaxed">
-          The 2027 conference combines competitive paper sessions and interactive presentations across 18 thematic
+          The 2027 conference combines competitive paper sessions and interactive presentations across 19 thematic
           tracks. The track list below is tentative; the final tracks and track chairs will be announced in Fall 2026.
           Each submission must be submitted to only one track.
         </p>
@@ -225,6 +225,19 @@ const areas = [
                 </tr>
               ))
             }
+            <tr class="border-t border-brand-200 dark:border-brand-500 bg-brand-50 dark:bg-brand-700">
+              <td class="px-4 py-3 text-sm text-muted font-mono shadow-[inset_4px_0_0_0_var(--aw-color-primary)]">
+                {tracks.length + 1}
+              </td>
+              <td class="px-4 py-3 text-sm">
+                <span
+                  class="block text-xs font-semibold tracking-wide uppercase text-primary dark:text-brand-200 mb-0.5"
+                >
+                  JIM Special Issue
+                </span>
+                Artificial Intelligence and the Transformation of International Marketing Strategy
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -279,7 +292,7 @@ const areas = [
             Journal of International Marketing
           </p>
           <h2 class="text-4xl md:text-5xl font-bold tracking-tighter font-heading mb-6">JIM Special Issue Session</h2>
-          <p class="text-lg text-muted leading-relaxed">
+          <p class="text-lg text-muted leading-relaxed mb-8">
             The conference will also feature a special session connected to the <em
               >Journal of International Marketing</em
             > special issue, “Artificial Intelligence and the Transformation of International Marketing Strategy.” Authors
@@ -287,6 +300,11 @@ const areas = [
               href="https://easychair.org/conferences/?conf=amaglobal2027">EasyChair</a
             > for feedback from the guest editors.
           </p>
+          <Button
+            variant="primary"
+            text="Submit Your Extended Abstract"
+            href="https://easychair.org/conferences/?conf=amaglobal2027"
+          />
         </div>
       </div>
     </div>
